@@ -1,8 +1,10 @@
 # Chamuka Daybreak
 
-> Brand pack and UI/UX design system for Chamuka Labs, an applied AI lab. Tokens, React components, and logo icons for Next.js + React 19 + Tailwind apps. Audience: business teams. Feel: playful, warm, African-rooted — not toy-like.
+> Brand infrastructure for Chamuka Labs, an applied AI lab. Tokens, React components, and logo icons for Next.js + React 19 + Tailwind apps. Not a product.
 
-Chamuka Labs ships products as lab outputs. DrawIt is the flagship; FormIt is a sub-brand. “From thoughts to form” is DrawIt’s line only — never the lab’s.
+Chamuka Labs is an applied AI lab: we ship AI-native products, put research into practice, and build tools for AI agents.
+
+DrawIt is the flagship (a canvas you and the model both edit). FormIt, Play, Waypoint, Vmette and others are experiments or infrastructure, not launched products. “From thoughts to form” is DrawIt’s line only — never the lab’s. Voice: founder-led, short, specific, slightly dry.
 
 The GitHub repository is https://github.com/chamuka-inc/chamuka-design (formerly chamuka-branding). Apache-2.0 code; names and Daybreak marks are trademarks — see TRADEMARKS.md.
 

@@ -1,24 +1,53 @@
 # Voice
 
-Chamuka Labs is an **applied AI lab**. It speaks to business teams. The feel is playful, warm, and African-rooted — not toy-like, not startup-cute, not corporate-sterile.
+**Chamuka Labs is an applied AI lab: we ship AI-native products, put research into practice, and build tools for AI agents.**
 
-Products such as **DrawIt** (flagship) and **FormIt** are sub-brands: outputs of the lab. In copy, lead with the lab when the subject is the organisation, and with the product when the subject is that product.
+Voice is founder-led, short, specific, slightly dry: a tinkerer speaking for the lab.
 
 ## Positioning (do not invent past this)
 
-1. **Master brand:** Chamuka Labs, an applied AI lab.
-2. **Products are lab outputs**, not the lab. DrawIt is the flagship. FormIt is a named sub-brand. Play, Waypoint, and Vmette in this pack are further examples of the sub-brand pattern, not a closed list.
-3. **“From thoughts to form” is DrawIt’s line.** Never use it for Chamuka Labs, Daybreak, FormIt, or org chrome.
-4. **Do not invent other taglines** for the lab or for Daybreak. A README, OG image, or email signature can end on chamuka.ai — no slogan under the name.
-5. **“Research” means applied engineering.** Do not imply academic, university, or fundamental research.
+Use this one-liner verbatim when you need a sentence for the lab (docs, about copy, README). Do **not** put it under a lockup; templates still end on chamuka.ai with no slogan.
+
+> Chamuka Labs is an applied AI lab: we ship AI-native products, put research into practice, and build tools for AI agents.
+
+Social / profile bio, verbatim:
+
+> Applied AI lab. We ship products, put research to work, and build tools for agents. Flagship: DrawIt, a canvas you and the model both edit.
+
+What that means:
+
+1. **Ship AI-native products and tools.** AI is in the artefact itself, not just a chat window.
+2. **Put research into practice.** “Research” means applied engineering only. Do not claim papers, benchmarks, evaluation work, or research results.
+3. **Build tools for AI agents.** Examples: DrawIt’s MCP server and CLI, Vmette, Conduit.
+
+## Hierarchy
+
+Lead with the lab, then name the outputs.
+
+- **DrawIt** is the flagship.
+- **FormIt, Play, Waypoint, Vmette** and others are experiments or infrastructure, not launched products.
+- **Daybreak** is brand infrastructure, not a product.
+
+## Visuals
+
+- Lab / org surfaces: the master lockup.
+- Flagship surfaces: Chamuka + DrawIt, ember `#E24E1B`.
+
+## Do not claim
+
+- Hype words (“groundbreaking”, “empowering creators worldwide”).
+- Invented customers, logos, testimonials, or metrics (no “60fps”, no “90% faster”).
+- That every experiment is a launched product.
+- That other chamuka-inc repos or products are already open source. This repository being Apache 2.0 is fine to state.
+- **“From thoughts to form”** anywhere but DrawIt. Never as a line for Chamuka Labs, Daybreak, FormIt, or org chrome.
+- Other taglines for the lab or for Daybreak.
 
 ## Principles
 
 1. **Plain first.** Say what the thing is in one sentence. The first line of a README should be able to replace the GitHub description without a rewrite.
-2. **Warm, not loud.** Humour is dry. No trailing exclamation marks, no emoji in org listings, no “best”, no marketing puff.
-3. **Adult play.** Play the product can be more playful in its own UI; Play the listing stays adult. Coral is the accent, not a license to shout.
-4. **Named, not nicknamed.** Surfaces say Chamuka Labs (org) or Chamuka + product name (DrawIt, FormIt). Do not drop “Chamuka” from a product lockup.
-5. **Placeholders until confirmed.** Do not invent social handles. `name@chamuka.ai` is a stand-in for a person’s address.
+2. **Short, specific, slightly dry.** No trailing exclamation marks, no emoji in org listings, no “best”, no marketing puff.
+3. **Named, not nicknamed.** Surfaces say Chamuka Labs (org) or Chamuka + product name (DrawIt on flagship surfaces). Do not drop “Chamuka” from a product lockup.
+4. **Placeholders until confirmed.** Do not invent social handles. `name@chamuka.ai` is a stand-in for a person’s address on business cards and email signatures. Conduct and security reports go to `security@chamuka.ai`.
 
 ## Repo names and descriptions
 
@@ -39,4 +68,4 @@ Visual do / don’t examples: [`templates/github-repo-naming.svg`](../../templat
 
 ## Words we avoid in chrome
 
-“Simply”, “just”, “awesome”, “unlock”, “magic”, “natively AI”. Prefer the concrete: *Draw together. Shape a form. Run a session.*
+“Simply”, “just”, “awesome”, “unlock”, “magic”, “groundbreaking”, “empowering”. Prefer the concrete: *Draw together. Shape a form. Run a session.*
