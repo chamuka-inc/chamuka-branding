@@ -1,12 +1,17 @@
 # Chamuka Daybreak
 
+[![CI](https://github.com/chamuka-inc/chamuka-design/actions/workflows/ci.yml/badge.svg)](https://github.com/chamuka-inc/chamuka-design/actions/workflows/ci.yml)
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+
+Daybreak, the Chamuka Labs design system: tokens, React components, brand assets.
+
 **Chamuka Labs is an applied AI lab: we ship AI-native products, put research into practice, and build tools for AI agents.**
 
-Daybreak is brand infrastructure for [Chamuka Labs](https://chamuka.ai) — tokens, components, and marks — not a product. **DrawIt** is the flagship (a canvas you and the model both edit). FormIt, Play, Waypoint, Vmette and others are experiments or infrastructure, not launched products.
+Daybreak is brand infrastructure for [Chamuka Labs](https://chamuka.ai): tokens, components, and marks, not a product. **DrawIt** is the flagship (a canvas you and the model both edit). FormIt, Play, Waypoint, Vmette and others are experiments or infrastructure, not launched products.
 
 This repository is public. Clone it, open issues, and send pull requests. See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
-**DrawIt’s line is “From thoughts to form.”** Use that only for DrawIt, never as a line for Chamuka Labs.
+**DrawIt's line is "From thoughts to form."** Use that only for DrawIt, never as a line for Chamuka Labs.
 
 ## Quick start
 
@@ -116,8 +121,20 @@ python brand/scripts/_surfaces.py
 
 If the palette changes, update both the Python `PALETTE` and `packages/tokens/src/tokens`.
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Security
+
+Report vulnerabilities to [security@chamuka.ai](mailto:security@chamuka.ai). See [SECURITY.md](SECURITY.md).
+
 ## Licence and trademarks
 
 Code, tokens, components, and templates are **[Apache License 2.0](./LICENSE)** (copyright Chamuka Labs).
 
 The Chamuka, Chamuka Labs, DrawIt, FormIt, and Play names and the Daybreak logos are **not** licensed for others to use as their own brand or to imply endorsement. Others may use them to refer to the projects. **Forks must rebrand.** See [`TRADEMARKS.md`](./TRADEMARKS.md).
+
+---
+
+Part of [Chamuka Labs](https://chamuka.ai), an applied AI lab.
