@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card",
+  "type": "registry:ui",
+  "title": "Card",
+  "description": "Surface grouping for forms and summaries.",
+  "meta": {
+    "behaviour": "plain",
+    "behaviourReason": "Presentational.",
+    "a11y": "CardTitle is an h3. Do not nest headings out of order.",
+    "example": "<Card><CardHeader><CardTitle>Forms</CardTitle></CardHeader></Card>"
+  },
+  "dependencies": [],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/utils.json"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/card.tsx",
+      "type": "registry:ui",
+      "target": "@ui/card.tsx",
+      "content": "import { type HTMLAttributes, forwardRef } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport const Card = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(\n  ({ className, ...props }, ref) => (\n    <div\n      ref={ref}\n      className={cn(\"rounded-lg border border-border bg-card text-card-foreground shadow-sm\", className)}\n      {...props}\n    />\n  ),\n);\nCard.displayName = \"Card\";\n\nexport const CardHeader = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(\n  ({ className, ...props }, ref) => (\n    <div ref={ref} className={cn(\"flex flex-col gap-1.5 p-6\", className)} {...props} />\n  ),\n);\nCardHeader.displayName = \"CardHeader\";\n\nexport const CardTitle = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingElement>>(\n  ({ className, ...props }, ref) => (\n    <h3\n      ref={ref}\n      className={cn(\"font-display text-lg font-semibold leading-none tracking-tight\", className)}\n      {...props}\n    />\n  ),\n);\nCardTitle.displayName = \"CardTitle\";\n\nexport const CardDescription = forwardRef<\n  HTMLParagraphElement,\n  HTMLAttributes<HTMLParagraphElement>\n>(({ className, ...props }, ref) => (\n  <p ref={ref} className={cn(\"text-sm text-muted-foreground\", className)} {...props} />\n));\nCardDescription.displayName = \"CardDescription\";\n\nexport const CardContent = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(\n  ({ className, ...props }, ref) => (\n    <div ref={ref} className={cn(\"p-6 pt-0\", className)} {...props} />\n  ),\n);\nCardContent.displayName = \"CardContent\";\n\nexport const CardFooter = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(\n  ({ className, ...props }, ref) => (\n    <div ref={ref} className={cn(\"flex items-center gap-2 p-6 pt-0\", className)} {...props} />\n  ),\n);\nCardFooter.displayName = \"CardFooter\";\n"
+    }
+  ]
+}

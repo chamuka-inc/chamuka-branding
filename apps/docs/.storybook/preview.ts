@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/react";
 import { ThemeProvider, ToastProvider, TooltipProvider } from "@chamuka/ui";
 import "@chamuka/tokens/tokens.css";
-import "@chamuka/ui/styles.css";
+import "@chamuka/tokens/theme.css";
 import "@fontsource/sora/500.css";
 import "@fontsource/sora/600.css";
 import "@fontsource/sora/700.css";

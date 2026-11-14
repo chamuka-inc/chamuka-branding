@@ -33,6 +33,8 @@ import { Textarea } from "./textarea";
 import { ThemeProvider } from "./theme-provider";
 import { ToastProvider } from "./toast";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./tooltip";
+import { Accordion, AccordionHeader, AccordionItem, AccordionPanel, AccordionTrigger } from "./accordion";
+import { Combobox, ComboboxContent, ComboboxEmpty, ComboboxInput, ComboboxItem, ComboboxList } from "./combobox";
 
 function wrap(ui: ReactNode) {
   return (
@@ -104,7 +106,7 @@ describe("components are accessible", () => {
 
   it("Checkbox", async () => {
     await expectAccessible(
-      <div className="ck-control-row">
+      <div className="flex items-center gap-2">
         <Checkbox id="tos" />
         <Label htmlFor="tos">Accept terms</Label>
       </div>,
@@ -114,7 +116,7 @@ describe("components are accessible", () => {
   it("RadioGroup", async () => {
     await expectAccessible(
       <RadioGroup aria-label="Plan" defaultValue="a">
-        <div className="ck-control-row">
+        <div className="flex items-center gap-2">
           <RadioGroupItem value="a" id="plan-a" />
           <Label htmlFor="plan-a">Starter</Label>
         </div>
@@ -124,7 +126,7 @@ describe("components are accessible", () => {
 
   it("Switch", async () => {
     await expectAccessible(
-      <div className="ck-control-row">
+      <div className="flex items-center gap-2">
         <Switch id="alerts" />
         <Label htmlFor="alerts">Alerts</Label>
       </div>,
@@ -198,13 +200,40 @@ describe("components are accessible", () => {
   it("Tabs", async () => {
     await expectAccessible(
       <Tabs defaultValue="one">
-        <TabsList>
+        <TabsList aria-label="Sections">
           <TabsTrigger value="one">One</TabsTrigger>
           <TabsTrigger value="two">Two</TabsTrigger>
         </TabsList>
         <TabsContent value="one">First</TabsContent>
         <TabsContent value="two">Second</TabsContent>
       </Tabs>,
+    );
+  });
+
+  it("Accordion", async () => {
+    await expectAccessible(
+      <Accordion defaultValue="one">
+        <AccordionItem value="one">
+          <AccordionHeader>
+            <AccordionTrigger>Shipping</AccordionTrigger>
+          </AccordionHeader>
+          <AccordionPanel>Ships in 5 days.</AccordionPanel>
+        </AccordionItem>
+      </Accordion>,
+    );
+  });
+
+  it("Combobox", async () => {
+    await expectAccessible(
+      <Combobox>
+        <ComboboxInput aria-label="Framework" />
+        <ComboboxContent>
+          <ComboboxEmpty>None found.</ComboboxEmpty>
+          <ComboboxList>
+            <ComboboxItem value="next">Next.js</ComboboxItem>
+          </ComboboxList>
+        </ComboboxContent>
+      </Combobox>,
     );
   });
 
@@ -219,5 +248,12 @@ describe("components are accessible", () => {
         </Stack>
       </Container>,
     );
+  });
+
+  it("Button uses Tailwind utilities, not ck-* classes", () => {
+    const { getByRole } = render(wrap(<Button>Save</Button>));
+    const className = getByRole("button").className;
+    expect(className).toContain("bg-primary");
+    expect(className).not.toContain("ck-button");
   });
 });

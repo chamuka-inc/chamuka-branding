@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input",
+  "type": "registry:ui",
+  "title": "Input",
+  "description": "Single-line text field.",
+  "meta": {
+    "behaviour": "plain",
+    "behaviourReason": "Native input is sufficient.",
+    "a11y": "Pair with Label or Field. aria-invalid turns the border destructive.",
+    "example": "<Input id=\"email\" type=\"email\" />"
+  },
+  "dependencies": [],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/utils.json"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/input.tsx",
+      "type": "registry:ui",
+      "target": "@ui/input.tsx",
+      "content": "import { type InputHTMLAttributes, forwardRef } from \"react\";\nimport { cn } from \"@/lib/utils\";\nimport { disabledControl, focusRing } from \"@/lib/classes\";\n\nexport type InputProps = InputHTMLAttributes<HTMLInputElement>;\n\nexport const Input = forwardRef<HTMLInputElement, InputProps>(\n  ({ className, type = \"text\", ...props }, ref) => (\n    <input\n      ref={ref}\n      type={type}\n      className={cn(\n        \"flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base text-foreground shadow-sm\",\n        \"placeholder:text-muted-foreground\",\n        \"aria-invalid:border-destructive\",\n        \"motion-reduce:transition-none\",\n        focusRing,\n        disabledControl,\n        className,\n      )}\n      {...props}\n    />\n  ),\n);\nInput.displayName = \"Input\";\n"
+    }
+  ]
+}

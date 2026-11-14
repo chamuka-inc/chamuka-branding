@@ -1,6 +1,7 @@
 {
   "name": "chamuka-design",
   "private": true,
+  "license": "Apache-2.0",
   "type": "module",
   "packageManager": "pnpm@10.33.4",
   "engines": {
@@ -14,7 +15,9 @@
     "build-storybook": "turbo run build-storybook",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "changeset": "changeset"
+    "changeset": "changeset",
+    "generate:agent": "tsx scripts/generate-agent-artifacts.ts",
+    "release": "changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.7",
@@ -26,11 +29,16 @@
     "eslint-plugin-storybook": "^0.12.0",
     "globals": "^16.5.0",
     "prettier": "^3.6.2",
+    "tsx": "^4.20.6",
     "turbo": "^2.5.8",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.46.2"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chamuka-inc/chamuka-design.git"
+  },
   "pnpm": {
-    "onlyBuiltDependencies": ["esbuild"]
+    "onlyBuiltDependencies": ["esbuild", "@parcel/watcher"]
   }
 }

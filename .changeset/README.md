@@ -1,6 +1,6 @@
 # Changesets
 
-This repo uses [Changesets](https://github.com/changesets/changesets) to version `@chamuka/*` packages. Packages are **private** — do not publish them to npm.
+This repo uses [Changesets](https://github.com/changesets/changesets) to version `@chamuka/*` packages. Releases publish to **GitHub Packages** from `main`, not to npmjs. Public npm can come later.
 
 ```bash
 pnpm changeset

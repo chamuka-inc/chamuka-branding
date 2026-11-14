@@ -1,0 +1,1351 @@
+{
+  "name": "chamuka-design",
+  "brand": "Daybreak",
+  "repository": "https://github.com/chamuka-inc/chamuka-design",
+  "packages": [
+    "@chamuka/tokens",
+    "@chamuka/ui",
+    "@chamuka/icons"
+  ],
+  "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/registry.json",
+  "behaviour": {
+    "ui-sdk": "Interactive components wrap @ui-sdk/react 0.1.0-beta.2. Do not import UI SDK types from @chamuka/ui.",
+    "radix": "Avatar and Separator still use Radix.",
+    "plain": "Presentational components are React + Tailwind + cva."
+  },
+  "components": [
+    {
+      "name": "Button",
+      "slug": "button",
+      "import": {
+        "named": [
+          "Button",
+          "buttonVariants"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/button.tsx",
+      "description": "Primary action control. Ember fill; 16px default so ember-on-paper meets AA large.",
+      "behaviour": "plain",
+      "behaviourReason": "Presentational. Uses Radix Slot only for asChild.",
+      "variants": {
+        "variant": [
+          "default",
+          "primary",
+          "secondary",
+          "outline",
+          "ghost",
+          "destructive",
+          "link"
+        ],
+        "size": [
+          "default",
+          "md",
+          "sm",
+          "lg",
+          "icon"
+        ]
+      },
+      "props": [],
+      "a11y": "Focus-visible ring. Disabled is pointer-events-none + opacity. Ember labels stay at 14px minimum, medium weight.",
+      "example": "<Button>Save</Button>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/button.json"
+    },
+    {
+      "name": "IconButton",
+      "slug": "icon-button",
+      "import": {
+        "named": [
+          "IconButton"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/icon-button.tsx",
+      "description": "Square icon-only button. Requires a visible-name `label`.",
+      "behaviour": "plain",
+      "behaviourReason": "Presentational wrapper around Button.",
+      "variants": {},
+      "props": [],
+      "a11y": "Sets aria-label from `label`. Pair with Lucide at 1.5–2px stroke.",
+      "example": "<IconButton label=\"Close\"><span aria-hidden>×</span></IconButton>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/icon-button.json"
+    },
+    {
+      "name": "Link",
+      "slug": "link",
+      "import": {
+        "named": [
+          "Link"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/link.tsx",
+      "description": "Text link in primary (ember).",
+      "behaviour": "plain",
+      "behaviourReason": "Presentational.",
+      "variants": {},
+      "props": [],
+      "a11y": "Focus-visible ring. Use asChild to render a router Link.",
+      "example": "<Link href=\"https://chamuka.ai\">chamuka.ai</Link>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/link.json"
+    },
+    {
+      "name": "Input",
+      "slug": "input",
+      "import": {
+        "named": [
+          "Input"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/input.tsx",
+      "description": "Single-line text field.",
+      "behaviour": "plain",
+      "behaviourReason": "Native input is sufficient.",
+      "variants": {},
+      "props": [],
+      "a11y": "Pair with Label or Field. aria-invalid turns the border destructive.",
+      "example": "<Input id=\"email\" type=\"email\" />",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/input.json"
+    },
+    {
+      "name": "Textarea",
+      "slug": "textarea",
+      "import": {
+        "named": [
+          "Textarea"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/textarea.tsx",
+      "description": "Multi-line text field.",
+      "behaviour": "plain",
+      "behaviourReason": "Native textarea is sufficient.",
+      "variants": {},
+      "props": [],
+      "a11y": "Pair with Label or Field.",
+      "example": "<Textarea id=\"notes\" />",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/textarea.json"
+    },
+    {
+      "name": "Field",
+      "slug": "field",
+      "import": {
+        "named": [
+          "Field",
+          "FieldHelp",
+          "FieldError",
+          "Label"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/label.tsx",
+      "description": "Label + control + help + error. Wires aria-describedby and aria-invalid.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Label uses @ui-sdk/react/label. Field layout stays a Chamuka wrapper so Input/Textarea stay native.",
+      "variants": {},
+      "props": [],
+      "a11y": "Help and error ids are generated. Required fields get a visible asterisk marked aria-hidden.",
+      "example": "<Field label=\"Email\" htmlFor=\"email\" help=\"Work email\"><Input id=\"email\" /></Field>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/field.json"
+    },
+    {
+      "name": "Checkbox",
+      "slug": "checkbox",
+      "import": {
+        "named": [
+          "Checkbox"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/checkbox.tsx",
+      "description": "Boolean choice with a Daybreak check indicator.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Keyboard, mixed state, and form input come from @ui-sdk/react/checkbox.",
+      "variants": {},
+      "props": [],
+      "a11y": "Always pair with Label. Space toggles. data-checked styles the fill.",
+      "example": "<div className=\"flex items-center gap-2\"><Checkbox id=\"tos\" /><Label htmlFor=\"tos\">Accept</Label></div>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/checkbox.json"
+    },
+    {
+      "name": "Switch",
+      "slug": "switch",
+      "import": {
+        "named": [
+          "Switch"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/switch.tsx",
+      "description": "On/off setting.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Role, keyboard, and form input come from @ui-sdk/react/switch.",
+      "variants": {},
+      "props": [],
+      "a11y": "Always pair with Label. Space toggles.",
+      "example": "<div className=\"flex items-center gap-2\"><Switch id=\"alerts\" /><Label htmlFor=\"alerts\">Alerts</Label></div>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/switch.json"
+    },
+    {
+      "name": "RadioGroup",
+      "slug": "radio-group",
+      "import": {
+        "named": [
+          "RadioGroup",
+          "RadioGroupItem"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/radio-group.tsx",
+      "description": "Single choice from a short list.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Roving tabindex and form radios come from @ui-sdk/react/radio.",
+      "variants": {},
+      "props": [],
+      "a11y": "Name the group (aria-label or Field). Arrow keys move the selection. Pair each RadioGroupItem with a Label.",
+      "example": "<RadioGroup defaultValue=\"a\" aria-label=\"Plan\"><RadioGroupItem value=\"a\" id=\"a\" /><Label htmlFor=\"a\">Starter</Label></RadioGroup>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/radio-group.json"
+    },
+    {
+      "name": "Select",
+      "slug": "select",
+      "import": {
+        "named": [
+          "Select",
+          "SelectTrigger",
+          "SelectValue",
+          "SelectContent",
+          "SelectItem",
+          "SelectGroup",
+          "SelectField"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/select.tsx",
+      "description": "Popup list of options.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Typeahead, popup, and listbox keyboard come from @ui-sdk/react/select.",
+      "variants": {},
+      "props": [],
+      "a11y": "Name the trigger with aria-label or a visible label. Items need a value.",
+      "example": "<Select><SelectTrigger aria-label=\"Role\"><SelectValue placeholder=\"Choose\" /></SelectTrigger><SelectContent><SelectItem value=\"admin\">Admin</SelectItem></SelectContent></Select>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/select.json"
+    },
+    {
+      "name": "Combobox",
+      "slug": "combobox",
+      "import": {
+        "named": [
+          "Combobox",
+          "ComboboxInput",
+          "ComboboxContent",
+          "ComboboxList",
+          "ComboboxItem",
+          "ComboboxEmpty"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/combobox.tsx",
+      "description": "Searchable list of options.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Filter, listbox, and popup come from @ui-sdk/react/combobox.",
+      "variants": {},
+      "props": [],
+      "a11y": "Name the input. Arrow keys highlight; Enter selects.",
+      "example": "<Combobox><ComboboxInput aria-label=\"Framework\" /><ComboboxContent><ComboboxItem value=\"next\">Next.js</ComboboxItem></ComboboxContent></Combobox>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/combobox.json"
+    },
+    {
+      "name": "Dialog",
+      "slug": "dialog",
+      "import": {
+        "named": [
+          "Dialog",
+          "DialogTrigger",
+          "DialogContent",
+          "DialogTitle",
+          "DialogDescription",
+          "DialogClose",
+          "DialogOverlay",
+          "DialogBackdrop",
+          "DialogPortal"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/dialog.tsx",
+      "description": "Modal task over the page. DialogContent includes the overlay.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Focus trap, Escape, inert, and top-layer popup come from @ui-sdk/react/dialog. DialogPortal is a no-op: UI SDK popups do not use portals.",
+      "variants": {},
+      "props": [],
+      "a11y": "Always include DialogTitle. Escape and overlay press dismiss.",
+      "example": "<Dialog><DialogTrigger asChild><Button>Open</Button></DialogTrigger><DialogContent><DialogTitle>Invite</DialogTitle></DialogContent></Dialog>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/dialog.json"
+    },
+    {
+      "name": "Popover",
+      "slug": "popover",
+      "import": {
+        "named": [
+          "Popover",
+          "PopoverTrigger",
+          "PopoverContent",
+          "PopoverAnchor"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/popover.tsx",
+      "description": "Non-modal floating panel.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Placement, dismissal, and focus come from @ui-sdk/react/popover. PopoverAnchor is a presentational span; pass `anchor` on content for custom anchors.",
+      "variants": {},
+      "props": [],
+      "a11y": "Name the content if it has no title.",
+      "example": "<Popover><PopoverTrigger asChild><Button>More</Button></PopoverTrigger><PopoverContent>Details</PopoverContent></Popover>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/popover.json"
+    },
+    {
+      "name": "DropdownMenu",
+      "slug": "dropdown-menu",
+      "import": {
+        "named": [
+          "DropdownMenu",
+          "DropdownMenuTrigger",
+          "DropdownMenuContent",
+          "DropdownMenuItem",
+          "DropdownMenuSeparator",
+          "DropdownMenuLabel",
+          "DropdownMenuGroup",
+          "DropdownMenuPortal"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/dropdown-menu.tsx",
+      "description": "Action menu from a button. Wraps UI SDK Menu behind the Chamuka names.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Keyboard, typeahead, and popup come from @ui-sdk/react/menu. DropdownMenuPortal is a no-op.",
+      "variants": {},
+      "props": [],
+      "a11y": "Arrow keys move; Enter selects; Escape closes.",
+      "example": "<DropdownMenu><DropdownMenuTrigger asChild><Button>Menu</Button></DropdownMenuTrigger><DropdownMenuContent><DropdownMenuItem>Edit</DropdownMenuItem></DropdownMenuContent></DropdownMenu>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/dropdown-menu.json"
+    },
+    {
+      "name": "Tooltip",
+      "slug": "tooltip",
+      "import": {
+        "named": [
+          "Tooltip",
+          "TooltipTrigger",
+          "TooltipContent",
+          "TooltipProvider",
+          "SimpleTooltip"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/tooltip.tsx",
+      "description": "Short hint on hover or keyboard focus.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Delay, placement, and hover/focus open come from @ui-sdk/react/tooltip. TooltipProvider is a no-op kept for API stability.",
+      "variants": {},
+      "props": [],
+      "a11y": "Keep copy short. Do not put essential information only in a tooltip.",
+      "example": "<Tooltip><TooltipTrigger asChild><Button>Hint</Button></TooltipTrigger><TooltipContent>Helpful</TooltipContent></Tooltip>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/tooltip.json"
+    },
+    {
+      "name": "Tabs",
+      "slug": "tabs",
+      "import": {
+        "named": [
+          "Tabs",
+          "TabsList",
+          "TabsTrigger",
+          "TabsContent"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/tabs.tsx",
+      "description": "One panel visible at a time. TabsTrigger/TabsContent alias UI SDK TabsTab/TabsPanel.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Roving tabindex and arrow keys come from @ui-sdk/react/tabs.",
+      "variants": {},
+      "props": [],
+      "a11y": "Give TabsList an aria-label. Each trigger and panel share a value.",
+      "example": "<Tabs defaultValue=\"one\"><TabsList aria-label=\"Sections\"><TabsTrigger value=\"one\">One</TabsTrigger></TabsList><TabsContent value=\"one\">First</TabsContent></Tabs>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/tabs.json"
+    },
+    {
+      "name": "Accordion",
+      "slug": "accordion",
+      "import": {
+        "named": [
+          "Accordion",
+          "AccordionItem",
+          "AccordionHeader",
+          "AccordionTrigger",
+          "AccordionPanel"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/accordion.tsx",
+      "description": "Expandable sections. defaultValue accepts a string or string[].",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Heading structure, keyboard, and disclosure come from @ui-sdk/react/accordion.",
+      "variants": {},
+      "props": [],
+      "a11y": "Triggers report aria-expanded. Put the trigger inside AccordionHeader.",
+      "example": "<Accordion defaultValue=\"one\"><AccordionItem value=\"one\"><AccordionHeader><AccordionTrigger>Shipping</AccordionTrigger></AccordionHeader><AccordionPanel>5 days.</AccordionPanel></AccordionItem></Accordion>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/accordion.json"
+    },
+    {
+      "name": "Toast",
+      "slug": "toast",
+      "import": {
+        "named": [
+          "ToastProvider",
+          "useToast",
+          "Toast",
+          "ToastTitle",
+          "ToastDescription",
+          "ToastClose",
+          "ToastViewport"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/toast.tsx",
+      "description": "Transient notification. useToast().toast({ title, description, variant }).",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Queue, timed dismissal, and announcements come from @ui-sdk/react/toast via createToaster. ToastViewport is a compatibility no-op; ToastProvider places ToastRegion.",
+      "variants": {},
+      "props": [],
+      "a11y": "Errors are announced assertively. Do not steal focus.",
+      "example": "const { toast } = useToast();\ntoast({ title: \"Saved\" });",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/toast.json"
+    },
+    {
+      "name": "Alert",
+      "slug": "alert",
+      "import": {
+        "named": [
+          "Alert",
+          "alertVariants"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/alert.tsx",
+      "description": "Inline status message.",
+      "behaviour": "plain",
+      "behaviourReason": "Presentational. role=status.",
+      "variants": {
+        "variant": [
+          "default",
+          "success",
+          "warning",
+          "danger",
+          "info"
+        ]
+      },
+      "props": [],
+      "a11y": "Uses role=status. For blocking confirmation use a Dialog.",
+      "example": "<Alert title=\"Saved\">The form was saved.</Alert>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/alert.json"
+    },
+    {
+      "name": "Card",
+      "slug": "card",
+      "import": {
+        "named": [
+          "Card",
+          "CardHeader",
+          "CardTitle",
+          "CardDescription",
+          "CardContent",
+          "CardFooter"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/card.tsx",
+      "description": "Surface grouping for forms and summaries.",
+      "behaviour": "plain",
+      "behaviourReason": "Presentational.",
+      "variants": {},
+      "props": [],
+      "a11y": "CardTitle is an h3. Do not nest headings out of order.",
+      "example": "<Card><CardHeader><CardTitle>Forms</CardTitle></CardHeader></Card>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/card.json"
+    },
+    {
+      "name": "Badge",
+      "slug": "badge",
+      "import": {
+        "named": [
+          "Badge",
+          "badgeVariants"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/badge.tsx",
+      "description": "Small status pill.",
+      "behaviour": "plain",
+      "behaviourReason": "Presentational.",
+      "variants": {
+        "variant": [
+          "default",
+          "secondary",
+          "outline",
+          "success",
+          "warning",
+          "danger"
+        ]
+      },
+      "props": [],
+      "a11y": "Do not rely on colour alone.",
+      "example": "<Badge>New</Badge>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/badge.json"
+    },
+    {
+      "name": "Avatar",
+      "slug": "avatar",
+      "import": {
+        "named": [
+          "Avatar",
+          "AvatarImage",
+          "AvatarFallback"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/avatar.tsx",
+      "description": "Image with initials fallback.",
+      "behaviour": "radix",
+      "behaviourReason": "Image load/error fallback is still @radix-ui/react-avatar. Not a keyboard/ARIA behaviour primitive; UI SDK Avatar was left unused to keep this presentational.",
+      "variants": {},
+      "props": [],
+      "a11y": "Fallback text should be initials, not a name sentence.",
+      "example": "<Avatar><AvatarFallback>CH</AvatarFallback></Avatar>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/avatar.json"
+    },
+    {
+      "name": "Separator",
+      "slug": "separator",
+      "import": {
+        "named": [
+          "Separator"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/separator.tsx",
+      "description": "Horizontal or vertical rule.",
+      "behaviour": "radix",
+      "behaviourReason": "Decorative vs semantic orientation still uses @radix-ui/react-separator. UI SDK Separator exists; kept Radix to avoid pulling UI SDK into a presentational primitive.",
+      "variants": {},
+      "props": [],
+      "a11y": "decorative=true by default.",
+      "example": "<Separator />",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/separator.json"
+    },
+    {
+      "name": "Skeleton",
+      "slug": "skeleton",
+      "import": {
+        "named": [
+          "Skeleton"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/skeleton.tsx",
+      "description": "Loading placeholder.",
+      "behaviour": "plain",
+      "behaviourReason": "Presentational. aria-hidden.",
+      "variants": {},
+      "props": [],
+      "a11y": "aria-hidden. Pair with a live region elsewhere if needed.",
+      "example": "<Skeleton className=\"h-4 w-32\" />",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/skeleton.json"
+    },
+    {
+      "name": "Spinner",
+      "slug": "spinner",
+      "import": {
+        "named": [
+          "Spinner"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/spinner.tsx",
+      "description": "Indeterminate loading indicator.",
+      "behaviour": "plain",
+      "behaviourReason": "Presentational.",
+      "variants": {},
+      "props": [],
+      "a11y": "role=status and aria-label=Loading. motion-reduce:animate-none.",
+      "example": "<Spinner />",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/spinner.json"
+    },
+    {
+      "name": "Stack",
+      "slug": "stack",
+      "import": {
+        "named": [
+          "Stack"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/stack.tsx",
+      "description": "Flex stack with gap variants.",
+      "behaviour": "plain",
+      "behaviourReason": "Layout only.",
+      "variants": {
+        "direction": [
+          "column",
+          "row"
+        ],
+        "gap": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "8"
+        ]
+      },
+      "props": [],
+      "a11y": "No inherent role.",
+      "example": "<Stack gap=\"4\"><Button>One</Button><Button>Two</Button></Stack>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/stack.json"
+    },
+    {
+      "name": "Container",
+      "slug": "container",
+      "import": {
+        "named": [
+          "Container"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/container.tsx",
+      "description": "Centered max-width wrapper.",
+      "behaviour": "plain",
+      "behaviourReason": "Layout only.",
+      "variants": {
+        "size": [
+          "sm",
+          "md",
+          "lg",
+          "full"
+        ]
+      },
+      "props": [],
+      "a11y": "No inherent role.",
+      "example": "<Container size=\"md\">{children}</Container>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/container.json"
+    },
+    {
+      "name": "ThemeProvider",
+      "slug": "theme-provider",
+      "import": {
+        "named": [
+          "ThemeProvider",
+          "useTheme"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/theme-provider.tsx",
+      "description": "Applies class=dark and data-theme for token overrides.",
+      "behaviour": "plain",
+      "behaviourReason": "Theme class + context only.",
+      "variants": {},
+      "props": [],
+      "a11y": "Does not trap focus. Wrap the app once.",
+      "example": "<ThemeProvider defaultTheme=\"system\">{children}</ThemeProvider>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/theme-provider.json"
+    }
+  ],
+  "tokens": [
+    {
+      "path": "color.ember",
+      "cssVar": "--ember",
+      "value": "#E24E1B",
+      "description": "Master primary. DrawIt accent. Not body text on paper."
+    },
+    {
+      "path": "color.gold",
+      "cssVar": "--gold",
+      "value": "#E6B422",
+      "description": "Horizon bar and highlights. Never a product accent."
+    },
+    {
+      "path": "color.slate",
+      "cssVar": "--slate",
+      "value": "#2B4C7E",
+      "description": "Horizon rule, FormIt accent, info."
+    },
+    {
+      "path": "color.paper",
+      "cssVar": "--paper",
+      "value": "#FFF8F1",
+      "description": "Morning paper — default light background."
+    },
+    {
+      "path": "color.mist",
+      "cssVar": "--mist",
+      "value": "#F3EBE0",
+      "description": "Subtle surfaces and chips."
+    },
+    {
+      "path": "color.ink",
+      "cssVar": "--ink",
+      "value": "#17141C",
+      "description": "Text and mono lockups."
+    },
+    {
+      "path": "color.muted",
+      "cssVar": "--muted",
+      "value": "#6B645C",
+      "description": "Secondary text. AA on paper."
+    },
+    {
+      "path": "color.success",
+      "cssVar": "--success",
+      "value": "#1F8A5B",
+      "description": "Success. AA large on paper only."
+    },
+    {
+      "path": "color.warning",
+      "cssVar": "--warning",
+      "value": "#E0A100",
+      "description": "Warning. Use on ink, not paper."
+    },
+    {
+      "path": "color.danger",
+      "cssVar": "--danger",
+      "value": "#C5362B",
+      "description": "Danger / error. AA on paper."
+    },
+    {
+      "path": "color.info",
+      "cssVar": "--info",
+      "value": "#2B4C7E",
+      "description": "Info — same as slate."
+    },
+    {
+      "path": "color.play",
+      "cssVar": "--play",
+      "value": "#D9487A",
+      "description": "Coral — playful-but-adult products (Play is an example)."
+    },
+    {
+      "path": "color.forest",
+      "cssVar": "--forest",
+      "value": "#2F6B4F",
+      "description": "Forest — calm green products (Waypoint is an example)."
+    },
+    {
+      "path": "color.mineral",
+      "cssVar": "--mineral",
+      "value": "#1F7A6B",
+      "description": "Mineral — infra / platform tools (Vmette is an example)."
+    },
+    {
+      "path": "color.white",
+      "cssVar": "--white",
+      "value": "#FFFFFF"
+    },
+    {
+      "path": "color.neutral.50",
+      "cssVar": "--neutral-50",
+      "value": "#FBF7F2"
+    },
+    {
+      "path": "color.neutral.100",
+      "cssVar": "--neutral-100",
+      "value": "#F3EBE0"
+    },
+    {
+      "path": "color.neutral.200",
+      "cssVar": "--neutral-200",
+      "value": "#E6D9C8"
+    },
+    {
+      "path": "color.neutral.300",
+      "cssVar": "--neutral-300",
+      "value": "#D0C0AA"
+    },
+    {
+      "path": "color.neutral.400",
+      "cssVar": "--neutral-400",
+      "value": "#B3A28A"
+    },
+    {
+      "path": "color.neutral.500",
+      "cssVar": "--neutral-500",
+      "value": "#8F8170"
+    },
+    {
+      "path": "color.neutral.600",
+      "cssVar": "--neutral-600",
+      "value": "#6B645C"
+    },
+    {
+      "path": "color.neutral.700",
+      "cssVar": "--neutral-700",
+      "value": "#524C46"
+    },
+    {
+      "path": "color.neutral.800",
+      "cssVar": "--neutral-800",
+      "value": "#3A3531"
+    },
+    {
+      "path": "color.neutral.900",
+      "cssVar": "--neutral-900",
+      "value": "#241F1C"
+    },
+    {
+      "path": "color.neutral.950",
+      "cssVar": "--neutral-950",
+      "value": "#17141C"
+    },
+    {
+      "path": "motion.duration.fast",
+      "cssVar": "--duration-fast",
+      "value": "150ms"
+    },
+    {
+      "path": "motion.duration.base",
+      "cssVar": "--duration-base",
+      "value": "200ms"
+    },
+    {
+      "path": "motion.duration.slow",
+      "cssVar": "--duration-slow",
+      "value": "300ms"
+    },
+    {
+      "path": "motion.easing.out",
+      "cssVar": "--easing-out",
+      "value": [
+        0.16,
+        1,
+        0.3,
+        1
+      ]
+    },
+    {
+      "path": "motion.easing.standard",
+      "cssVar": "--easing-standard",
+      "value": [
+        0.2,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "path": "radius.sm",
+      "cssVar": "--radius-sm",
+      "value": "4px"
+    },
+    {
+      "path": "radius.md",
+      "cssVar": "--radius-md",
+      "value": "8px"
+    },
+    {
+      "path": "radius.lg",
+      "cssVar": "--radius-lg",
+      "value": "12px"
+    },
+    {
+      "path": "radius.xl",
+      "cssVar": "--radius-xl",
+      "value": "20px"
+    },
+    {
+      "path": "radius.full",
+      "cssVar": "--radius-full",
+      "value": "9999px"
+    },
+    {
+      "path": "radius.default",
+      "cssVar": "--radius",
+      "value": "0.5rem",
+      "description": "Shadcn --radius on :root."
+    },
+    {
+      "path": "semantic.light.background",
+      "cssVar": "--background",
+      "value": "{color.paper}"
+    },
+    {
+      "path": "semantic.light.foreground",
+      "cssVar": "--foreground",
+      "value": "{color.ink}"
+    },
+    {
+      "path": "semantic.light.card",
+      "cssVar": "--card",
+      "value": "{color.paper}"
+    },
+    {
+      "path": "semantic.light.card-foreground",
+      "cssVar": "--card-foreground",
+      "value": "{color.ink}"
+    },
+    {
+      "path": "semantic.light.popover",
+      "cssVar": "--popover",
+      "value": "#FFFFFF"
+    },
+    {
+      "path": "semantic.light.popover-foreground",
+      "cssVar": "--popover-foreground",
+      "value": "{color.ink}"
+    },
+    {
+      "path": "semantic.light.primary",
+      "cssVar": "--primary",
+      "value": "{color.ember}"
+    },
+    {
+      "path": "semantic.light.primary-foreground",
+      "cssVar": "--primary-foreground",
+      "value": "#FFFFFF",
+      "description": "Large UI only; ember fails WCAG AA for small text on paper (3.74:1)."
+    },
+    {
+      "path": "semantic.light.secondary",
+      "cssVar": "--secondary",
+      "value": "{color.mist}"
+    },
+    {
+      "path": "semantic.light.secondary-foreground",
+      "cssVar": "--secondary-foreground",
+      "value": "{color.ink}"
+    },
+    {
+      "path": "semantic.light.muted-bg",
+      "cssVar": "--muted-bg",
+      "value": "{color.mist}"
+    },
+    {
+      "path": "semantic.light.muted-foreground",
+      "cssVar": "--muted-foreground",
+      "value": "{color.muted}"
+    },
+    {
+      "path": "semantic.light.accent",
+      "cssVar": "--accent",
+      "value": "{color.slate}"
+    },
+    {
+      "path": "semantic.light.accent-foreground",
+      "cssVar": "--accent-foreground",
+      "value": "{color.paper}"
+    },
+    {
+      "path": "semantic.light.destructive",
+      "cssVar": "--destructive",
+      "value": "{color.danger}"
+    },
+    {
+      "path": "semantic.light.destructive-foreground",
+      "cssVar": "--destructive-foreground",
+      "value": "#FFFFFF"
+    },
+    {
+      "path": "semantic.light.border",
+      "cssVar": "--border",
+      "value": "#E6D9C8"
+    },
+    {
+      "path": "semantic.light.input",
+      "cssVar": "--input",
+      "value": "#E6D9C8"
+    },
+    {
+      "path": "semantic.light.ring",
+      "cssVar": "--ring",
+      "value": "{color.ember}"
+    },
+    {
+      "path": "semantic.light.accent-drawit",
+      "cssVar": "--accent-drawit",
+      "value": "{color.ember}"
+    },
+    {
+      "path": "semantic.light.accent-formit",
+      "cssVar": "--accent-formit",
+      "value": "{color.slate}"
+    },
+    {
+      "path": "semantic.light.accent-play",
+      "cssVar": "--accent-play",
+      "value": "{color.play}"
+    },
+    {
+      "path": "semantic.light.accent-forest",
+      "cssVar": "--accent-forest",
+      "value": "{color.forest}"
+    },
+    {
+      "path": "semantic.light.accent-mineral",
+      "cssVar": "--accent-mineral",
+      "value": "{color.mineral}"
+    },
+    {
+      "path": "semantic.dark.background",
+      "cssVar": "--background",
+      "value": "#17141C"
+    },
+    {
+      "path": "semantic.dark.foreground",
+      "cssVar": "--foreground",
+      "value": "#FFF8F1"
+    },
+    {
+      "path": "semantic.dark.card",
+      "cssVar": "--card",
+      "value": "#241F1C"
+    },
+    {
+      "path": "semantic.dark.card-foreground",
+      "cssVar": "--card-foreground",
+      "value": "#FFF8F1"
+    },
+    {
+      "path": "semantic.dark.popover",
+      "cssVar": "--popover",
+      "value": "#241F1C"
+    },
+    {
+      "path": "semantic.dark.popover-foreground",
+      "cssVar": "--popover-foreground",
+      "value": "#FFF8F1"
+    },
+    {
+      "path": "semantic.dark.primary",
+      "cssVar": "--primary",
+      "value": "#F06A3A",
+      "description": "Slightly lifted ember so filled buttons hold contrast on ink."
+    },
+    {
+      "path": "semantic.dark.primary-foreground",
+      "cssVar": "--primary-foreground",
+      "value": "#17141C"
+    },
+    {
+      "path": "semantic.dark.secondary",
+      "cssVar": "--secondary",
+      "value": "#3A3531"
+    },
+    {
+      "path": "semantic.dark.secondary-foreground",
+      "cssVar": "--secondary-foreground",
+      "value": "#FFF8F1"
+    },
+    {
+      "path": "semantic.dark.muted-bg",
+      "cssVar": "--muted-bg",
+      "value": "#241F1C"
+    },
+    {
+      "path": "semantic.dark.muted-foreground",
+      "cssVar": "--muted-foreground",
+      "value": "#A39484"
+    },
+    {
+      "path": "semantic.dark.accent",
+      "cssVar": "--accent",
+      "value": "#7FA0D4",
+      "description": "Lifted slate for text/links on ink; fills may still use #2B4C7E."
+    },
+    {
+      "path": "semantic.dark.accent-foreground",
+      "cssVar": "--accent-foreground",
+      "value": "#17141C"
+    },
+    {
+      "path": "semantic.dark.destructive",
+      "cssVar": "--destructive",
+      "value": "#E0564A"
+    },
+    {
+      "path": "semantic.dark.destructive-foreground",
+      "cssVar": "--destructive-foreground",
+      "value": "#17141C"
+    },
+    {
+      "path": "semantic.dark.border",
+      "cssVar": "--border",
+      "value": "#3A3531"
+    },
+    {
+      "path": "semantic.dark.input",
+      "cssVar": "--input",
+      "value": "#3A3531"
+    },
+    {
+      "path": "semantic.dark.ring",
+      "cssVar": "--ring",
+      "value": "#F06A3A"
+    },
+    {
+      "path": "shadow.sm",
+      "cssVar": "--shadow-sm",
+      "value": "0 1px 2px rgb(23 20 28 / 0.06)"
+    },
+    {
+      "path": "shadow.md",
+      "cssVar": "--shadow-md",
+      "value": "0 8px 20px rgb(23 20 28 / 0.08)"
+    },
+    {
+      "path": "shadow.lg",
+      "cssVar": "--shadow-lg",
+      "value": "0 18px 40px rgb(23 20 28 / 0.12)"
+    },
+    {
+      "path": "spacing.0",
+      "cssVar": "--spacing-0",
+      "value": "0px"
+    },
+    {
+      "path": "spacing.1",
+      "cssVar": "--spacing-1",
+      "value": "4px"
+    },
+    {
+      "path": "spacing.2",
+      "cssVar": "--spacing-2",
+      "value": "8px"
+    },
+    {
+      "path": "spacing.3",
+      "cssVar": "--spacing-3",
+      "value": "12px"
+    },
+    {
+      "path": "spacing.4",
+      "cssVar": "--spacing-4",
+      "value": "16px"
+    },
+    {
+      "path": "spacing.5",
+      "cssVar": "--spacing-5",
+      "value": "20px"
+    },
+    {
+      "path": "spacing.6",
+      "cssVar": "--spacing-6",
+      "value": "24px"
+    },
+    {
+      "path": "spacing.8",
+      "cssVar": "--spacing-8",
+      "value": "32px"
+    },
+    {
+      "path": "spacing.10",
+      "cssVar": "--spacing-10",
+      "value": "40px"
+    },
+    {
+      "path": "spacing.12",
+      "cssVar": "--spacing-12",
+      "value": "48px"
+    },
+    {
+      "path": "spacing.16",
+      "cssVar": "--spacing-16",
+      "value": "64px"
+    },
+    {
+      "path": "spacing.20",
+      "cssVar": "--spacing-20",
+      "value": "80px"
+    },
+    {
+      "path": "spacing.24",
+      "cssVar": "--spacing-24",
+      "value": "96px"
+    },
+    {
+      "path": "font.display",
+      "cssVar": "--font-display",
+      "value": [
+        "Sora",
+        "ui-sans-serif",
+        "system-ui",
+        "sans-serif"
+      ]
+    },
+    {
+      "path": "font.sans",
+      "cssVar": "--font-sans",
+      "value": [
+        "IBM Plex Sans",
+        "ui-sans-serif",
+        "system-ui",
+        "sans-serif"
+      ]
+    },
+    {
+      "path": "font.mono",
+      "cssVar": "--font-mono",
+      "value": [
+        "IBM Plex Mono",
+        "ui-monospace",
+        "monospace"
+      ]
+    },
+    {
+      "path": "fontWeight.regular",
+      "cssVar": "--font-weight-regular",
+      "value": "400"
+    },
+    {
+      "path": "fontWeight.medium",
+      "cssVar": "--font-weight-medium",
+      "value": "500"
+    },
+    {
+      "path": "fontWeight.semibold",
+      "cssVar": "--font-weight-semibold",
+      "value": "600"
+    },
+    {
+      "path": "fontWeight.bold",
+      "cssVar": "--font-weight-bold",
+      "value": "700"
+    },
+    {
+      "path": "fontSize.display",
+      "cssVar": "--font-size-display",
+      "value": "56px",
+      "description": "Sora 600 / 64"
+    },
+    {
+      "path": "fontSize.h1",
+      "cssVar": "--font-size-h1",
+      "value": "40px"
+    },
+    {
+      "path": "fontSize.h2",
+      "cssVar": "--font-size-h2",
+      "value": "32px"
+    },
+    {
+      "path": "fontSize.h3",
+      "cssVar": "--font-size-h3",
+      "value": "24px"
+    },
+    {
+      "path": "fontSize.h4",
+      "cssVar": "--font-size-h4",
+      "value": "20px"
+    },
+    {
+      "path": "fontSize.body",
+      "cssVar": "--font-size-body",
+      "value": "16px"
+    },
+    {
+      "path": "fontSize.small",
+      "cssVar": "--font-size-small",
+      "value": "14px"
+    },
+    {
+      "path": "fontSize.caption",
+      "cssVar": "--font-size-caption",
+      "value": "12px"
+    },
+    {
+      "path": "fontSize.code",
+      "cssVar": "--font-size-code",
+      "value": "14px"
+    },
+    {
+      "path": "lineHeight.display",
+      "cssVar": "--line-height-display",
+      "value": "64px"
+    },
+    {
+      "path": "lineHeight.h1",
+      "cssVar": "--line-height-h1",
+      "value": "48px"
+    },
+    {
+      "path": "lineHeight.h2",
+      "cssVar": "--line-height-h2",
+      "value": "40px"
+    },
+    {
+      "path": "lineHeight.h3",
+      "cssVar": "--line-height-h3",
+      "value": "32px"
+    },
+    {
+      "path": "lineHeight.h4",
+      "cssVar": "--line-height-h4",
+      "value": "28px"
+    },
+    {
+      "path": "lineHeight.body",
+      "cssVar": "--line-height-body",
+      "value": "24px"
+    },
+    {
+      "path": "lineHeight.small",
+      "cssVar": "--line-height-small",
+      "value": "20px"
+    },
+    {
+      "path": "lineHeight.caption",
+      "cssVar": "--line-height-caption",
+      "value": "16px"
+    },
+    {
+      "path": "lineHeight.code",
+      "cssVar": "--line-height-code",
+      "value": "22px"
+    },
+    {
+      "path": "zIndex.base",
+      "cssVar": "--z-base",
+      "value": 0
+    },
+    {
+      "path": "zIndex.dropdown",
+      "cssVar": "--z-dropdown",
+      "value": 50
+    },
+    {
+      "path": "zIndex.sticky",
+      "cssVar": "--z-sticky",
+      "value": 100
+    },
+    {
+      "path": "zIndex.overlay",
+      "cssVar": "--z-overlay",
+      "value": 200
+    },
+    {
+      "path": "zIndex.modal",
+      "cssVar": "--z-modal",
+      "value": 300
+    },
+    {
+      "path": "zIndex.toast",
+      "cssVar": "--z-toast",
+      "value": 400
+    },
+    {
+      "path": "zIndex.tooltip",
+      "cssVar": "--z-tooltip",
+      "value": 500
+    }
+  ]
+}

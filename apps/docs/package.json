@@ -2,8 +2,9 @@
   "name": "@chamuka/docs",
   "version": "0.1.0",
   "private": true,
+  "license": "Apache-2.0",
   "type": "module",
-  "description": "Storybook for the Daybreak design system.",
+  "description": "Storybook for the Chamuka Labs Daybreak design system.",
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "echo 'Storybook is built with build-storybook'",
@@ -33,7 +34,9 @@
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
+    "@tailwindcss/vite": "^4.1.17",
     "storybook": "^8.6.14",
+    "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3",
     "vite": "^6.4.1"
   }

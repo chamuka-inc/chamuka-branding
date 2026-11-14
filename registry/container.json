@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "container",
+  "type": "registry:ui",
+  "title": "Container",
+  "description": "Centered max-width wrapper.",
+  "meta": {
+    "behaviour": "plain",
+    "behaviourReason": "Layout only.",
+    "a11y": "No inherent role.",
+    "example": "<Container size=\"md\">{children}</Container>"
+  },
+  "dependencies": [],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/utils.json"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/container.tsx",
+      "type": "registry:ui",
+      "target": "@ui/container.tsx",
+      "content": "import { cva, type VariantProps } from \"class-variance-authority\";\nimport { type HTMLAttributes, forwardRef } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nconst containerVariants = cva(\"mx-auto w-full px-4\", {\n  variants: {\n    size: {\n      sm: \"max-w-xl\",\n      md: \"max-w-3xl\",\n      lg: \"max-w-5xl\",\n      full: \"max-w-none\",\n    },\n  },\n  defaultVariants: { size: \"lg\" },\n});\n\nexport type ContainerProps = HTMLAttributes<HTMLDivElement> &\n  VariantProps<typeof containerVariants>;\n\nexport const Container = forwardRef<HTMLDivElement, ContainerProps>(\n  ({ className, size, ...props }, ref) => (\n    <div ref={ref} className={cn(containerVariants({ size }), className)} {...props} />\n  ),\n);\nContainer.displayName = \"Container\";\n"
+    }
+  ]
+}

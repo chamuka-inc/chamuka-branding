@@ -1,59 +1,76 @@
-import * as ToastPrimitive from "@radix-ui/react-toast";
+import {
+  Toast as UiToast,
+  ToastClose as UiToastClose,
+  ToastDescription as UiToastDescription,
+  ToastRegion,
+  ToastTitle as UiToastTitle,
+  createToaster,
+} from "@ui-sdk/react/toast";
 import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
+  type ComponentPropsWithoutRef,
   type ReactNode,
 } from "react";
 import { cn } from "./lib/cn";
 
-type ToastRecord = {
-  id: string;
+type ToastInput = {
   title: string;
   description?: string;
   variant?: "default" | "destructive";
 };
 
-type ToastContextValue = {
-  toast: (input: Omit<ToastRecord, "id">) => void;
+type ToastApi = {
+  toast: (input: ToastInput) => void;
 };
 
-const ToastContext = createContext<ToastContextValue | null>(null);
+type ToasterFn = ReturnType<typeof createToaster<ReactNode>>;
+
+const ToastContext = createContext<ToastApi | null>(null);
 
 export function ToastProvider({ children }: { children: ReactNode }) {
-  const [toasts, setToasts] = useState<ToastRecord[]>([]);
+  const [toaster] = useState<ToasterFn>(() => createToaster());
 
-  const toast = useCallback((input: Omit<ToastRecord, "id">) => {
-    const id = crypto.randomUUID();
-    setToasts((current) => [...current, { ...input, id }]);
-  }, []);
+  useEffect(() => () => toaster.dismiss(), [toaster]);
+
+  const toast = useCallback(
+    (input: ToastInput) => {
+      const options = { title: input.title, description: input.description };
+      if (input.variant === "destructive") {
+        toaster.error(input.title, options);
+      } else {
+        toaster(input.title, options);
+      }
+    },
+    [toaster],
+  );
 
   const value = useMemo(() => ({ toast }), [toast]);
 
   return (
     <ToastContext.Provider value={value}>
-      <ToastPrimitive.Provider swipeDirection="right">
-        {children}
-        {toasts.map((item) => (
-          <ToastPrimitive.Root
-            key={item.id}
-            className={cn("ck-toast", item.variant === "destructive" && "ck-toast--destructive")}
-            onOpenChange={(open) => {
-              if (!open) setToasts((current) => current.filter((t) => t.id !== item.id));
-            }}
+      {children}
+      <ToastRegion
+        toaster={toaster}
+        className="fixed bottom-4 right-4 z-toast flex max-h-screen w-full max-w-sm flex-col gap-2 outline-none"
+      >
+        {(item) => (
+          <Toast
+            className={
+              item.type === "error"
+                ? "border-destructive/40 bg-destructive text-destructive-foreground"
+                : undefined
+            }
           >
-            <ToastPrimitive.Title className="ck-alert-title">{item.title}</ToastPrimitive.Title>
-            {item.description ? (
-              <ToastPrimitive.Description className="ck-alert-body">
-                {item.description}
-              </ToastPrimitive.Description>
-            ) : null}
-          </ToastPrimitive.Root>
-        ))}
-        <ToastPrimitive.Viewport className="ck-toast-viewport" />
-      </ToastPrimitive.Provider>
+            <ToastTitle />
+            <ToastDescription />
+          </Toast>
+        )}
+      </ToastRegion>
     </ToastContext.Provider>
   );
 }
@@ -64,8 +81,66 @@ export function useToast() {
   return ctx;
 }
 
-export const Toast = ToastPrimitive.Root;
-export const ToastTitle = ToastPrimitive.Title;
-export const ToastDescription = ToastPrimitive.Description;
-export const ToastViewport = ToastPrimitive.Viewport;
-export const ToastClose = ToastPrimitive.Close;
+export function Toast({
+  className,
+  children,
+}: {
+  className?: string;
+  children?: ReactNode;
+}) {
+  return (
+    <UiToast
+      className={cn(
+        "pointer-events-auto relative flex w-full max-w-sm flex-col gap-1 rounded-md border border-border bg-background p-4 shadow-lg",
+        className,
+      )}
+    >
+      {children}
+    </UiToast>
+  );
+}
+
+export function ToastTitle({
+  className,
+  children,
+}: {
+  className?: string;
+  children?: ReactNode;
+}) {
+  return (
+    <UiToastTitle className={cn("text-sm font-medium", className)}>{children}</UiToastTitle>
+  );
+}
+
+export function ToastDescription({
+  className,
+  children,
+}: {
+  className?: string;
+  children?: ReactNode;
+}) {
+  return (
+    <UiToastDescription className={cn("text-sm opacity-90", className)}>
+      {children}
+    </UiToastDescription>
+  );
+}
+
+export function ToastClose({
+  className,
+  children,
+}: {
+  className?: string;
+  children?: ReactNode;
+}) {
+  return (
+    <UiToastClose className={cn("absolute right-2 top-2", className)}>{children}</UiToastClose>
+  );
+}
+
+export function ToastViewport({
+  className,
+  ...props
+}: ComponentPropsWithoutRef<"ol">) {
+  return <ol className={className} {...props} />;
+}

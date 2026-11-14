@@ -741,6 +741,8 @@ Masters in `svg/` and `templates/`. Preview rasters in `png/` and `mockups/`. Pr
 
 The website is chamuka.ai. Email uses the @chamuka.ai domain; `name@chamuka.ai` on the business card is a placeholder. Product sites follow the pattern drawit.chamuka.ai and formit.chamuka.ai (examples).
 
+Print files use Daybreak marks. Names and logos are covered by [`TRADEMARKS.md`](../../TRADEMARKS.md); the repository code is Apache 2.0. Forks must rebrand.
+
 ## How the print values were made
 
 **CMYK.** Separated from sRGB with LittleCMS (Pillow ImageCms) using Ghostscript’s sRGB profile and the **Artifex CMYK SWOP** profile (`default_cmyk.icc`), Relative Colorimetric intent, values rounded to whole percentages. This is a US SWOP-like coated separation. It is **not** FOGRA39 / ISO Coated v2 and **not** GRACoL 2013 (CRPC6). A European printer should re-separate to FOGRA39 (ISO Coated v2 300%) in prepress; a North American printer should re-separate to GRACoL 2013 if that is the house profile. Treat the builds below as starting points.

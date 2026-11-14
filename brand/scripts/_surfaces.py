@@ -451,11 +451,13 @@ def github_repo_listing():
 def write_docs():
     md = f"""# Daybreak surface templates
 
-Reusable masters for the places Chamuka shows up online and in documents. Production starts from the SVGs (and the HTML signature). PNG previews are for review. Nothing here has been published.
+Reusable masters for the places **Chamuka Labs** shows up online and in documents. Chamuka Labs is an applied AI lab; products such as DrawIt (flagship) and FormIt are sub-brands. Production starts from the SVGs (and the HTML signature). PNG previews are for review.
 
 The website is chamuka.ai. Email uses the @chamuka.ai domain; in templates, name@chamuka.ai is a placeholder for the person’s address. Product sites follow the pattern drawit.chamuka.ai and formit.chamuka.ai (examples). Do not invent social handles — leave them as placeholders until they are confirmed.
 
-All templates use the Daybreak core: morning paper `#FFF8F1`, ink `#17141C`, ember `#E24E1B`, gold `#E6B422`, slate `#2B4C7E`, and Sora + IBM Plex Sans (outlined in the SVGs). Swap in a **Chamuka + Name** lockup and the product accent when the surface belongs to a sub-brand; use the master lockup for org, hiring, and company channels.
+**Do not put “From thoughts to form” on lab or org templates.** That line is DrawIt’s only. Do not invent a lab slogan. Names and Daybreak marks: [`TRADEMARKS.md`](../TRADEMARKS.md).
+
+All templates use the Daybreak core: morning paper `#FFF8F1`, ink `#17141C`, ember `#E24E1B`, gold `#E6B422`, slate `#2B4C7E`, and Sora + IBM Plex Sans (outlined in the SVGs). Swap in a **Chamuka + Name** lockup and the product accent when the surface belongs to a sub-brand; use the master lockup for lab, hiring, and company channels.
 
 Hide any leftover notes before publishing. Safe-area guidance is in this file, not drawn on the art.
 
@@ -517,7 +519,7 @@ Keep margins at 96 px. Ember is for emphasis, not for paragraphs. Titles in Sora
 
 Visual examples: `github-repo-naming.svg`.
 
-- Organisational owner: `chamuka-inc`.
+- Public name: Chamuka Labs. GitHub owner: `chamuka-inc`.
 - User-facing products and tools: `chamuka-<name>` in lowercase kebab-case (`chamuka-drawit`, `chamuka-formit`). Do not use camelCase in the repo name.
 - Shared libraries: `@chamuka/<package>` on the registry, `chamuka-<package>` in GitHub (for example `chamuka-ui`).
 - Infra and platform that are not a named product may drop the product suffix (`vmette`, `chamuka` for the platform) — but the README still opens as Chamuka, not as a private nickname.

@@ -1,8 +1,14 @@
-# Chamuka brand system (Daybreak)
+# Chamuka Labs brand system (Daybreak)
 
-Daybreak is the master brand for everything chamuka-inc builds or communicates. This folder holds logo masters, colour documentation, print files, and the Python generators. Screen tokens for product UI live in [`@chamuka/tokens`](../packages/tokens); this folder keeps a regenerated snapshot at `tokens.css` for brand QA.
+Daybreak is the visual system for **Chamuka Labs, an applied AI lab**. The lab is the master brand. Products such as **DrawIt** (flagship) and **FormIt** are sub-brands — outputs of the lab, not the lab itself.
+
+This folder holds logo masters, colour documentation, print files, and the Python generators. Screen tokens for product UI live in [`@chamuka/tokens`](../packages/tokens); this folder keeps a regenerated snapshot at `tokens.css` for brand QA.
 
 Website: [chamuka.ai](https://chamuka.ai). Email uses the `@chamuka.ai` domain; `name@chamuka.ai` in templates is a **placeholder** for a person’s address, not a real inbox. Product sites follow the pattern `drawit.chamuka.ai` and `formit.chamuka.ai` (examples). Do not invent social handles — leave them as placeholders until they are confirmed.
+
+**“From thoughts to form” is DrawIt’s line.** Do not put it on lab, org, or Daybreak surfaces.
+
+Brand assets (names, logos, lockups, wordmarks) are covered by [`TRADEMARKS.md`](../TRADEMARKS.md). The code and tokens are Apache 2.0; the marks are not licensed for others to use as their own brand. Forks must rebrand.
 
 ## Folder map
 
@@ -67,8 +73,6 @@ Physical items use the same mark and palette. One-ink, knockout, and simple (no-
 
 **Print colour is a starting point, not a contract.** Never treat Pantone numbers as official equivalents.
 
-## Licence
+## Licence and trademarks
 
-Copyright © Chamuka. All rights reserved.
-
-A licence for this brand pack has not yet been added. Do not assume the files are open source, and do not publish or redistribute them until a licence is in place.
+Code, tokens, components, and templates in this repository are [Apache License 2.0](../LICENSE). Names and Daybreak logos are not: see [`TRADEMARKS.md`](../TRADEMARKS.md).

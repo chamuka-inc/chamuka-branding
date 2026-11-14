@@ -4,19 +4,19 @@ import { Meta } from "@storybook/blocks";
 
 # Daybreak design system
 
-Daybreak is the master brand for everything [chamuka-inc](https://chamuka.ai) builds. This Storybook is the UI/UX source for product teams. The logo masters, print files, and Python generators live in `/brand`. Digital marketing templates live in `/templates`.
+Daybreak is the brand and UI system for **[Chamuka Labs](https://chamuka.ai), an applied AI lab**. Products such as DrawIt (flagship) and FormIt are sub-brands — outputs of the lab. This Storybook is the UI/UX source for those products. Logo masters, print files, and Python generators live in `/brand`. Digital templates live in `/templates`.
 
-**Audience:** business teams. **Feel:** playful, warm, African-rooted — not toy-like.
+**Audience:** business teams. **Feel:** playful, warm, African-rooted — not toy-like. **“From thoughts to form”** is DrawIt’s line only.
 
 ## Packages
 
 | Package | Use |
 |---|---|
 | `@chamuka/tokens` | DTCG tokens → CSS variables, Tailwind v3 preset, Tailwind v4 `@theme`, TS |
-| `@chamuka/ui` | React 19 components on Radix |
+| `@chamuka/ui` | React 19 components (Tailwind + UI SDK) |
 | `@chamuka/icons` | Daybreak mark, lockups, product marks |
 
-Consuming apps (DrawIt, FormIt, Play) are Next.js + React 19 + Tailwind v3 or v4 with shadcn-style CSS variables. Import tokens CSS, then UI CSS, then wrap with `ThemeProvider`.
+Consuming apps (DrawIt, FormIt, Play) are Next.js + React 19 + Tailwind v3 or v4 with shadcn-style CSS variables. Import `tokens.css` + `theme.css`, `@source` `@chamuka/ui` (or import the compiled `styles.css` fallback), then wrap with `ThemeProvider`. Interactive components wrap UI SDK; presentational ones are plain Tailwind.
 
 ## Quick start
 

@@ -7,7 +7,7 @@ export default meta;
 export const Default: StoryObj<typeof Tabs> = {
   render: () => (
     <Tabs defaultValue="overview">
-      <TabsList>
+      <TabsList aria-label="Workspace">
         <TabsTrigger value="overview">Overview</TabsTrigger>
         <TabsTrigger value="settings">Settings</TabsTrigger>
       </TabsList>

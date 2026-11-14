@@ -1,13 +1,14 @@
-import type { HTMLAttributes } from "react";
+import { type HTMLAttributes, forwardRef } from "react";
 import { cn } from "./lib/cn";
 
-export function Skeleton({ className, style, ...props }: HTMLAttributes<HTMLDivElement>) {
-  return (
+export const Skeleton = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
+  ({ className, ...props }, ref) => (
     <div
-      className={cn("ck-skeleton", className)}
-      style={{ minHeight: 16, ...style }}
+      ref={ref}
+      className={cn("min-h-4 animate-pulse rounded-md bg-muted motion-reduce:animate-none", className)}
       aria-hidden="true"
       {...props}
     />
-  );
-}
+  ),
+);
+Skeleton.displayName = "Skeleton";

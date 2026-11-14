@@ -1,13 +1,18 @@
-import type { HTMLAttributes } from "react";
+import { type HTMLAttributes, forwardRef } from "react";
 import { cn } from "./lib/cn";
 
-export function Spinner({ className, ...props }: HTMLAttributes<HTMLSpanElement>) {
-  return (
+export const Spinner = forwardRef<HTMLSpanElement, HTMLAttributes<HTMLSpanElement>>(
+  ({ className, ...props }, ref) => (
     <span
-      className={cn("ck-spinner", className)}
+      ref={ref}
+      className={cn(
+        "inline-block size-5 animate-spin rounded-full border-2 border-border border-t-primary motion-reduce:animate-none",
+        className,
+      )}
       role="status"
       aria-label="Loading"
       {...props}
     />
-  );
-}
+  ),
+);
+Spinner.displayName = "Spinner";

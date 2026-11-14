@@ -26,6 +26,8 @@ jobs:
         run: pnpm typecheck
       - name: Test
         run: pnpm test
+      - name: Agent artifacts in sync
+        run: pnpm generate:agent && git diff --exit-code
       - name: Build Storybook
         env:
           CI: true

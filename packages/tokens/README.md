@@ -21,6 +21,7 @@ import "@chamuka/tokens/tokens.css";
 @import "tailwindcss";
 @import "@chamuka/tokens/tokens.css";
 @import "@chamuka/tokens/theme.css";
+@source "../node_modules/@chamuka/ui/dist/**/*.js";
 ```
 
 ### Tailwind v3
@@ -31,7 +32,7 @@ import chamuka from "@chamuka/tokens/preset";
 
 export default {
   presets: [chamuka],
-  content: ["./src/**/*.{ts,tsx}"],
+  content: ["./src/**/*.{ts,tsx}", "./node_modules/@chamuka/ui/dist/**/*.js"],
   darkMode: ["class"],
 } satisfies Config;
 ```

@@ -1,57 +1,121 @@
-import * as SelectPrimitive from "@radix-ui/react-select";
+import {
+  Select as UiSelect,
+  SelectContent as UiSelectContent,
+  SelectGroup as UiSelectGroup,
+  SelectItem as UiSelectItem,
+  SelectTrigger as UiSelectTrigger,
+  SelectValue as UiSelectValue,
+} from "@ui-sdk/react/select";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import { type NativeButtonProps, type NativeDivProps } from "./lib/as-child";
 import { cn } from "./lib/cn";
+import { disabledControl, focusRing, itemInteractive, popupSurface } from "./lib/classes";
 
-export const Select = SelectPrimitive.Root;
-export const SelectValue = SelectPrimitive.Value;
-export const SelectGroup = SelectPrimitive.Group;
+export function Select({
+  children,
+  value,
+  defaultValue,
+  onValueChange,
+  disabled,
+  name,
+  placeholder,
+}: {
+  children?: ReactNode;
+  value?: string;
+  defaultValue?: string;
+  onValueChange?: (value: string) => void;
+  disabled?: boolean;
+  name?: string;
+  placeholder?: string;
+}) {
+  return (
+    <UiSelect
+      value={value}
+      defaultValue={defaultValue}
+      disabled={disabled}
+      name={name}
+      placeholder={placeholder}
+      onValueChange={
+        onValueChange
+          ? (next) => {
+              onValueChange(String(next));
+            }
+          : undefined
+      }
+    >
+      {children}
+    </UiSelect>
+  );
+}
+
+export function SelectValue({
+  className,
+  placeholder,
+  ...props
+}: Omit<ComponentPropsWithoutRef<"span">, "value" | "defaultValue" | "onChange" | "onSelect"> & {
+  placeholder?: string;
+}) {
+  return (
+    <UiSelectValue
+      placeholder={placeholder}
+      className={cn("line-clamp-1", className)}
+      {...props}
+    />
+  );
+}
+
+export function SelectGroup({ className, ...props }: NativeDivProps) {
+  return <UiSelectGroup className={className} {...props} />;
+}
 
 export function SelectTrigger({
   className,
-  children,
   ...props
-}: ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>) {
+}: NativeButtonProps) {
   return (
-    <SelectPrimitive.Trigger className={cn("ck-select-trigger ck-focusable", className)} {...props}>
-      {children}
-      <SelectPrimitive.Icon>
-        <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
-          <path
-            d="M2 4.5 6 8.5 10 4.5"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-        </svg>
-      </SelectPrimitive.Icon>
-    </SelectPrimitive.Trigger>
+    <UiSelectTrigger
+      className={cn(
+        "flex h-10 w-full items-center justify-between gap-2 rounded-md border border-input bg-background px-3 py-2 text-base",
+        "data-placeholder:text-muted-foreground",
+        "motion-reduce:transition-none",
+        focusRing,
+        disabledControl,
+        className,
+      )}
+      {...props}
+    />
   );
 }
 
 export function SelectContent({
   className,
-  children,
   ...props
-}: ComponentPropsWithoutRef<typeof SelectPrimitive.Content>) {
+}: NativeDivProps) {
   return (
-    <SelectPrimitive.Portal>
-      <SelectPrimitive.Content className={cn("ck-select-content", className)} {...props}>
-        <SelectPrimitive.Viewport>{children}</SelectPrimitive.Viewport>
-      </SelectPrimitive.Content>
-    </SelectPrimitive.Portal>
+    <UiSelectContent
+      className={cn(popupSurface, "z-dropdown p-1", className)}
+      {...props}
+    />
   );
 }
 
 export function SelectItem({
   className,
   children,
+  value,
+  disabled,
   ...props
-}: ComponentPropsWithoutRef<typeof SelectPrimitive.Item>) {
+}: NativeDivProps & { value: string; disabled?: boolean }) {
   return (
-    <SelectPrimitive.Item className={cn("ck-select-item", className)} {...props}>
-      <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
-    </SelectPrimitive.Item>
+    <UiSelectItem
+      value={value}
+      label={typeof children === "string" ? children : undefined}
+      disabled={disabled}
+      className={cn(itemInteractive, className)}
+      {...props}
+    >
+      {children}
+    </UiSelectItem>
   );
 }
 
@@ -63,8 +127,8 @@ export function SelectField({
   children: ReactNode;
 }) {
   return (
-    <div className="ck-field">
-      <span className="ck-label">{label}</span>
+    <div className="grid gap-2">
+      <span className="text-sm font-medium leading-none text-foreground">{label}</span>
       {children}
     </div>
   );

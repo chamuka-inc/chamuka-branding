@@ -1,16 +1,25 @@
 {
   "name": "@chamuka/icons",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
   "description": "Daybreak mark, lockups, and product marks as React components.",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/chamuka-inc/chamuka-design/tree/main/packages/icons",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chamuka-inc/chamuka-design.git",
+    "directory": "packages/icons"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": ["dist", "README.md"],
   "scripts": {
     "generate": "tsx src/generate.ts",
     "build": "tsx src/generate.ts && tsup && node ../../scripts/prepend-use-client.mjs dist/index.js",

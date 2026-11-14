@@ -2,9 +2,15 @@ import { forwardRef } from "react";
 import { Button, type ButtonProps } from "./button";
 import { cn } from "./lib/cn";
 
+const iconSizes = {
+  sm: "size-8",
+  md: "size-10",
+  lg: "size-11",
+} as const;
+
 export type IconButtonProps = Omit<ButtonProps, "size"> & {
   label: string;
-  size?: "sm" | "md" | "lg";
+  size?: keyof typeof iconSizes;
 };
 
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
@@ -13,7 +19,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
       ref={ref}
       size="icon"
       aria-label={label}
-      className={cn("ck-icon-button", `ck-button--${size}`, className)}
+      className={cn(iconSizes[size], className)}
       {...props}
     >
       {children}

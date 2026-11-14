@@ -60,7 +60,11 @@ export function ThemeProvider({
   return (
     <ThemeContext.Provider value={value}>
       <div
-        className={cn("ck-root", resolved === "dark" && "dark", className)}
+        className={cn(
+          "min-h-full bg-background font-sans text-base text-foreground antialiased",
+          resolved === "dark" && "dark",
+          className,
+        )}
         data-theme={resolved}
       >
         {children}

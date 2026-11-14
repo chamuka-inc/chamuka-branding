@@ -1,0 +1,425 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "chamuka",
+  "homepage": "https://github.com/chamuka-inc/chamuka-design",
+  "items": [
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "cn",
+      "description": "clsx + tailwind-merge helper used by every Chamuka component.",
+      "files": [
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "classes",
+      "type": "registry:lib",
+      "title": "shared classes",
+      "description": "Focus ring and popup surfaces shared by Chamuka components.",
+      "files": [
+        {
+          "path": "lib/classes.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Primary action control. Ember fill; 16px default so ember-on-paper meets AA large.",
+      "files": [
+        {
+          "path": "packages/ui/src/button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button.tsx"
+        },
+        {
+          "path": "packages/ui/src/lib/cn.ts",
+          "type": "registry:lib",
+          "target": "@lib/cn.ts"
+        },
+        {
+          "path": "packages/ui/src/lib/classes.ts",
+          "type": "registry:lib",
+          "target": "@lib/classes.ts"
+        }
+      ]
+    },
+    {
+      "name": "icon-button",
+      "type": "registry:ui",
+      "title": "IconButton",
+      "description": "Square icon-only button. Requires a visible-name `label`.",
+      "files": [
+        {
+          "path": "packages/ui/src/icon-button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/icon-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "link",
+      "type": "registry:ui",
+      "title": "Link",
+      "description": "Text link in primary (ember).",
+      "files": [
+        {
+          "path": "packages/ui/src/link.tsx",
+          "type": "registry:ui",
+          "target": "@ui/link.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Single-line text field.",
+      "files": [
+        {
+          "path": "packages/ui/src/input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Multi-line text field.",
+      "files": [
+        {
+          "path": "packages/ui/src/textarea.tsx",
+          "type": "registry:ui",
+          "target": "@ui/textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "Label + control + help + error. Wires aria-describedby and aria-invalid.",
+      "files": [
+        {
+          "path": "packages/ui/src/label.tsx",
+          "type": "registry:ui",
+          "target": "@ui/field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Boolean choice with a Daybreak check indicator.",
+      "files": [
+        {
+          "path": "packages/ui/src/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "On/off setting.",
+      "files": [
+        {
+          "path": "packages/ui/src/switch.tsx",
+          "type": "registry:ui",
+          "target": "@ui/switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "RadioGroup",
+      "description": "Single choice from a short list.",
+      "files": [
+        {
+          "path": "packages/ui/src/radio-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/radio-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Popup list of options.",
+      "files": [
+        {
+          "path": "packages/ui/src/select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Searchable list of options.",
+      "files": [
+        {
+          "path": "packages/ui/src/combobox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/combobox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Modal task over the page. DialogContent includes the overlay.",
+      "files": [
+        {
+          "path": "packages/ui/src/dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dialog.tsx"
+        },
+        {
+          "path": "packages/ui/src/lib/as-child.ts",
+          "type": "registry:lib",
+          "target": "@lib/as-child.ts"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Non-modal floating panel.",
+      "files": [
+        {
+          "path": "packages/ui/src/popover.tsx",
+          "type": "registry:ui",
+          "target": "@ui/popover.tsx"
+        },
+        {
+          "path": "packages/ui/src/lib/as-child.ts",
+          "type": "registry:lib",
+          "target": "@lib/as-child.ts"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "DropdownMenu",
+      "description": "Action menu from a button. Wraps UI SDK Menu behind the Chamuka names.",
+      "files": [
+        {
+          "path": "packages/ui/src/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dropdown-menu.tsx"
+        },
+        {
+          "path": "packages/ui/src/lib/as-child.ts",
+          "type": "registry:lib",
+          "target": "@lib/as-child.ts"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Short hint on hover or keyboard focus.",
+      "files": [
+        {
+          "path": "packages/ui/src/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tooltip.tsx"
+        },
+        {
+          "path": "packages/ui/src/lib/as-child.ts",
+          "type": "registry:lib",
+          "target": "@lib/as-child.ts"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "One panel visible at a time. TabsTrigger/TabsContent alias UI SDK TabsTab/TabsPanel.",
+      "files": [
+        {
+          "path": "packages/ui/src/tabs.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Expandable sections. defaultValue accepts a string or string[].",
+      "files": [
+        {
+          "path": "packages/ui/src/accordion.tsx",
+          "type": "registry:ui",
+          "target": "@ui/accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Transient notification. useToast().toast({ title, description, variant }).",
+      "files": [
+        {
+          "path": "packages/ui/src/toast.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toast.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Inline status message.",
+      "files": [
+        {
+          "path": "packages/ui/src/alert.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Surface grouping for forms and summaries.",
+      "files": [
+        {
+          "path": "packages/ui/src/card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Small status pill.",
+      "files": [
+        {
+          "path": "packages/ui/src/badge.tsx",
+          "type": "registry:ui",
+          "target": "@ui/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Image with initials fallback.",
+      "files": [
+        {
+          "path": "packages/ui/src/avatar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/avatar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Horizontal or vertical rule.",
+      "files": [
+        {
+          "path": "packages/ui/src/separator.tsx",
+          "type": "registry:ui",
+          "target": "@ui/separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Loading placeholder.",
+      "files": [
+        {
+          "path": "packages/ui/src/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "@ui/skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "Indeterminate loading indicator.",
+      "files": [
+        {
+          "path": "packages/ui/src/spinner.tsx",
+          "type": "registry:ui",
+          "target": "@ui/spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stack",
+      "type": "registry:ui",
+      "title": "Stack",
+      "description": "Flex stack with gap variants.",
+      "files": [
+        {
+          "path": "packages/ui/src/stack.tsx",
+          "type": "registry:ui",
+          "target": "@ui/stack.tsx"
+        }
+      ]
+    },
+    {
+      "name": "container",
+      "type": "registry:ui",
+      "title": "Container",
+      "description": "Centered max-width wrapper.",
+      "files": [
+        {
+          "path": "packages/ui/src/container.tsx",
+          "type": "registry:ui",
+          "target": "@ui/container.tsx"
+        }
+      ]
+    },
+    {
+      "name": "theme-provider",
+      "type": "registry:ui",
+      "title": "ThemeProvider",
+      "description": "Applies class=dark and data-theme for token overrides.",
+      "files": [
+        {
+          "path": "packages/ui/src/theme-provider.tsx",
+          "type": "registry:ui",
+          "target": "@ui/theme-provider.tsx"
+        }
+      ]
+    }
+  ]
+}

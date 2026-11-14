@@ -12,6 +12,7 @@ export default defineConfig({
     "react-dom",
     "react/jsx-runtime",
     /^@radix-ui\//,
+    /^@ui-sdk\//,
     /^@chamuka\//,
     "class-variance-authority",
     "clsx",

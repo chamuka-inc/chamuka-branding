@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select",
+  "type": "registry:ui",
+  "title": "Select",
+  "description": "Popup list of options.",
+  "meta": {
+    "behaviour": "ui-sdk",
+    "behaviourReason": "Typeahead, popup, and listbox keyboard come from @ui-sdk/react/select.",
+    "a11y": "Name the trigger with aria-label or a visible label. Items need a value.",
+    "example": "<Select><SelectTrigger aria-label=\"Role\"><SelectValue placeholder=\"Choose\" /></SelectTrigger><SelectContent><SelectItem value=\"admin\">Admin</SelectItem></SelectContent></Select>"
+  },
+  "dependencies": [
+    "@ui-sdk/react",
+    "@ui-sdk/core"
+  ],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/utils.json"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/select.tsx",
+      "type": "registry:ui",
+      "target": "@ui/select.tsx",
+      "content": "import {\n  Select as UiSelect,\n  SelectContent as UiSelectContent,\n  SelectGroup as UiSelectGroup,\n  SelectItem as UiSelectItem,\n  SelectTrigger as UiSelectTrigger,\n  SelectValue as UiSelectValue,\n} from \"@ui-sdk/react/select\";\nimport type { ComponentPropsWithoutRef, ReactNode } from \"react\";\nimport { type NativeButtonProps, type NativeDivProps } from \"@/lib/as-child\";\nimport { cn } from \"@/lib/utils\";\nimport { disabledControl, focusRing, itemInteractive, popupSurface } from \"@/lib/classes\";\n\nexport function Select({\n  children,\n  value,\n  defaultValue,\n  onValueChange,\n  disabled,\n  name,\n  placeholder,\n}: {\n  children?: ReactNode;\n  value?: string;\n  defaultValue?: string;\n  onValueChange?: (value: string) => void;\n  disabled?: boolean;\n  name?: string;\n  placeholder?: string;\n}) {\n  return (\n    <UiSelect\n      value={value}\n      defaultValue={defaultValue}\n      disabled={disabled}\n      name={name}\n      placeholder={placeholder}\n      onValueChange={\n        onValueChange\n          ? (next) => {\n              onValueChange(String(next));\n            }\n          : undefined\n      }\n    >\n      {children}\n    </UiSelect>\n  );\n}\n\nexport function SelectValue({\n  className,\n  placeholder,\n  ...props\n}: Omit<ComponentPropsWithoutRef<\"span\">, \"value\" | \"defaultValue\" | \"onChange\" | \"onSelect\"> & {\n  placeholder?: string;\n}) {\n  return (\n    <UiSelectValue\n      placeholder={placeholder}\n      className={cn(\"line-clamp-1\", className)}\n      {...props}\n    />\n  );\n}\n\nexport function SelectGroup({ className, ...props }: NativeDivProps) {\n  return <UiSelectGroup className={className} {...props} />;\n}\n\nexport function SelectTrigger({\n  className,\n  ...props\n}: NativeButtonProps) {\n  return (\n    <UiSelectTrigger\n      className={cn(\n        \"flex h-10 w-full items-center justify-between gap-2 rounded-md border border-input bg-background px-3 py-2 text-base\",\n        \"data-placeholder:text-muted-foreground\",\n        \"motion-reduce:transition-none\",\n        focusRing,\n        disabledControl,\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nexport function SelectContent({\n  className,\n  ...props\n}: NativeDivProps) {\n  return (\n    <UiSelectContent\n      className={cn(popupSurface, \"z-dropdown p-1\", className)}\n      {...props}\n    />\n  );\n}\n\nexport function SelectItem({\n  className,\n  children,\n  value,\n  disabled,\n  ...props\n}: NativeDivProps & { value: string; disabled?: boolean }) {\n  return (\n    <UiSelectItem\n      value={value}\n      label={typeof children === \"string\" ? children : undefined}\n      disabled={disabled}\n      className={cn(itemInteractive, className)}\n      {...props}\n    >\n      {children}\n    </UiSelectItem>\n  );\n}\n\nexport function SelectField({\n  label,\n  children,\n}: {\n  label: ReactNode;\n  children: ReactNode;\n}) {\n  return (\n    <div className=\"grid gap-2\">\n      <span className=\"text-sm font-medium leading-none text-foreground\">{label}</span>\n      {children}\n    </div>\n  );\n}\n"
+    }
+  ]
+}

@@ -6,7 +6,7 @@ export default meta;
 
 export const Default: StoryObj<typeof Switch> = {
   render: () => (
-    <div className="ck-control-row">
+    <div className="flex items-center gap-2">
       <Switch id="alerts" />
       <Label htmlFor="alerts">Email alerts</Label>
     </div>

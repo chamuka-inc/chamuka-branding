@@ -6,7 +6,7 @@ export default meta;
 
 export const Default: StoryObj<typeof Checkbox> = {
   render: () => (
-    <div className="ck-control-row">
+    <div className="flex items-center gap-2">
       <Checkbox id="tos" />
       <Label htmlFor="tos">Accept terms</Label>
     </div>

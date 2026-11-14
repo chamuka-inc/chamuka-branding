@@ -3,7 +3,7 @@
  *
  * ```ts
  * import chamuka from "@chamuka/tokens/preset";
- * export default { presets: [chamuka], content: ["./src/**\/*.{ts,tsx}"] };
+ * export default { presets: [chamuka], content: ["./src/**\/*.{ts,tsx}", "./node_modules/@chamuka/ui/dist/**\/*.js"] };
  * ```
  */
 const fontDisplay = ["Sora", "ui-sans-serif", "system-ui", "sans-serif"];

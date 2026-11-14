@@ -1,30 +1,14 @@
-# Chamuka design system (Daybreak)
+# Chamuka Daybreak
 
-Daybreak is the master brand and UI/UX design system for everything [chamuka-inc](https://chamuka.ai) builds. This repository holds the brand pack, design tokens, React components, generated logo icons, Storybook, and reusable surface templates.
+Daybreak is the brand pack and UI/UX design system for **[Chamuka Labs](https://chamuka.ai), an applied AI lab**. Products such as **DrawIt** (flagship) and **FormIt** are sub-brands — outputs of the lab, not the lab itself.
 
-Packages are private (`@chamuka/*`). Do not publish them to npm.
+This repository is public. Clone it, open issues, and send pull requests. See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
-## Folder map
-
-```
-.
-├── apps/docs                 Storybook 8 (components, tokens, guidelines)
-├── brand/                    Logo masters, print, colour/type/voice docs, Python generators
-│   ├── svg/ png/ mockups/    Asset names unchanged from the original pack
-│   ├── print/                One-ink SVGs, print templates, merch mockups
-│   ├── docs/                 Colour, type, voice
-│   └── scripts/              _build.py, _templates.py, _surfaces.py
-├── packages/tokens           @chamuka/tokens — DTCG JSON → CSS, Tailwind, TS
-├── packages/ui               @chamuka/ui — React 19 + Radix components
-├── packages/icons            @chamuka/icons — Daybreak mark/lockups as React
-├── templates/                Digital surfaces (GitHub, OG, slides, email, web)
-├── turbo.json                pnpm + Turborepo pipelines
-└── .github/workflows/ci.yml  install --frozen-lockfile, build, lint, typecheck, test, build-storybook
-```
-
-Print templates stay under `brand/print/templates` (millimetre artboards with bleed). Digital surfaces stay at `/templates` so product apps can find them next to the design system rather than inside the print pack.
+**DrawIt’s line is “From thoughts to form.”** Use that only for DrawIt, never as a line for Chamuka Labs.
 
 ## Quick start
+
+Requires Node 22+ and [pnpm](https://pnpm.io) 10.
 
 ```bash
 pnpm install
@@ -33,11 +17,36 @@ pnpm test
 pnpm --filter @chamuka/docs dev
 ```
 
-Requires Node 22+ and pnpm 10.
+Storybook (component and token docs) runs at http://localhost:6006.
 
-## Consume in a Next.js app (DrawIt, FormIt, Play)
+## Packages
 
-Workspace dependency, not a public registry package. Add `@chamuka/tokens` and `@chamuka/ui` to the app. Import CSS once in the root layout. Wrap the tree with `ThemeProvider`.
+| Package | What it is |
+|---|---|
+| [`@chamuka/tokens`](./packages/tokens) | DTCG JSON → CSS variables, Tailwind v4 `@theme`, v3 preset |
+| [`@chamuka/ui`](./packages/ui) | React 19 components (Tailwind look, [UI SDK](https://github.com/vercel-labs/ui) behaviour) |
+| [`@chamuka/icons`](./packages/icons) | Daybreak mark and lockups as React |
+
+Also in this repo: [`/brand`](./brand) (logo masters, print, voice), [`/templates`](./templates) (GitHub, OG, slides, email), [`apps/docs`](./apps/docs) (Storybook).
+
+Agents working in other apps: start at [`AGENTS.md`](./AGENTS.md) and [`llms.txt`](./llms.txt). Machine-readable inventory: [`manifest.json`](./manifest.json). shadcn registry: [`registry/`](./registry).
+
+## Use in an app
+
+Packages currently publish to **GitHub Packages** (`npm.pkg.github.com`), not npmjs. Public npm can come later. Until then, copy [`.npmrc.example`](./.npmrc.example):
+
+```
+@chamuka:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+```
+
+Then `pnpm add @chamuka/tokens @chamuka/ui @chamuka/icons`. `GITHUB_TOKEN` needs `read:packages`.
+
+You can also copy a component from the registry (no package install):
+
+```bash
+npx shadcn@latest add https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/button.json
+```
 
 ### Tailwind v4
 
@@ -45,10 +54,12 @@ Workspace dependency, not a public registry package. Add `@chamuka/tokens` and `
 @import "tailwindcss";
 @import "@chamuka/tokens/tokens.css";
 @import "@chamuka/tokens/theme.css";
-@import "@chamuka/ui/styles.css";
+@source "../node_modules/@chamuka/ui/dist/**/*.js";
 ```
 
-`tokens.css` defines `:root` and `.dark, [data-theme="dark"]` shadcn-style variables. `theme.css` maps them onto Tailwind v4 `@theme` so `bg-background`, `text-ember`, and `font-display` work.
+`tokens.css` defines `:root` and `.dark, [data-theme="dark"]`. `theme.css` maps them onto Tailwind v4 `@theme` so `bg-primary` and `text-muted-foreground` work. If you cannot scan the package, `@import "@chamuka/ui/styles.css"` instead of `@source`.
+
+Core `--muted` is Daybreak muted ink. The muted *surface* is `--muted-bg`.
 
 ### Tailwind v3
 
@@ -68,7 +79,6 @@ export default {
 
 ```ts
 import "@chamuka/tokens/tokens.css";
-import "@chamuka/ui/styles.css";
 ```
 
 ### React
@@ -82,7 +92,7 @@ export function App({ children }: { children: React.ReactNode }) {
     <ThemeProvider defaultTheme="system">
       <ToastProvider>
         <TooltipProvider>
-          <LockupHorizontal title="Chamuka" height={32} />
+          <LockupHorizontal title="Chamuka Labs" height={32} />
           <Button>Save</Button>
           {children}
         </TooltipProvider>
@@ -92,7 +102,7 @@ export function App({ children }: { children: React.ReactNode }) {
 }
 ```
 
-Core `--muted` is Daybreak muted ink. The muted *surface* is `--muted-bg` so it does not collide with shadcn’s `--muted`.
+Interactive components (Dialog, Select, Tabs, …) wrap UI SDK 0.1.0-beta.2. Presentational components are plain React + Tailwind. See `AGENTS.md` for the per-component table.
 
 ## Brand regeneration
 
@@ -102,8 +112,10 @@ python brand/scripts/_templates.py
 python brand/scripts/_surfaces.py
 ```
 
-If the palette changes, update both the Python `PALETTE` and `packages/tokens/src/tokens` so brand files and `@chamuka/tokens` stay aligned.
+If the palette changes, update both the Python `PALETTE` and `packages/tokens/src/tokens`.
 
-## Licence
+## Licence and trademarks
 
-Copyright © Chamuka. All rights reserved. A licence has not yet been added. Do not assume the files are open source.
+Code, tokens, components, and templates are **[Apache License 2.0](./LICENSE)** (copyright Chamuka Labs).
+
+The Chamuka, Chamuka Labs, DrawIt, FormIt, and Play names and the Daybreak logos are **not** licensed for others to use as their own brand or to imply endorsement. Others may use them to refer to the projects. **Forks must rebrand.** See [`TRADEMARKS.md`](./TRADEMARKS.md).

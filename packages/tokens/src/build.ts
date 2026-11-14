@@ -422,6 +422,15 @@ ${colorLines.join("\n")}
   --text-h4--line-height: ${v("lineHeight.h4")};
   --text-body: ${v("fontSize.body")};
   --text-body--line-height: ${v("lineHeight.body")};
+  --z-index-dropdown: ${v("zIndex.dropdown")};
+  --z-index-sticky: ${v("zIndex.sticky")};
+  --z-index-overlay: ${v("zIndex.overlay")};
+  --z-index-modal: ${v("zIndex.modal")};
+  --z-index-toast: ${v("zIndex.toast")};
+  --z-index-tooltip: ${v("zIndex.tooltip")};
+  --duration-fast: ${v("motion.duration.fast")};
+  --duration-base: ${v("motion.duration.base")};
+  --duration-slow: ${v("motion.duration.slow")};
 }
 `;
 }

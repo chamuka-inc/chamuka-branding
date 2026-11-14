@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert",
+  "type": "registry:ui",
+  "title": "Alert",
+  "description": "Inline status message.",
+  "meta": {
+    "behaviour": "plain",
+    "behaviourReason": "Presentational. role=status.",
+    "a11y": "Uses role=status. For blocking confirmation use a Dialog.",
+    "example": "<Alert title=\"Saved\">The form was saved.</Alert>"
+  },
+  "dependencies": [],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/utils.json"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/alert.tsx",
+      "type": "registry:ui",
+      "target": "@ui/alert.tsx",
+      "content": "import { cva, type VariantProps } from \"class-variance-authority\";\nimport { type HTMLAttributes, forwardRef, type ReactNode } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nconst alertVariants = cva(\"relative w-full rounded-lg border p-4\", {\n  variants: {\n    variant: {\n      default: \"border-border bg-card text-card-foreground\",\n      success: \"border-success/30 bg-success/10 text-foreground\",\n      warning: \"border-warning/40 bg-warning/15 text-foreground\",\n      danger: \"border-destructive/30 bg-destructive/10 text-foreground\",\n      info: \"border-info/30 bg-info/10 text-foreground\",\n    },\n  },\n  defaultVariants: { variant: \"default\" },\n});\n\nexport type AlertProps = HTMLAttributes<HTMLDivElement> &\n  VariantProps<typeof alertVariants> & {\n    title?: ReactNode;\n  };\n\nexport const Alert = forwardRef<HTMLDivElement, AlertProps>(\n  ({ className, variant, title, children, ...props }, ref) => (\n    <div\n      ref={ref}\n      role=\"status\"\n      className={cn(alertVariants({ variant }), className)}\n      {...props}\n    >\n      <div className=\"grid gap-1\">\n        {title ? <p className=\"font-display text-sm font-medium\">{title}</p> : null}\n        {children ? <div className=\"text-sm text-muted-foreground\">{children}</div> : null}\n      </div>\n    </div>\n  ),\n);\nAlert.displayName = \"Alert\";\n\nexport { alertVariants };\n"
+    }
+  ]
+}

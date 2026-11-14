@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stack",
+  "type": "registry:ui",
+  "title": "Stack",
+  "description": "Flex stack with gap variants.",
+  "meta": {
+    "behaviour": "plain",
+    "behaviourReason": "Layout only.",
+    "a11y": "No inherent role.",
+    "example": "<Stack gap=\"4\"><Button>One</Button><Button>Two</Button></Stack>"
+  },
+  "dependencies": [],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/utils.json"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/stack.tsx",
+      "type": "registry:ui",
+      "target": "@ui/stack.tsx",
+      "content": "import { cva, type VariantProps } from \"class-variance-authority\";\nimport { type HTMLAttributes, forwardRef } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nconst stackVariants = cva(\"flex\", {\n  variants: {\n    direction: {\n      column: \"flex-col\",\n      row: \"flex-row\",\n    },\n    gap: {\n      \"1\": \"gap-1\",\n      \"2\": \"gap-2\",\n      \"3\": \"gap-3\",\n      \"4\": \"gap-4\",\n      \"5\": \"gap-5\",\n      \"6\": \"gap-6\",\n      \"8\": \"gap-8\",\n    },\n    align: {\n      start: \"items-start\",\n      center: \"items-center\",\n      end: \"items-end\",\n      stretch: \"items-stretch\",\n    },\n    justify: {\n      start: \"justify-start\",\n      center: \"justify-center\",\n      end: \"justify-end\",\n      between: \"justify-between\",\n    },\n  },\n  defaultVariants: {\n    direction: \"column\",\n    gap: \"4\",\n  },\n});\n\nexport type StackProps = HTMLAttributes<HTMLDivElement> & VariantProps<typeof stackVariants>;\n\nexport const Stack = forwardRef<HTMLDivElement, StackProps>(\n  ({ className, direction, gap, align, justify, ...props }, ref) => (\n    <div\n      ref={ref}\n      className={cn(stackVariants({ direction, gap, align, justify }), className)}\n      {...props}\n    />\n  ),\n);\nStack.displayName = \"Stack\";\n"
+    }
+  ]
+}

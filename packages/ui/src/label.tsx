@@ -1,25 +1,34 @@
-import * as LabelPrimitive from "@radix-ui/react-label";
+import { Label as UiLabel } from "@ui-sdk/react/label";
 import {
   Children,
   cloneElement,
   isValidElement,
   useId,
   type ComponentPropsWithoutRef,
+  type ReactElement,
   type ReactNode,
 } from "react";
 import { cn } from "./lib/cn";
 
-export type LabelProps = ComponentPropsWithoutRef<typeof LabelPrimitive.Root> & {
+export type LabelProps = ComponentPropsWithoutRef<"label"> & {
   required?: boolean;
 };
 
-export function Label({ className, required, ...props }: LabelProps) {
+export function Label({ className, required, children, ...props }: LabelProps) {
   return (
-    <LabelPrimitive.Root
-      className={cn("ck-label", className)}
+    <UiLabel
+      className={cn("text-sm font-medium leading-none text-foreground", className)}
       data-required={required ? "true" : undefined}
       {...props}
-    />
+    >
+      {children}
+      {required ? (
+        <span className="text-destructive" aria-hidden="true">
+          {" "}
+          *
+        </span>
+      ) : null}
+    </UiLabel>
   );
 }
 
@@ -33,7 +42,7 @@ export function FieldHelp({
   className?: string;
 }) {
   return (
-    <p id={id} className={cn("ck-field-help", className)}>
+    <p id={id} className={cn("text-sm text-muted-foreground", className)}>
       {children}
     </p>
   );
@@ -50,7 +59,7 @@ export function FieldError({
 }) {
   if (!children) return null;
   return (
-    <p id={id} className={cn("ck-field-error", className)} role="alert">
+    <p id={id} className={cn("text-sm font-medium text-destructive", className)} role="alert">
       {children}
     </p>
   );
@@ -80,16 +89,17 @@ export function Field({
 
   const control = Children.map(children, (child) => {
     if (!isValidElement(child)) return child;
-    return cloneElement(child, {
-      id: htmlFor ?? (child.props as { id?: string }).id,
+    const el = child as ReactElement<{ id?: string }>;
+    return cloneElement(el, {
+      id: htmlFor ?? el.props.id,
       "aria-invalid": error ? true : undefined,
       "aria-describedby": describedBy,
       "aria-required": required || undefined,
-    } as Record<string, unknown>);
+    } as never);
   });
 
   return (
-    <div className={cn("ck-field", className)}>
+    <div className={cn("grid gap-2", className)}>
       {label ? (
         <Label htmlFor={htmlFor} required={required}>
           {label}

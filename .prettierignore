@@ -8,3 +8,4 @@ templates
 *.png
 *.jpg
 src/generated
+registry

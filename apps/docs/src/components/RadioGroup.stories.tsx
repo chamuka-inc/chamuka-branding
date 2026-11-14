@@ -7,11 +7,11 @@ export default meta;
 export const Default: StoryObj<typeof RadioGroup> = {
   render: () => (
     <RadioGroup defaultValue="starter" aria-label="Plan">
-      <div className="ck-control-row">
+      <div className="flex items-center gap-2">
         <RadioGroupItem value="starter" id="starter" />
         <Label htmlFor="starter">Starter</Label>
       </div>
-      <div className="ck-control-row">
+      <div className="flex items-center gap-2">
         <RadioGroupItem value="team" id="team" />
         <Label htmlFor="team">Team</Label>
       </div>
