@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field",
+  "type": "registry:ui",
+  "title": "Field",
+  "description": "Label + control + help + error. Wires aria-describedby and aria-invalid.",
+  "meta": {
+    "behaviour": "ui-sdk",
+    "behaviourReason": "Label uses @ui-sdk/react/label. Field layout stays a Chamuka wrapper so Input/Textarea stay native.",
+    "a11y": "Help and error ids are generated. Required fields get a visible asterisk marked aria-hidden.",
+    "example": "<Field label=\"Email\" htmlFor=\"email\" help=\"Work email\"><Input id=\"email\" /></Field>"
+  },
+  "dependencies": [
+    "@ui-sdk/react",
+    "@ui-sdk/core"
+  ],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/utils.json"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/label.tsx",
+      "type": "registry:ui",
+      "target": "@ui/field.tsx",
+      "content": "import { Label as UiLabel } from \"@ui-sdk/react/label\";\nimport {\n  Children,\n  cloneElement,\n  isValidElement,\n  useId,\n  type ComponentPropsWithoutRef,\n  type ReactElement,\n  type ReactNode,\n} from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type LabelProps = ComponentPropsWithoutRef<\"label\"> & {\n  required?: boolean;\n};\n\nexport function Label({ className, required, children, ...props }: LabelProps) {\n  return (\n    <UiLabel\n      className={cn(\"text-sm font-medium leading-none text-foreground\", className)}\n      data-required={required ? \"true\" : undefined}\n      {...props}\n    >\n      {children}\n      {required ? (\n        <span className=\"text-destructive\" aria-hidden=\"true\">\n          {\" \"}\n          *\n        </span>\n      ) : null}\n    </UiLabel>\n  );\n}\n\nexport function FieldHelp({\n  id,\n  children,\n  className,\n}: {\n  id?: string;\n  children: ReactNode;\n  className?: string;\n}) {\n  return (\n    <p id={id} className={cn(\"text-sm text-muted-foreground\", className)}>\n      {children}\n    </p>\n  );\n}\n\nexport function FieldError({\n  id,\n  children,\n  className,\n}: {\n  id?: string;\n  children: ReactNode;\n  className?: string;\n}) {\n  if (!children) return null;\n  return (\n    <p id={id} className={cn(\"text-sm font-medium text-destructive\", className)} role=\"alert\">\n      {children}\n    </p>\n  );\n}\n\nexport function Field({\n  label,\n  htmlFor,\n  help,\n  error,\n  required,\n  children,\n  className,\n}: {\n  label?: ReactNode;\n  htmlFor?: string;\n  help?: ReactNode;\n  error?: ReactNode;\n  required?: boolean;\n  children: ReactNode;\n  className?: string;\n}) {\n  const uid = useId();\n  const helpId = help ? `${uid}-help` : undefined;\n  const errorId = error ? `${uid}-error` : undefined;\n  const describedBy = [helpId, errorId].filter(Boolean).join(\" \") || undefined;\n\n  const control = Children.map(children, (child) => {\n    if (!isValidElement(child)) return child;\n    const el = child as ReactElement<{ id?: string }>;\n    return cloneElement(el, {\n      id: htmlFor ?? el.props.id,\n      \"aria-invalid\": error ? true : undefined,\n      \"aria-describedby\": describedBy,\n      \"aria-required\": required || undefined,\n    } as never);\n  });\n\n  return (\n    <div className={cn(\"grid gap-2\", className)}>\n      {label ? (\n        <Label htmlFor={htmlFor} required={required}>\n          {label}\n        </Label>\n      ) : null}\n      {control}\n      {help ? <FieldHelp id={helpId}>{help}</FieldHelp> : null}\n      <FieldError id={errorId}>{error}</FieldError>\n    </div>\n  );\n}\n"
+    }
+  ]
+}

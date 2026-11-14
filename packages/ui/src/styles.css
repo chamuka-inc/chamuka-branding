@@ -1,0 +1,5 @@
+@import "tailwindcss";
+@import "@chamuka/tokens/tokens.css";
+@import "@chamuka/tokens/theme.css";
+
+@source "./**/*.{ts,tsx}";

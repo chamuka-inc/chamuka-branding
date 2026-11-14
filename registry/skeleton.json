@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton",
+  "type": "registry:ui",
+  "title": "Skeleton",
+  "description": "Loading placeholder.",
+  "meta": {
+    "behaviour": "plain",
+    "behaviourReason": "Presentational. aria-hidden.",
+    "a11y": "aria-hidden. Pair with a live region elsewhere if needed.",
+    "example": "<Skeleton className=\"h-4 w-32\" />"
+  },
+  "dependencies": [],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/utils.json"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/skeleton.tsx",
+      "type": "registry:ui",
+      "target": "@ui/skeleton.tsx",
+      "content": "import { type HTMLAttributes, forwardRef } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport const Skeleton = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(\n  ({ className, ...props }, ref) => (\n    <div\n      ref={ref}\n      className={cn(\"min-h-4 animate-pulse rounded-md bg-muted motion-reduce:animate-none\", className)}\n      aria-hidden=\"true\"\n      {...props}\n    />\n  ),\n);\nSkeleton.displayName = \"Skeleton\";\n"
+    }
+  ]
+}

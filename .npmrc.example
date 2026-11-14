@@ -1,0 +1,4 @@
+# Copy into a consuming app as `.npmrc`.
+# GitHub Packages currently hosts @chamuka/*. Public npm can come later.
+@chamuka:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}

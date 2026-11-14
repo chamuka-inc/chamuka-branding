@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator",
+  "type": "registry:ui",
+  "title": "Separator",
+  "description": "Horizontal or vertical rule.",
+  "meta": {
+    "behaviour": "radix",
+    "behaviourReason": "Decorative vs semantic orientation still uses @radix-ui/react-separator. UI SDK Separator exists; kept Radix to avoid pulling UI SDK into a presentational primitive.",
+    "a11y": "decorative=true by default.",
+    "example": "<Separator />"
+  },
+  "dependencies": [
+    "@radix-ui/react-separator"
+  ],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/utils.json"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/separator.tsx",
+      "type": "registry:ui",
+      "target": "@ui/separator.tsx",
+      "content": "import * as SeparatorPrimitive from \"@radix-ui/react-separator\";\nimport { forwardRef, type ComponentPropsWithoutRef, type ElementRef } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport const Separator = forwardRef<\n  ElementRef<typeof SeparatorPrimitive.Root>,\n  ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>\n>(({ className, orientation = \"horizontal\", decorative = true, ...props }, ref) => (\n  <SeparatorPrimitive.Root\n    ref={ref}\n    decorative={decorative}\n    orientation={orientation}\n    className={cn(\n      \"shrink-0 bg-border\",\n      orientation === \"horizontal\" ? \"h-px w-full\" : \"h-full w-px\",\n      className,\n    )}\n    {...props}\n  />\n));\nSeparator.displayName = \"Separator\";\n"
+    }
+  ]
+}

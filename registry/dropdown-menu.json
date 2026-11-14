@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu",
+  "type": "registry:ui",
+  "title": "DropdownMenu",
+  "description": "Action menu from a button. Wraps UI SDK Menu behind the Chamuka names.",
+  "meta": {
+    "behaviour": "ui-sdk",
+    "behaviourReason": "Keyboard, typeahead, and popup come from @ui-sdk/react/menu. DropdownMenuPortal is a no-op.",
+    "a11y": "Arrow keys move; Enter selects; Escape closes.",
+    "example": "<DropdownMenu><DropdownMenuTrigger asChild><Button>Menu</Button></DropdownMenuTrigger><DropdownMenuContent><DropdownMenuItem>Edit</DropdownMenuItem></DropdownMenuContent></DropdownMenu>"
+  },
+  "dependencies": [
+    "@ui-sdk/react",
+    "@ui-sdk/core"
+  ],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/utils.json"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/dropdown-menu.tsx",
+      "type": "registry:ui",
+      "target": "@ui/dropdown-menu.tsx",
+      "content": "import {\n  Menu,\n  MenuContent,\n  MenuGroup,\n  MenuGroupLabel,\n  MenuItem,\n  MenuSeparator,\n  MenuTrigger,\n} from \"@ui-sdk/react/menu\";\nimport { useId, type ComponentPropsWithoutRef, type ReactNode } from \"react\";\nimport { asChildRender, type NativeButtonProps, type NativeDivProps } from \"@/lib/as-child\";\nimport { cn } from \"@/lib/utils\";\nimport { focusRing, itemInteractive, popupSurface } from \"@/lib/classes\";\n\nexport function DropdownMenu({\n  children,\n  open,\n  defaultOpen,\n  onOpenChange,\n}: {\n  children?: ReactNode;\n  open?: boolean;\n  defaultOpen?: boolean;\n  onOpenChange?: (open: boolean) => void;\n}) {\n  return (\n    <Menu\n      open={open}\n      defaultOpen={defaultOpen}\n      onOpenChange={\n        onOpenChange\n          ? (next) => {\n              onOpenChange(next);\n            }\n          : undefined\n      }\n    >\n      {children}\n    </Menu>\n  );\n}\n\nexport function DropdownMenuTrigger({\n  asChild,\n  className,\n  children,\n  ...props\n}: NativeButtonProps & { asChild?: boolean }) {\n  const render = asChildRender(asChild, children);\n  return (\n    <MenuTrigger className={cn(!render && focusRing, className)} render={render} {...props}>\n      {render ? undefined : children}\n    </MenuTrigger>\n  );\n}\n\nexport function DropdownMenuPortal({ children }: { children?: ReactNode }) {\n  return <>{children}</>;\n}\n\nexport function DropdownMenuGroup({ className, ...props }: NativeDivProps) {\n  return <MenuGroup className={className} {...props} />;\n}\n\nexport function DropdownMenuContent({\n  className,\n  ...props\n}: NativeDivProps) {\n  return (\n    <MenuContent\n      sideOffset={6}\n      className={cn(popupSurface, \"z-dropdown min-w-32 p-1\", className)}\n      {...props}\n    />\n  );\n}\n\nexport function DropdownMenuItem({\n  className,\n  children,\n  disabled,\n  onSelect,\n  ...props\n}: NativeDivProps & {\n  disabled?: boolean;\n  onSelect?: () => void;\n}) {\n  const generated = useId();\n  const value = typeof children === \"string\" ? children : generated;\n  return (\n    <MenuItem\n      value={value}\n      label={typeof children === \"string\" ? children : undefined}\n      disabled={disabled}\n      onSelect={onSelect}\n      className={cn(itemInteractive, className)}\n      {...props}\n    >\n      {children}\n    </MenuItem>\n  );\n}\n\nexport function DropdownMenuSeparator({\n  className,\n  ...props\n}: NativeDivProps) {\n  return <MenuSeparator className={cn(\"-mx-1 my-1 h-px bg-border\", className)} {...props} />;\n}\n\nexport function DropdownMenuLabel({\n  className,\n  ...props\n}: ComponentPropsWithoutRef<\"div\">) {\n  return (\n    <MenuGroupLabel\n      className={cn(\"px-2 py-1.5 text-sm font-medium text-foreground\", className)}\n      {...props}\n    />\n  );\n}\n"
+    },
+    {
+      "path": "packages/ui/src/lib/as-child.ts",
+      "type": "registry:lib",
+      "target": "@lib/as-child.ts",
+      "content": "import {\n  isValidElement,\n  type ComponentPropsWithoutRef,\n  type ReactElement,\n  type ReactNode,\n} from \"react\";\n\nexport type NativeButtonProps = Omit<\n  ComponentPropsWithoutRef<\"button\">,\n  \"value\" | \"defaultValue\" | \"onChange\" | \"onSelect\"\n>;\nexport type NativeDivProps = Omit<\n  ComponentPropsWithoutRef<\"div\">,\n  \"value\" | \"defaultValue\" | \"onChange\" | \"onSelect\"\n>;\nexport type NativeInputProps = Omit<\n  ComponentPropsWithoutRef<\"input\">,\n  \"value\" | \"defaultValue\" | \"onChange\" | \"onSelect\"\n>;\n\n/** Maps our `asChild` API onto UI SDK's `render` element. */\nexport function asChildRender(\n  asChild: boolean | undefined,\n  children: ReactNode,\n): ReactElement<Record<string, unknown>> | undefined {\n  if (!asChild || !isValidElement(children)) return undefined;\n  return children as ReactElement<Record<string, unknown>>;\n}\n"
+    }
+  ]
+}

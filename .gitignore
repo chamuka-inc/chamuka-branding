@@ -1,4 +1,16 @@
+node_modules
+dist
+storybook-static
+.turbo
+.DS_Store
+*.log
+coverage
+.eslintcache
+.vite
+*.tsbuildinfo
 __pycache__/
 *.pyc
-.DS_Store
 page.canvas.tsx
+apps/docs/src/generated
+packages/icons/src/generated
+packages/tokens/src/generated.ts

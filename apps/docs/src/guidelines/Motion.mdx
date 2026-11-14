@@ -1,0 +1,11 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Guidelines/Motion" />
+
+# Motion
+
+Duration: 150ms fast, 200ms base, 300ms slow. Easing: `--easing-out` (`cubic-bezier(0.16, 1, 0.3, 1)`).
+
+Use motion to confirm a state change (switch, dialog, toast). Do not bounce, elastic-overshoot, or loop decoration. Honour `prefers-reduced-motion`: Chamuka components collapse duration to a negligible value.
+
+Toasts may linger 4–6s; they must be dismissible and must not steal focus from a form control the person is using.

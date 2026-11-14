@@ -1,0 +1,654 @@
+{
+  "name": "@chamuka/ui",
+  "repository": "https://github.com/chamuka-inc/chamuka-design",
+  "components": [
+    {
+      "name": "Button",
+      "slug": "button",
+      "import": {
+        "named": [
+          "Button",
+          "buttonVariants"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/button.tsx",
+      "description": "Primary action control. Ember fill; 16px default so ember-on-paper meets AA large.",
+      "behaviour": "plain",
+      "behaviourReason": "Presentational. Uses Radix Slot only for asChild.",
+      "variants": {
+        "variant": [
+          "default",
+          "primary",
+          "secondary",
+          "outline",
+          "ghost",
+          "destructive",
+          "link"
+        ],
+        "size": [
+          "default",
+          "md",
+          "sm",
+          "lg",
+          "icon"
+        ]
+      },
+      "props": [],
+      "a11y": "Focus-visible ring. Disabled is pointer-events-none + opacity. Ember labels stay at 14px minimum, medium weight.",
+      "example": "<Button>Save</Button>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/button.json"
+    },
+    {
+      "name": "IconButton",
+      "slug": "icon-button",
+      "import": {
+        "named": [
+          "IconButton"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/icon-button.tsx",
+      "description": "Square icon-only button. Requires a visible-name `label`.",
+      "behaviour": "plain",
+      "behaviourReason": "Presentational wrapper around Button.",
+      "variants": {},
+      "props": [],
+      "a11y": "Sets aria-label from `label`. Pair with Lucide at 1.5–2px stroke.",
+      "example": "<IconButton label=\"Close\"><span aria-hidden>×</span></IconButton>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/icon-button.json"
+    },
+    {
+      "name": "Link",
+      "slug": "link",
+      "import": {
+        "named": [
+          "Link"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/link.tsx",
+      "description": "Text link in primary (ember).",
+      "behaviour": "plain",
+      "behaviourReason": "Presentational.",
+      "variants": {},
+      "props": [],
+      "a11y": "Focus-visible ring. Use asChild to render a router Link.",
+      "example": "<Link href=\"https://chamuka.ai\">chamuka.ai</Link>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/link.json"
+    },
+    {
+      "name": "Input",
+      "slug": "input",
+      "import": {
+        "named": [
+          "Input"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/input.tsx",
+      "description": "Single-line text field.",
+      "behaviour": "plain",
+      "behaviourReason": "Native input is sufficient.",
+      "variants": {},
+      "props": [],
+      "a11y": "Pair with Label or Field. aria-invalid turns the border destructive.",
+      "example": "<Input id=\"email\" type=\"email\" />",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/input.json"
+    },
+    {
+      "name": "Textarea",
+      "slug": "textarea",
+      "import": {
+        "named": [
+          "Textarea"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/textarea.tsx",
+      "description": "Multi-line text field.",
+      "behaviour": "plain",
+      "behaviourReason": "Native textarea is sufficient.",
+      "variants": {},
+      "props": [],
+      "a11y": "Pair with Label or Field.",
+      "example": "<Textarea id=\"notes\" />",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/textarea.json"
+    },
+    {
+      "name": "Field",
+      "slug": "field",
+      "import": {
+        "named": [
+          "Field",
+          "FieldHelp",
+          "FieldError",
+          "Label"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/label.tsx",
+      "description": "Label + control + help + error. Wires aria-describedby and aria-invalid.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Label uses @ui-sdk/react/label. Field layout stays a Chamuka wrapper so Input/Textarea stay native.",
+      "variants": {},
+      "props": [],
+      "a11y": "Help and error ids are generated. Required fields get a visible asterisk marked aria-hidden.",
+      "example": "<Field label=\"Email\" htmlFor=\"email\" help=\"Work email\"><Input id=\"email\" /></Field>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/field.json"
+    },
+    {
+      "name": "Checkbox",
+      "slug": "checkbox",
+      "import": {
+        "named": [
+          "Checkbox"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/checkbox.tsx",
+      "description": "Boolean choice with a Daybreak check indicator.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Keyboard, mixed state, and form input come from @ui-sdk/react/checkbox.",
+      "variants": {},
+      "props": [],
+      "a11y": "Always pair with Label. Space toggles. data-checked styles the fill.",
+      "example": "<div className=\"flex items-center gap-2\"><Checkbox id=\"tos\" /><Label htmlFor=\"tos\">Accept</Label></div>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/checkbox.json"
+    },
+    {
+      "name": "Switch",
+      "slug": "switch",
+      "import": {
+        "named": [
+          "Switch"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/switch.tsx",
+      "description": "On/off setting.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Role, keyboard, and form input come from @ui-sdk/react/switch.",
+      "variants": {},
+      "props": [],
+      "a11y": "Always pair with Label. Space toggles.",
+      "example": "<div className=\"flex items-center gap-2\"><Switch id=\"alerts\" /><Label htmlFor=\"alerts\">Alerts</Label></div>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/switch.json"
+    },
+    {
+      "name": "RadioGroup",
+      "slug": "radio-group",
+      "import": {
+        "named": [
+          "RadioGroup",
+          "RadioGroupItem"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/radio-group.tsx",
+      "description": "Single choice from a short list.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Roving tabindex and form radios come from @ui-sdk/react/radio.",
+      "variants": {},
+      "props": [],
+      "a11y": "Name the group (aria-label or Field). Arrow keys move the selection. Pair each RadioGroupItem with a Label.",
+      "example": "<RadioGroup defaultValue=\"a\" aria-label=\"Plan\"><RadioGroupItem value=\"a\" id=\"a\" /><Label htmlFor=\"a\">Starter</Label></RadioGroup>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/radio-group.json"
+    },
+    {
+      "name": "Select",
+      "slug": "select",
+      "import": {
+        "named": [
+          "Select",
+          "SelectTrigger",
+          "SelectValue",
+          "SelectContent",
+          "SelectItem",
+          "SelectGroup",
+          "SelectField"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/select.tsx",
+      "description": "Popup list of options.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Typeahead, popup, and listbox keyboard come from @ui-sdk/react/select.",
+      "variants": {},
+      "props": [],
+      "a11y": "Name the trigger with aria-label or a visible label. Items need a value.",
+      "example": "<Select><SelectTrigger aria-label=\"Role\"><SelectValue placeholder=\"Choose\" /></SelectTrigger><SelectContent><SelectItem value=\"admin\">Admin</SelectItem></SelectContent></Select>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/select.json"
+    },
+    {
+      "name": "Combobox",
+      "slug": "combobox",
+      "import": {
+        "named": [
+          "Combobox",
+          "ComboboxInput",
+          "ComboboxContent",
+          "ComboboxList",
+          "ComboboxItem",
+          "ComboboxEmpty"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/combobox.tsx",
+      "description": "Searchable list of options.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Filter, listbox, and popup come from @ui-sdk/react/combobox.",
+      "variants": {},
+      "props": [],
+      "a11y": "Name the input. Arrow keys highlight; Enter selects.",
+      "example": "<Combobox><ComboboxInput aria-label=\"Framework\" /><ComboboxContent><ComboboxItem value=\"next\">Next.js</ComboboxItem></ComboboxContent></Combobox>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/combobox.json"
+    },
+    {
+      "name": "Dialog",
+      "slug": "dialog",
+      "import": {
+        "named": [
+          "Dialog",
+          "DialogTrigger",
+          "DialogContent",
+          "DialogTitle",
+          "DialogDescription",
+          "DialogClose",
+          "DialogOverlay",
+          "DialogBackdrop",
+          "DialogPortal"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/dialog.tsx",
+      "description": "Modal task over the page. DialogContent includes the overlay.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Focus trap, Escape, inert, and top-layer popup come from @ui-sdk/react/dialog. DialogPortal is a no-op: UI SDK popups do not use portals.",
+      "variants": {},
+      "props": [],
+      "a11y": "Always include DialogTitle. Escape and overlay press dismiss.",
+      "example": "<Dialog><DialogTrigger asChild><Button>Open</Button></DialogTrigger><DialogContent><DialogTitle>Invite</DialogTitle></DialogContent></Dialog>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/dialog.json"
+    },
+    {
+      "name": "Popover",
+      "slug": "popover",
+      "import": {
+        "named": [
+          "Popover",
+          "PopoverTrigger",
+          "PopoverContent",
+          "PopoverAnchor"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/popover.tsx",
+      "description": "Non-modal floating panel.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Placement, dismissal, and focus come from @ui-sdk/react/popover. PopoverAnchor is a presentational span; pass `anchor` on content for custom anchors.",
+      "variants": {},
+      "props": [],
+      "a11y": "Name the content if it has no title.",
+      "example": "<Popover><PopoverTrigger asChild><Button>More</Button></PopoverTrigger><PopoverContent>Details</PopoverContent></Popover>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/popover.json"
+    },
+    {
+      "name": "DropdownMenu",
+      "slug": "dropdown-menu",
+      "import": {
+        "named": [
+          "DropdownMenu",
+          "DropdownMenuTrigger",
+          "DropdownMenuContent",
+          "DropdownMenuItem",
+          "DropdownMenuSeparator",
+          "DropdownMenuLabel",
+          "DropdownMenuGroup",
+          "DropdownMenuPortal"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/dropdown-menu.tsx",
+      "description": "Action menu from a button. Wraps UI SDK Menu behind the Chamuka names.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Keyboard, typeahead, and popup come from @ui-sdk/react/menu. DropdownMenuPortal is a no-op.",
+      "variants": {},
+      "props": [],
+      "a11y": "Arrow keys move; Enter selects; Escape closes.",
+      "example": "<DropdownMenu><DropdownMenuTrigger asChild><Button>Menu</Button></DropdownMenuTrigger><DropdownMenuContent><DropdownMenuItem>Edit</DropdownMenuItem></DropdownMenuContent></DropdownMenu>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/dropdown-menu.json"
+    },
+    {
+      "name": "Tooltip",
+      "slug": "tooltip",
+      "import": {
+        "named": [
+          "Tooltip",
+          "TooltipTrigger",
+          "TooltipContent",
+          "TooltipProvider",
+          "SimpleTooltip"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/tooltip.tsx",
+      "description": "Short hint on hover or keyboard focus.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Delay, placement, and hover/focus open come from @ui-sdk/react/tooltip. TooltipProvider is a no-op kept for API stability.",
+      "variants": {},
+      "props": [],
+      "a11y": "Keep copy short. Do not put essential information only in a tooltip.",
+      "example": "<Tooltip><TooltipTrigger asChild><Button>Hint</Button></TooltipTrigger><TooltipContent>Helpful</TooltipContent></Tooltip>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/tooltip.json"
+    },
+    {
+      "name": "Tabs",
+      "slug": "tabs",
+      "import": {
+        "named": [
+          "Tabs",
+          "TabsList",
+          "TabsTrigger",
+          "TabsContent"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/tabs.tsx",
+      "description": "One panel visible at a time. TabsTrigger/TabsContent alias UI SDK TabsTab/TabsPanel.",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Roving tabindex and arrow keys come from @ui-sdk/react/tabs.",
+      "variants": {},
+      "props": [],
+      "a11y": "Give TabsList an aria-label. Each trigger and panel share a value.",
+      "example": "<Tabs defaultValue=\"one\"><TabsList aria-label=\"Sections\"><TabsTrigger value=\"one\">One</TabsTrigger></TabsList><TabsContent value=\"one\">First</TabsContent></Tabs>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/tabs.json"
+    },
+    {
+      "name": "Accordion",
+      "slug": "accordion",
+      "import": {
+        "named": [
+          "Accordion",
+          "AccordionItem",
+          "AccordionHeader",
+          "AccordionTrigger",
+          "AccordionPanel"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/accordion.tsx",
+      "description": "Expandable sections. defaultValue accepts a string or string[].",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Heading structure, keyboard, and disclosure come from @ui-sdk/react/accordion.",
+      "variants": {},
+      "props": [],
+      "a11y": "Triggers report aria-expanded. Put the trigger inside AccordionHeader.",
+      "example": "<Accordion defaultValue=\"one\"><AccordionItem value=\"one\"><AccordionHeader><AccordionTrigger>Shipping</AccordionTrigger></AccordionHeader><AccordionPanel>5 days.</AccordionPanel></AccordionItem></Accordion>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/accordion.json"
+    },
+    {
+      "name": "Toast",
+      "slug": "toast",
+      "import": {
+        "named": [
+          "ToastProvider",
+          "useToast",
+          "Toast",
+          "ToastTitle",
+          "ToastDescription",
+          "ToastClose",
+          "ToastViewport"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/toast.tsx",
+      "description": "Transient notification. useToast().toast({ title, description, variant }).",
+      "behaviour": "ui-sdk",
+      "behaviourReason": "Queue, timed dismissal, and announcements come from @ui-sdk/react/toast via createToaster. ToastViewport is a compatibility no-op; ToastProvider places ToastRegion.",
+      "variants": {},
+      "props": [],
+      "a11y": "Errors are announced assertively. Do not steal focus.",
+      "example": "const { toast } = useToast();\ntoast({ title: \"Saved\" });",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/toast.json"
+    },
+    {
+      "name": "Alert",
+      "slug": "alert",
+      "import": {
+        "named": [
+          "Alert",
+          "alertVariants"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/alert.tsx",
+      "description": "Inline status message.",
+      "behaviour": "plain",
+      "behaviourReason": "Presentational. role=status.",
+      "variants": {
+        "variant": [
+          "default",
+          "success",
+          "warning",
+          "danger",
+          "info"
+        ]
+      },
+      "props": [],
+      "a11y": "Uses role=status. For blocking confirmation use a Dialog.",
+      "example": "<Alert title=\"Saved\">The form was saved.</Alert>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/alert.json"
+    },
+    {
+      "name": "Card",
+      "slug": "card",
+      "import": {
+        "named": [
+          "Card",
+          "CardHeader",
+          "CardTitle",
+          "CardDescription",
+          "CardContent",
+          "CardFooter"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/card.tsx",
+      "description": "Surface grouping for forms and summaries.",
+      "behaviour": "plain",
+      "behaviourReason": "Presentational.",
+      "variants": {},
+      "props": [],
+      "a11y": "CardTitle is an h3. Do not nest headings out of order.",
+      "example": "<Card><CardHeader><CardTitle>Forms</CardTitle></CardHeader></Card>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/card.json"
+    },
+    {
+      "name": "Badge",
+      "slug": "badge",
+      "import": {
+        "named": [
+          "Badge",
+          "badgeVariants"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/badge.tsx",
+      "description": "Small status pill.",
+      "behaviour": "plain",
+      "behaviourReason": "Presentational.",
+      "variants": {
+        "variant": [
+          "default",
+          "secondary",
+          "outline",
+          "success",
+          "warning",
+          "danger"
+        ]
+      },
+      "props": [],
+      "a11y": "Do not rely on colour alone.",
+      "example": "<Badge>New</Badge>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/badge.json"
+    },
+    {
+      "name": "Avatar",
+      "slug": "avatar",
+      "import": {
+        "named": [
+          "Avatar",
+          "AvatarImage",
+          "AvatarFallback"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/avatar.tsx",
+      "description": "Image with initials fallback.",
+      "behaviour": "radix",
+      "behaviourReason": "Image load/error fallback is still @radix-ui/react-avatar. Not a keyboard/ARIA behaviour primitive; UI SDK Avatar was left unused to keep this presentational.",
+      "variants": {},
+      "props": [],
+      "a11y": "Fallback text should be initials, not a name sentence.",
+      "example": "<Avatar><AvatarFallback>CH</AvatarFallback></Avatar>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/avatar.json"
+    },
+    {
+      "name": "Separator",
+      "slug": "separator",
+      "import": {
+        "named": [
+          "Separator"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/separator.tsx",
+      "description": "Horizontal or vertical rule.",
+      "behaviour": "radix",
+      "behaviourReason": "Decorative vs semantic orientation still uses @radix-ui/react-separator. UI SDK Separator exists; kept Radix to avoid pulling UI SDK into a presentational primitive.",
+      "variants": {},
+      "props": [],
+      "a11y": "decorative=true by default.",
+      "example": "<Separator />",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/separator.json"
+    },
+    {
+      "name": "Skeleton",
+      "slug": "skeleton",
+      "import": {
+        "named": [
+          "Skeleton"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/skeleton.tsx",
+      "description": "Loading placeholder.",
+      "behaviour": "plain",
+      "behaviourReason": "Presentational. aria-hidden.",
+      "variants": {},
+      "props": [],
+      "a11y": "aria-hidden. Pair with a live region elsewhere if needed.",
+      "example": "<Skeleton className=\"h-4 w-32\" />",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/skeleton.json"
+    },
+    {
+      "name": "Spinner",
+      "slug": "spinner",
+      "import": {
+        "named": [
+          "Spinner"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/spinner.tsx",
+      "description": "Indeterminate loading indicator.",
+      "behaviour": "plain",
+      "behaviourReason": "Presentational.",
+      "variants": {},
+      "props": [],
+      "a11y": "role=status and aria-label=Loading. motion-reduce:animate-none.",
+      "example": "<Spinner />",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/spinner.json"
+    },
+    {
+      "name": "Stack",
+      "slug": "stack",
+      "import": {
+        "named": [
+          "Stack"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/stack.tsx",
+      "description": "Flex stack with gap variants.",
+      "behaviour": "plain",
+      "behaviourReason": "Layout only.",
+      "variants": {
+        "direction": [
+          "column",
+          "row"
+        ],
+        "gap": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "8"
+        ]
+      },
+      "props": [],
+      "a11y": "No inherent role.",
+      "example": "<Stack gap=\"4\"><Button>One</Button><Button>Two</Button></Stack>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/stack.json"
+    },
+    {
+      "name": "Container",
+      "slug": "container",
+      "import": {
+        "named": [
+          "Container"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/container.tsx",
+      "description": "Centered max-width wrapper.",
+      "behaviour": "plain",
+      "behaviourReason": "Layout only.",
+      "variants": {
+        "size": [
+          "sm",
+          "md",
+          "lg",
+          "full"
+        ]
+      },
+      "props": [],
+      "a11y": "No inherent role.",
+      "example": "<Container size=\"md\">{children}</Container>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/container.json"
+    },
+    {
+      "name": "ThemeProvider",
+      "slug": "theme-provider",
+      "import": {
+        "named": [
+          "ThemeProvider",
+          "useTheme"
+        ],
+        "from": "@chamuka/ui"
+      },
+      "file": "packages/ui/src/theme-provider.tsx",
+      "description": "Applies class=dark and data-theme for token overrides.",
+      "behaviour": "plain",
+      "behaviourReason": "Theme class + context only.",
+      "variants": {},
+      "props": [],
+      "a11y": "Does not trap focus. Wrap the app once.",
+      "example": "<ThemeProvider defaultTheme=\"system\">{children}</ThemeProvider>",
+      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/theme-provider.json"
+    }
+  ]
+}

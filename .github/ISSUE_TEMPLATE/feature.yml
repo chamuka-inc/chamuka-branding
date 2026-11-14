@@ -1,0 +1,28 @@
+name: Feature
+description: Propose a token, component, or docs change.
+title: "[feat] "
+labels: []
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What is needed
+      description: The product or agent workflow this would help.
+    validations:
+      required: true
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Behaviour layer (if a component)
+      options:
+        - plain (presentational React + Tailwind)
+        - ui-sdk (keyboard, focus, popup, ARIA)
+        - radix (only if UI SDK cannot do it)
+        - not a component
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Extra notes
+      description: Accessibility, API shape, or related issues.

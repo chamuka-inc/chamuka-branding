@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog",
+  "type": "registry:ui",
+  "title": "Dialog",
+  "description": "Modal task over the page. DialogContent includes the overlay.",
+  "meta": {
+    "behaviour": "ui-sdk",
+    "behaviourReason": "Focus trap, Escape, inert, and top-layer popup come from @ui-sdk/react/dialog. DialogPortal is a no-op: UI SDK popups do not use portals.",
+    "a11y": "Always include DialogTitle. Escape and overlay press dismiss.",
+    "example": "<Dialog><DialogTrigger asChild><Button>Open</Button></DialogTrigger><DialogContent><DialogTitle>Invite</DialogTitle></DialogContent></Dialog>"
+  },
+  "dependencies": [
+    "@ui-sdk/react",
+    "@ui-sdk/core"
+  ],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/utils.json"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/dialog.tsx",
+      "type": "registry:ui",
+      "target": "@ui/dialog.tsx",
+      "content": "import {\n  Dialog as UiDialog,\n  DialogBackdrop as UiDialogBackdrop,\n  DialogClose as UiDialogClose,\n  DialogContent as UiDialogContent,\n  DialogDescription as UiDialogDescription,\n  DialogTitle as UiDialogTitle,\n  DialogTrigger as UiDialogTrigger,\n} from \"@ui-sdk/react/dialog\";\nimport type { ComponentPropsWithoutRef, ReactNode } from \"react\";\nimport { asChildRender, type NativeButtonProps } from \"@/lib/as-child\";\nimport { cn } from \"@/lib/utils\";\nimport { focusRing } from \"@/lib/classes\";\n\ntype OpenChangeHandler = (open: boolean) => void;\n\nexport function Dialog({\n  children,\n  open,\n  defaultOpen,\n  onOpenChange,\n}: {\n  children?: ReactNode;\n  open?: boolean;\n  defaultOpen?: boolean;\n  onOpenChange?: OpenChangeHandler;\n}) {\n  return (\n    <UiDialog\n      open={open}\n      defaultOpen={defaultOpen}\n      onOpenChange={\n        onOpenChange\n          ? (next) => {\n              onOpenChange(next);\n            }\n          : undefined\n      }\n    >\n      {children}\n    </UiDialog>\n  );\n}\n\nexport function DialogTrigger({\n  asChild,\n  className,\n  children,\n  ...props\n}: NativeButtonProps & { asChild?: boolean }) {\n  const render = asChildRender(asChild, children);\n  return (\n    <UiDialogTrigger\n      className={cn(!render && focusRing, className)}\n      render={render}\n      {...props}\n    >\n      {render ? undefined : children}\n    </UiDialogTrigger>\n  );\n}\n\nexport function DialogOverlay({\n  className,\n  ...props\n}: ComponentPropsWithoutRef<\"div\">) {\n  return (\n    <UiDialogBackdrop\n      className={cn(\"fixed inset-0 z-overlay bg-ink/50 motion-reduce:transition-none\", className)}\n      {...props}\n    />\n  );\n}\n\nexport const DialogBackdrop = DialogOverlay;\n\nexport function DialogPortal({ children }: { children?: ReactNode }) {\n  return <>{children}</>;\n}\n\nexport function DialogContent({\n  className,\n  children,\n  ...props\n}: ComponentPropsWithoutRef<\"div\">) {\n  return (\n    <>\n      <DialogOverlay />\n      <UiDialogContent\n        className={cn(\n          \"fixed left-1/2 top-1/2 z-modal w-full max-w-lg -translate-x-1/2 -translate-y-1/2\",\n          \"rounded-lg border border-border bg-background p-6 shadow-lg\",\n          \"motion-reduce:transition-none\",\n          focusRing,\n          className,\n        )}\n        {...props}\n      >\n        {children}\n      </UiDialogContent>\n    </>\n  );\n}\n\nexport function DialogTitle({\n  className,\n  ...props\n}: ComponentPropsWithoutRef<\"h2\">) {\n  return (\n    <UiDialogTitle\n      className={cn(\"font-display text-lg font-semibold leading-none tracking-tight\", className)}\n      {...props}\n    />\n  );\n}\n\nexport function DialogDescription({\n  className,\n  ...props\n}: ComponentPropsWithoutRef<\"p\">) {\n  return (\n    <UiDialogDescription\n      className={cn(\"mt-2 text-sm text-muted-foreground\", className)}\n      {...props}\n    />\n  );\n}\n\nexport function DialogClose({\n  className,\n  ...props\n}: NativeButtonProps) {\n  return <UiDialogClose className={cn(focusRing, className)} {...props} />;\n}\n"
+    },
+    {
+      "path": "packages/ui/src/lib/as-child.ts",
+      "type": "registry:lib",
+      "target": "@lib/as-child.ts",
+      "content": "import {\n  isValidElement,\n  type ComponentPropsWithoutRef,\n  type ReactElement,\n  type ReactNode,\n} from \"react\";\n\nexport type NativeButtonProps = Omit<\n  ComponentPropsWithoutRef<\"button\">,\n  \"value\" | \"defaultValue\" | \"onChange\" | \"onSelect\"\n>;\nexport type NativeDivProps = Omit<\n  ComponentPropsWithoutRef<\"div\">,\n  \"value\" | \"defaultValue\" | \"onChange\" | \"onSelect\"\n>;\nexport type NativeInputProps = Omit<\n  ComponentPropsWithoutRef<\"input\">,\n  \"value\" | \"defaultValue\" | \"onChange\" | \"onSelect\"\n>;\n\n/** Maps our `asChild` API onto UI SDK's `render` element. */\nexport function asChildRender(\n  asChild: boolean | undefined,\n  children: ReactNode,\n): ReactElement<Record<string, unknown>> | undefined {\n  if (!asChild || !isValidElement(children)) return undefined;\n  return children as ReactElement<Record<string, unknown>>;\n}\n"
+    }
+  ]
+}

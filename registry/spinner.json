@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner",
+  "type": "registry:ui",
+  "title": "Spinner",
+  "description": "Indeterminate loading indicator.",
+  "meta": {
+    "behaviour": "plain",
+    "behaviourReason": "Presentational.",
+    "a11y": "role=status and aria-label=Loading. motion-reduce:animate-none.",
+    "example": "<Spinner />"
+  },
+  "dependencies": [],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/utils.json"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/spinner.tsx",
+      "type": "registry:ui",
+      "target": "@ui/spinner.tsx",
+      "content": "import { type HTMLAttributes, forwardRef } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport const Spinner = forwardRef<HTMLSpanElement, HTMLAttributes<HTMLSpanElement>>(\n  ({ className, ...props }, ref) => (\n    <span\n      ref={ref}\n      className={cn(\n        \"inline-block size-5 animate-spin rounded-full border-2 border-border border-t-primary motion-reduce:animate-none\",\n        className,\n      )}\n      role=\"status\"\n      aria-label=\"Loading\"\n      {...props}\n    />\n  ),\n);\nSpinner.displayName = \"Spinner\";\n"
+    }
+  ]
+}

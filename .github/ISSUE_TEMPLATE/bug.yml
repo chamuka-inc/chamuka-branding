@@ -1,0 +1,40 @@
+name: Bug
+description: Something in tokens, components, icons, or docs is wrong.
+title: "[bug] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for a report. Security issues belong in [GitHub security advisories](https://github.com/chamuka-inc/chamuka-design/security/advisories/new), not here.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you expected, and what you saw instead.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Package, Storybook story, or a minimal snippet.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Package version or git SHA if known.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - tokens
+        - ui
+        - icons
+        - brand / templates
+        - docs / Storybook
+        - CI / packaging
+    validations:
+      required: true

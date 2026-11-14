@@ -1,0 +1,33 @@
+# Chamuka Daybreak
+
+> Brand pack and UI/UX design system for Chamuka Labs, an applied AI lab. Tokens, React components, and logo icons for Next.js + React 19 + Tailwind apps. Audience: business teams. Feel: playful, warm, African-rooted — not toy-like.
+
+Chamuka Labs ships products as lab outputs. DrawIt is the flagship; FormIt is a sub-brand. “From thoughts to form” is DrawIt’s line only — never the lab’s.
+
+The GitHub repository is https://github.com/chamuka-inc/chamuka-design (formerly chamuka-branding). Apache-2.0 code; names and Daybreak marks are trademarks — see TRADEMARKS.md.
+
+## Docs
+
+- [Agent guide](https://github.com/chamuka-inc/chamuka-design/blob/main/AGENTS.md)
+- [Contributing](https://github.com/chamuka-inc/chamuka-design/blob/main/CONTRIBUTING.md)
+- [Component catalog](https://github.com/chamuka-inc/chamuka-design/blob/main/packages/ui/AGENTS.md)
+- [Tokens](https://github.com/chamuka-inc/chamuka-design/blob/main/packages/tokens/AGENTS.md)
+- [Icons](https://github.com/chamuka-inc/chamuka-design/blob/main/packages/icons/AGENTS.md)
+- [Voice](https://github.com/chamuka-inc/chamuka-design/blob/main/brand/docs/voice.md)
+- [Machine-readable manifest](https://github.com/chamuka-inc/chamuka-design/blob/main/manifest.json)
+- [shadcn registry](https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/registry.json)
+- [UI SDK (behaviour)](https://github.com/vercel-labs/ui/blob/main/AGENTS.md)
+
+## Packages
+
+- `@chamuka/tokens` — DTCG JSON → CSS variables, Tailwind v4 `@theme`, v3 preset
+- `@chamuka/ui` — React 19 components (Tailwind look, UI SDK behaviour)
+- `@chamuka/icons` — Daybreak mark and lockups
+
+Install from GitHub Packages (`npm.pkg.github.com`), scope `@chamuka`. Copy `.npmrc.example`. Public npm can come later.
+
+## Optional
+
+- Brand masters: `/brand`
+- Digital templates: `/templates`
+- Storybook: `apps/docs`
