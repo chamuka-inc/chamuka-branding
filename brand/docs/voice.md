@@ -2,7 +2,9 @@
 
 **Chamuka Labs is an applied AI lab: we ship AI-native products, put research into practice, and build tools for AI agents.**
 
-Voice is founder-led, short, specific, slightly dry: a tinkerer speaking for the lab.
+Daybreak (this pack) is brand infrastructure, not a product. **Audience:** business teams. **Feel:** playful, warm, African-rooted — not toy-like.
+
+Lab copy is founder-led, short, specific, slightly dry: a tinkerer speaking for the lab.
 
 ## Positioning (do not invent past this)
 

@@ -1,6 +1,6 @@
 # Chamuka Daybreak
 
-> Brand infrastructure for Chamuka Labs, an applied AI lab. Tokens, React components, and logo icons for Next.js + React 19 + Tailwind apps. Not a product.
+> Brand infrastructure for Chamuka Labs, an applied AI lab. Tokens, React components, and logo icons for Next.js + React 19 + Tailwind apps. Not a product. Audience: business teams. Feel: playful, warm, African-rooted — not toy-like.
 
 Chamuka Labs is an applied AI lab: we ship AI-native products, put research into practice, and build tools for AI agents.
 
