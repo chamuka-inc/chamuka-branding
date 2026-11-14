@@ -1,6 +1,6 @@
 {
   "name": "@chamuka/ui",
-  "repository": "https://github.com/chamuka-inc/chamuka-design",
+  "repository": "https://github.com/chamuka-labs/chamuka-design",
   "components": [
     {
       "name": "Button",
@@ -37,7 +37,7 @@
       "props": [],
       "a11y": "Focus-visible ring. Disabled is pointer-events-none + opacity. Ember labels stay at 14px minimum, medium weight.",
       "example": "<Button>Save</Button>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/button.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/button.json"
     },
     {
       "name": "IconButton",
@@ -56,7 +56,7 @@
       "props": [],
       "a11y": "Sets aria-label from `label`. Pair with Lucide at 1.5–2px stroke.",
       "example": "<IconButton label=\"Close\"><span aria-hidden>×</span></IconButton>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/icon-button.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/icon-button.json"
     },
     {
       "name": "Link",
@@ -75,7 +75,7 @@
       "props": [],
       "a11y": "Focus-visible ring. Use asChild to render a router Link.",
       "example": "<Link href=\"https://chamuka.ai\">chamuka.ai</Link>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/link.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/link.json"
     },
     {
       "name": "Input",
@@ -94,7 +94,7 @@
       "props": [],
       "a11y": "Pair with Label or Field. aria-invalid turns the border destructive.",
       "example": "<Input id=\"email\" type=\"email\" />",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/input.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/input.json"
     },
     {
       "name": "Textarea",
@@ -113,7 +113,7 @@
       "props": [],
       "a11y": "Pair with Label or Field.",
       "example": "<Textarea id=\"notes\" />",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/textarea.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/textarea.json"
     },
     {
       "name": "Field",
@@ -135,7 +135,7 @@
       "props": [],
       "a11y": "Help and error ids are generated. Required fields get a visible asterisk marked aria-hidden.",
       "example": "<Field label=\"Email\" htmlFor=\"email\" help=\"Work email\"><Input id=\"email\" /></Field>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/field.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/field.json"
     },
     {
       "name": "Checkbox",
@@ -154,7 +154,7 @@
       "props": [],
       "a11y": "Always pair with Label. Space toggles. data-checked styles the fill.",
       "example": "<div className=\"flex items-center gap-2\"><Checkbox id=\"tos\" /><Label htmlFor=\"tos\">Accept</Label></div>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/checkbox.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/checkbox.json"
     },
     {
       "name": "Switch",
@@ -173,7 +173,7 @@
       "props": [],
       "a11y": "Always pair with Label. Space toggles.",
       "example": "<div className=\"flex items-center gap-2\"><Switch id=\"alerts\" /><Label htmlFor=\"alerts\">Alerts</Label></div>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/switch.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/switch.json"
     },
     {
       "name": "RadioGroup",
@@ -193,7 +193,7 @@
       "props": [],
       "a11y": "Name the group (aria-label or Field). Arrow keys move the selection. Pair each RadioGroupItem with a Label.",
       "example": "<RadioGroup defaultValue=\"a\" aria-label=\"Plan\"><RadioGroupItem value=\"a\" id=\"a\" /><Label htmlFor=\"a\">Starter</Label></RadioGroup>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/radio-group.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/radio-group.json"
     },
     {
       "name": "Select",
@@ -218,7 +218,7 @@
       "props": [],
       "a11y": "Name the trigger with aria-label or a visible label. Items need a value.",
       "example": "<Select><SelectTrigger aria-label=\"Role\"><SelectValue placeholder=\"Choose\" /></SelectTrigger><SelectContent><SelectItem value=\"admin\">Admin</SelectItem></SelectContent></Select>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/select.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/select.json"
     },
     {
       "name": "Combobox",
@@ -242,7 +242,7 @@
       "props": [],
       "a11y": "Name the input. Arrow keys highlight; Enter selects.",
       "example": "<Combobox><ComboboxInput aria-label=\"Framework\" /><ComboboxContent><ComboboxItem value=\"next\">Next.js</ComboboxItem></ComboboxContent></Combobox>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/combobox.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/combobox.json"
     },
     {
       "name": "Dialog",
@@ -269,7 +269,7 @@
       "props": [],
       "a11y": "Always include DialogTitle. Escape and overlay press dismiss.",
       "example": "<Dialog><DialogTrigger asChild><Button>Open</Button></DialogTrigger><DialogContent><DialogTitle>Invite</DialogTitle></DialogContent></Dialog>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/dialog.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/dialog.json"
     },
     {
       "name": "Popover",
@@ -291,7 +291,7 @@
       "props": [],
       "a11y": "Name the content if it has no title.",
       "example": "<Popover><PopoverTrigger asChild><Button>More</Button></PopoverTrigger><PopoverContent>Details</PopoverContent></Popover>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/popover.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/popover.json"
     },
     {
       "name": "DropdownMenu",
@@ -317,7 +317,7 @@
       "props": [],
       "a11y": "Arrow keys move; Enter selects; Escape closes.",
       "example": "<DropdownMenu><DropdownMenuTrigger asChild><Button>Menu</Button></DropdownMenuTrigger><DropdownMenuContent><DropdownMenuItem>Edit</DropdownMenuItem></DropdownMenuContent></DropdownMenu>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/dropdown-menu.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/dropdown-menu.json"
     },
     {
       "name": "Tooltip",
@@ -340,7 +340,7 @@
       "props": [],
       "a11y": "Keep copy short. Do not put essential information only in a tooltip.",
       "example": "<Tooltip><TooltipTrigger asChild><Button>Hint</Button></TooltipTrigger><TooltipContent>Helpful</TooltipContent></Tooltip>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/tooltip.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/tooltip.json"
     },
     {
       "name": "Tabs",
@@ -362,7 +362,7 @@
       "props": [],
       "a11y": "Give TabsList an aria-label. Each trigger and panel share a value.",
       "example": "<Tabs defaultValue=\"one\"><TabsList aria-label=\"Sections\"><TabsTrigger value=\"one\">One</TabsTrigger></TabsList><TabsContent value=\"one\">First</TabsContent></Tabs>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/tabs.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/tabs.json"
     },
     {
       "name": "Accordion",
@@ -385,7 +385,7 @@
       "props": [],
       "a11y": "Triggers report aria-expanded. Put the trigger inside AccordionHeader.",
       "example": "<Accordion defaultValue=\"one\"><AccordionItem value=\"one\"><AccordionHeader><AccordionTrigger>Shipping</AccordionTrigger></AccordionHeader><AccordionPanel>5 days.</AccordionPanel></AccordionItem></Accordion>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/accordion.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/accordion.json"
     },
     {
       "name": "Toast",
@@ -410,7 +410,7 @@
       "props": [],
       "a11y": "Errors are announced assertively. Do not steal focus.",
       "example": "const { toast } = useToast();\ntoast({ title: \"Saved\" });",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/toast.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/toast.json"
     },
     {
       "name": "Alert",
@@ -438,7 +438,7 @@
       "props": [],
       "a11y": "Uses role=status. For blocking confirmation use a Dialog.",
       "example": "<Alert title=\"Saved\">The form was saved.</Alert>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/alert.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/alert.json"
     },
     {
       "name": "Card",
@@ -462,7 +462,7 @@
       "props": [],
       "a11y": "CardTitle is an h3. Do not nest headings out of order.",
       "example": "<Card><CardHeader><CardTitle>Forms</CardTitle></CardHeader></Card>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/card.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/card.json"
     },
     {
       "name": "Badge",
@@ -491,7 +491,7 @@
       "props": [],
       "a11y": "Do not rely on colour alone.",
       "example": "<Badge>New</Badge>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/badge.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/badge.json"
     },
     {
       "name": "Avatar",
@@ -512,7 +512,7 @@
       "props": [],
       "a11y": "Fallback text should be initials, not a name sentence.",
       "example": "<Avatar><AvatarFallback>CH</AvatarFallback></Avatar>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/avatar.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/avatar.json"
     },
     {
       "name": "Separator",
@@ -531,7 +531,7 @@
       "props": [],
       "a11y": "decorative=true by default.",
       "example": "<Separator />",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/separator.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/separator.json"
     },
     {
       "name": "Skeleton",
@@ -550,7 +550,7 @@
       "props": [],
       "a11y": "aria-hidden. Pair with a live region elsewhere if needed.",
       "example": "<Skeleton className=\"h-4 w-32\" />",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/skeleton.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/skeleton.json"
     },
     {
       "name": "Spinner",
@@ -569,7 +569,7 @@
       "props": [],
       "a11y": "role=status and aria-label=Loading. motion-reduce:animate-none.",
       "example": "<Spinner />",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/spinner.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/spinner.json"
     },
     {
       "name": "Stack",
@@ -602,7 +602,7 @@
       "props": [],
       "a11y": "No inherent role.",
       "example": "<Stack gap=\"4\"><Button>One</Button><Button>Two</Button></Stack>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/stack.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/stack.json"
     },
     {
       "name": "Container",
@@ -628,7 +628,7 @@
       "props": [],
       "a11y": "No inherent role.",
       "example": "<Container size=\"md\">{children}</Container>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/container.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/container.json"
     },
     {
       "name": "ThemeProvider",
@@ -648,7 +648,7 @@
       "props": [],
       "a11y": "Does not trap focus. Wrap the app once.",
       "example": "<ThemeProvider defaultTheme=\"system\">{children}</ThemeProvider>",
-      "registry": "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/theme-provider.json"
+      "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/theme-provider.json"
     }
   ]
 }

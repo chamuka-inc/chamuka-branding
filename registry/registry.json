@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "chamuka",
-  "homepage": "https://github.com/chamuka-inc/chamuka-design",
+  "homepage": "https://github.com/chamuka-labs/chamuka-design",
   "items": [
     {
       "name": "utils",

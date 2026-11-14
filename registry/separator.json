@@ -14,7 +14,7 @@
     "@radix-ui/react-separator"
   ],
   "registryDependencies": [
-    "https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/utils.json"
+    "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/utils.json"
   ],
   "files": [
     {

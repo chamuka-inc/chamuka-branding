@@ -68,7 +68,7 @@ Keep margins at 96 px. Ember is for emphasis, not for paragraphs. Titles in Sora
 
 Visual examples: `github-repo-naming.svg`.
 
-- Public name: Chamuka Labs. GitHub owner: `chamuka-inc`.
+- Public name: Chamuka Labs. GitHub owner: `chamuka-labs`.
 - User-facing products and tools: `chamuka-<name>` in lowercase kebab-case (`chamuka-drawit`, `chamuka-formit`). Do not use camelCase in the repo name.
 - Shared libraries: `@chamuka/<package>` on the registry, `chamuka-<package>` in GitHub (for example `chamuka-ui`).
 - Infra and platform that are not a named product may drop the product suffix (`vmette`, `chamuka` for the platform) — but the README still opens as Chamuka, not as a private nickname.

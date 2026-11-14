@@ -1,6 +1,6 @@
 # Chamuka Daybreak
 
-[![CI](https://github.com/chamuka-inc/chamuka-design/actions/workflows/ci.yml/badge.svg)](https://github.com/chamuka-inc/chamuka-design/actions/workflows/ci.yml)
+[![CI](https://github.com/chamuka-labs/chamuka-design/actions/workflows/ci.yml/badge.svg)](https://github.com/chamuka-labs/chamuka-design/actions/workflows/ci.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
 Daybreak, the Chamuka Labs design system: tokens, React components, brand assets.
@@ -52,7 +52,7 @@ Then `pnpm add @chamuka/tokens @chamuka/ui @chamuka/icons`. `GITHUB_TOKEN` needs
 You can also copy a component from the registry (no package install):
 
 ```bash
-npx shadcn@latest add https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/button.json
+npx shadcn@latest add https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/button.json
 ```
 
 ### Tailwind v4

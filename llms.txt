@@ -6,18 +6,18 @@ Chamuka Labs is an applied AI lab: we ship AI-native products, put research into
 
 DrawIt, FormIt, Play, Waypoint, Vmette and others are experiments or infrastructure, not launched products. DrawIt is an experiment under agent and human interaction (a canvas you and the model both edit). “From thoughts to form” is DrawIt’s line only — never the lab’s. Voice: founder-led, short, specific, slightly dry.
 
-The GitHub repository is https://github.com/chamuka-inc/chamuka-design (formerly chamuka-branding). Apache-2.0 code; names and Daybreak marks are trademarks — see TRADEMARKS.md.
+The GitHub repository is https://github.com/chamuka-labs/chamuka-design (formerly chamuka-branding). Apache-2.0 code; names and Daybreak marks are trademarks — see TRADEMARKS.md.
 
 ## Docs
 
-- [Agent guide](https://github.com/chamuka-inc/chamuka-design/blob/main/AGENTS.md)
-- [Contributing](https://github.com/chamuka-inc/chamuka-design/blob/main/CONTRIBUTING.md)
-- [Component catalog](https://github.com/chamuka-inc/chamuka-design/blob/main/packages/ui/AGENTS.md)
-- [Tokens](https://github.com/chamuka-inc/chamuka-design/blob/main/packages/tokens/AGENTS.md)
-- [Icons](https://github.com/chamuka-inc/chamuka-design/blob/main/packages/icons/AGENTS.md)
-- [Voice](https://github.com/chamuka-inc/chamuka-design/blob/main/brand/docs/voice.md)
-- [Machine-readable manifest](https://github.com/chamuka-inc/chamuka-design/blob/main/manifest.json)
-- [shadcn registry](https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/registry.json)
+- [Agent guide](https://github.com/chamuka-labs/chamuka-design/blob/main/AGENTS.md)
+- [Contributing](https://github.com/chamuka-labs/chamuka-design/blob/main/CONTRIBUTING.md)
+- [Component catalog](https://github.com/chamuka-labs/chamuka-design/blob/main/packages/ui/AGENTS.md)
+- [Tokens](https://github.com/chamuka-labs/chamuka-design/blob/main/packages/tokens/AGENTS.md)
+- [Icons](https://github.com/chamuka-labs/chamuka-design/blob/main/packages/icons/AGENTS.md)
+- [Voice](https://github.com/chamuka-labs/chamuka-design/blob/main/brand/docs/voice.md)
+- [Machine-readable manifest](https://github.com/chamuka-labs/chamuka-design/blob/main/manifest.json)
+- [shadcn registry](https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/registry.json)
 - [UI SDK (behaviour)](https://github.com/vercel-labs/ui/blob/main/AGENTS.md)
 
 ## Packages

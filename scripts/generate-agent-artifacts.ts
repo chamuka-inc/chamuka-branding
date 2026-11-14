@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import { componentCatalog } from "../packages/ui/src/catalog.ts";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const REPO = "chamuka-inc/chamuka-design";
+const REPO = "chamuka-labs/chamuka-design";
 const RAW = `https://raw.githubusercontent.com/${REPO}/main/registry`;
 const REPO_URL = `https://github.com/${REPO}`;
 

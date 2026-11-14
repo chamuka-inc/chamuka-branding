@@ -1,6 +1,6 @@
 {
   "name": "@chamuka/tokens",
-  "repository": "https://github.com/chamuka-inc/chamuka-design",
+  "repository": "https://github.com/chamuka-labs/chamuka-design",
   "tokens": [
     {
       "path": "color.ember",

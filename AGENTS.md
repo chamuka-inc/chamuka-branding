@@ -1,10 +1,10 @@
 # Chamuka design system — agent guide
 
-This repository is **chamuka-inc/chamuka-design** (Daybreak), brand infrastructure for Chamuka Labs — not a product. Consume this pack from lab apps; do not invent a parallel palette, type ramp, or component set.
+This repository is **chamuka-labs/chamuka-design** (Daybreak), brand infrastructure for Chamuka Labs — not a product. Consume this pack from lab apps; do not invent a parallel palette, type ramp, or component set.
 
 **Chamuka Labs is an applied AI lab: we ship AI-native products, put research into practice, and build tools for AI agents.**
 
-**Voice:** founder-led, short, specific, slightly dry; a tinkerer speaking for the lab. Lead with the lab, then name the outputs. DrawIt, FormIt, Play, Waypoint, Vmette and others are experiments or infrastructure, not launched products. DrawIt is an experiment under agent and human interaction. “From thoughts to form” is DrawIt’s line only. If you write “research”, mean applied engineering — no papers, benchmarks, evaluation work, or research results. Do not claim other chamuka-inc repos are already open source. Full rules: [`brand/docs/voice.md`](./brand/docs/voice.md).
+**Voice:** founder-led, short, specific, slightly dry; a tinkerer speaking for the lab. Lead with the lab, then name the outputs. DrawIt, FormIt, Play, Waypoint, Vmette and others are experiments or infrastructure, not launched products. DrawIt is an experiment under agent and human interaction. “From thoughts to form” is DrawIt’s line only. If you write “research”, mean applied engineering — no papers, benchmarks, evaluation work, or research results. Do not claim other chamuka-labs repos are already open source. Full rules: [`brand/docs/voice.md`](./brand/docs/voice.md).
 
 Before writing UI, read this file, then the package `AGENTS.md` for the package you are changing. Machine-readable inventory: [`manifest.json`](./manifest.json), [`llms.txt`](./llms.txt), and the shadcn registry under [`registry/`](./registry).
 
@@ -92,10 +92,10 @@ Pinned exact versions (no `^` / `~`) because the SDK is beta and subject to [Ver
 After merge to `main`:
 
 ```bash
-npx shadcn@latest add https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/button.json
+npx shadcn@latest add https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/button.json
 ```
 
-Index: `https://raw.githubusercontent.com/chamuka-inc/chamuka-design/main/registry/registry.json`
+Index: `https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/registry.json`
 
 Prefer installing `@chamuka/ui` in Chamuka Labs apps. Use the registry when an app must copy source.
 
@@ -133,4 +133,4 @@ Do not publish to npmjs from a laptop. Do not push to `main`. Releases run on me
 
 ## GitHub Packages scope
 
-Package names stay `@chamuka/*` (brand scope). The GitHub owner is `chamuka-inc`. If `changeset publish` fails because GitHub Packages requires the owner as scope, that is an open follow-up — do not silently rename packages to `@chamuka-inc/*`.
+Package names stay `@chamuka/*` (brand scope). The GitHub owner is `chamuka-labs`. If `changeset publish` fails because GitHub Packages requires the owner as scope, that is an open follow-up — do not silently rename packages to `@chamuka-labs/*`.

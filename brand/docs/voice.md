@@ -40,7 +40,7 @@ Lead with the lab, then name the outputs. DrawIt, FormIt, Waypoint and the rest 
 - Hype words (“groundbreaking”, “empowering creators worldwide”).
 - Invented customers, logos, testimonials, or metrics (no “60fps”, no “90% faster”).
 - That every experiment is a launched product.
-- That other chamuka-inc repos or products are already open source. This repository being Apache 2.0 is fine to state.
+- That other chamuka-labs repos or products are already open source. This repository being Apache 2.0 is fine to state.
 - **“From thoughts to form”** anywhere but DrawIt. Never as a line for Chamuka Labs, Daybreak, FormIt, or org chrome.
 - Other taglines for the lab or for Daybreak.
 
@@ -53,7 +53,7 @@ Lead with the lab, then name the outputs. DrawIt, FormIt, Waypoint and the rest 
 
 ## Repo names and descriptions
 
-- Public name: Chamuka Labs. GitHub owner: `chamuka-inc`.
+- Public name: Chamuka Labs. GitHub owner: `chamuka-labs`.
 - User-facing products: `chamuka-<name>` in lowercase kebab-case (`chamuka-drawit`). No camelCase in the repo name.
 - Shared libraries: `@chamuka/<package>` on the registry, `chamuka-<package>` on GitHub.
 - Descriptions: one sentence, what it is, no trailing `!`, no emoji. Do not use DrawIt’s line on a lab or design-system repo.

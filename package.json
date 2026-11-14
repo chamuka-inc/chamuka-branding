@@ -36,7 +36,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/chamuka-inc/chamuka-design.git"
+    "url": "https://github.com/chamuka-labs/chamuka-design.git"
   },
   "pnpm": {
     "onlyBuiltDependencies": ["esbuild", "@parcel/watcher"]
