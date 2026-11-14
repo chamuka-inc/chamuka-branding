@@ -14,7 +14,7 @@ Use this one-liner verbatim when you need a sentence for the lab (docs, about co
 
 Social / profile bio, verbatim:
 
-> Applied AI lab. We ship products, put research to work, and build tools for agents. Flagship: DrawIt, a canvas you and the model both edit.
+> Applied AI lab. We ship products, put research to work, and build tools for agents.
 
 What that means:
 
@@ -24,16 +24,16 @@ What that means:
 
 ## Hierarchy
 
-Lead with the lab, then name the outputs.
+Lead with the lab, then name the outputs. DrawIt, FormIt, Waypoint and the rest are experiments.
 
-- **DrawIt** is the flagship.
+- **DrawIt** is an experiment under agent and human interaction. A canvas you and the model both edit.
 - **FormIt, Play, Waypoint, Vmette** and others are experiments or infrastructure, not launched products.
 - **Daybreak** is brand infrastructure, not a product.
 
 ## Visuals
 
 - Lab / org surfaces: the master lockup.
-- Flagship surfaces: Chamuka + DrawIt, ember `#E24E1B`.
+- DrawIt surfaces: Chamuka + DrawIt, ember `#E24E1B`.
 
 ## Do not claim
 
@@ -48,7 +48,7 @@ Lead with the lab, then name the outputs.
 
 1. **Plain first.** Say what the thing is in one sentence. The first line of a README should be able to replace the GitHub description without a rewrite.
 2. **Short, specific, slightly dry.** No trailing exclamation marks, no emoji in org listings, no “best”, no marketing puff.
-3. **Named, not nicknamed.** Surfaces say Chamuka Labs (org) or Chamuka + product name (DrawIt on flagship surfaces). Do not drop “Chamuka” from a product lockup.
+3. **Named, not nicknamed.** Surfaces say Chamuka Labs (org) or Chamuka + product name (DrawIt on DrawIt surfaces). Do not drop “Chamuka” from a product lockup.
 4. **Placeholders until confirmed.** Do not invent social handles. `name@chamuka.ai` is a stand-in for a person’s address on business cards and email signatures. Conduct and security reports go to `security@chamuka.ai`.
 
 ## Repo names and descriptions

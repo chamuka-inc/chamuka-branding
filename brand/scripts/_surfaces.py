@@ -451,7 +451,7 @@ def github_repo_listing():
 def write_docs():
     md = f"""# Daybreak surface templates
 
-Reusable masters for the places **Chamuka Labs** shows up online and in documents. Chamuka Labs is an applied AI lab; products such as DrawIt (flagship) and FormIt are sub-brands. Production starts from the SVGs (and the HTML signature). PNG previews are for review.
+Reusable masters for the places **Chamuka Labs** shows up online and in documents. Chamuka Labs is an applied AI lab; experiments such as DrawIt and FormIt are sub-brands. Production starts from the SVGs (and the HTML signature). PNG previews are for review.
 
 The website is chamuka.ai. Email uses the @chamuka.ai domain; in templates, name@chamuka.ai is a placeholder for the person’s address. Product sites follow the pattern drawit.chamuka.ai and formit.chamuka.ai (examples). Do not invent social handles — leave them as placeholders until they are confirmed.
 
