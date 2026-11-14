@@ -1,0 +1,914 @@
+{
+  "cmyk_method": "Separated from sRGB with LittleCMS (Pillow ImageCms) using the Ghostscript sRGB profile and the Artifex CMYK SWOP profile (default_cmyk.icc), Relative Colorimetric intent. Values rounded to whole percentages. This is a US SWOP-like coated separation, not FOGRA39 / ISO Coated v2 and not GRACoL 2013. European printers should re-separate to FOGRA39 (ISO Coated v2 300%) in prepress; North American printers should re-separate to GRACoL 2013 (CRPC6) if that is the house profile. Treat these CMYK builds as starting points.",
+  "pantone_method": "Nearest coated matches ranked by CIEDE2000 (D65/2\u00b0, sRGB-encoded Lab) against a compiled table of commonly circulated Pantone Color Bridge / converter *screen* hex approximations. These are not official Pantone-published measurements. Uncoated recommendations are the same PMS number in the Uncoated library (conventional C/U pairing), not a separately computed nearest-U. Every match is a nearest match and must be verified against a physical Pantone Coated or Uncoated guide before printing.",
+  "core": {
+    "ember": {
+      "name": "ember",
+      "hex": "#E24E1B",
+      "rgb": [
+        226,
+        78,
+        27
+      ],
+      "hsl": {
+        "h": 15,
+        "s": 79,
+        "l": 50
+      },
+      "cmyk_swop_relative": {
+        "c": 6,
+        "m": 87,
+        "y": 100,
+        "k": 1
+      },
+      "pantone_coated_nearest": [
+        {
+          "name": "Pantone 1665 C",
+          "hex_approx": "#DC4405",
+          "delta_e00": 2.83
+        },
+        {
+          "name": "Pantone 166 C",
+          "hex_approx": "#E35205",
+          "delta_e00": 3.24
+        },
+        {
+          "name": "Pantone 7625 C",
+          "hex_approx": "#E35205",
+          "delta_e00": 3.24
+        }
+      ],
+      "pantone_uncoated": {
+        "recommended": "Pantone 1665 U",
+        "note": "Conventional pairing: use the Uncoated (U) ink of the same PMS number as the nearest coated match. C and U of one number do not look identical; uncoated stock absorbs more and prints softer. This is not a separately measured nearest-U match. Verify against a physical Pantone Uncoated guide on the actual stock before printing."
+      }
+    },
+    "gold": {
+      "name": "gold",
+      "hex": "#E6B422",
+      "rgb": [
+        230,
+        180,
+        34
+      ],
+      "hsl": {
+        "h": 45,
+        "s": 80,
+        "l": 52
+      },
+      "cmyk_swop_relative": {
+        "c": 11,
+        "m": 30,
+        "y": 100,
+        "k": 0
+      },
+      "pantone_coated_nearest": [
+        {
+          "name": "Pantone 7409 C",
+          "hex_approx": "#F0B323",
+          "delta_e00": 2.94
+        },
+        {
+          "name": "Pantone 110 C",
+          "hex_approx": "#D7A900",
+          "delta_e00": 3.36
+        },
+        {
+          "name": "Pantone 7408 C",
+          "hex_approx": "#F6BE00",
+          "delta_e00": 3.5
+        }
+      ],
+      "pantone_uncoated": {
+        "recommended": "Pantone 7409 U",
+        "note": "Conventional pairing: use the Uncoated (U) ink of the same PMS number as the nearest coated match. C and U of one number do not look identical; uncoated stock absorbs more and prints softer. This is not a separately measured nearest-U match. Verify against a physical Pantone Uncoated guide on the actual stock before printing."
+      }
+    },
+    "slate": {
+      "name": "slate",
+      "hex": "#2B4C7E",
+      "rgb": [
+        43,
+        76,
+        126
+      ],
+      "hsl": {
+        "h": 216,
+        "s": 49,
+        "l": 33
+      },
+      "cmyk_swop_relative": {
+        "c": 100,
+        "m": 83,
+        "y": 26,
+        "k": 11
+      },
+      "pantone_coated_nearest": [
+        {
+          "name": "Pantone 7686 C",
+          "hex_approx": "#1D4F91",
+          "delta_e00": 2.99
+        },
+        {
+          "name": "Pantone 7687 C",
+          "hex_approx": "#1D4F91",
+          "delta_e00": 2.99
+        },
+        {
+          "name": "Pantone 7693 C",
+          "hex_approx": "#1D4F91",
+          "delta_e00": 2.99
+        }
+      ],
+      "pantone_uncoated": {
+        "recommended": "Pantone 7686 U",
+        "note": "Conventional pairing: use the Uncoated (U) ink of the same PMS number as the nearest coated match. C and U of one number do not look identical; uncoated stock absorbs more and prints softer. This is not a separately measured nearest-U match. Verify against a physical Pantone Uncoated guide on the actual stock before printing."
+      }
+    },
+    "paper": {
+      "name": "paper",
+      "hex": "#FFF8F1",
+      "rgb": [
+        255,
+        248,
+        241
+      ],
+      "hsl": {
+        "h": 30,
+        "s": 100,
+        "l": 97
+      },
+      "cmyk_swop_relative": {
+        "c": 0,
+        "m": 3,
+        "y": 4,
+        "k": 0
+      },
+      "pantone_coated_nearest": [
+        {
+          "name": "Pantone 663 C",
+          "hex_approx": "#E5E1E6",
+          "delta_e00": 7.68
+        },
+        {
+          "name": "Pantone Cool Gray 1 C",
+          "hex_approx": "#D9D9D6",
+          "delta_e00": 7.72
+        },
+        {
+          "name": "Pantone Warm Gray 1 C",
+          "hex_approx": "#D7D2CB",
+          "delta_e00": 8.43
+        }
+      ],
+      "pantone_uncoated": {
+        "recommended": "Pantone 663 U",
+        "note": "Conventional pairing: use the Uncoated (U) ink of the same PMS number as the nearest coated match. C and U of one number do not look identical; uncoated stock absorbs more and prints softer. This is not a separately measured nearest-U match. Verify against a physical Pantone Uncoated guide on the actual stock before printing."
+      }
+    },
+    "mist": {
+      "name": "mist",
+      "hex": "#F3EBE0",
+      "rgb": [
+        243,
+        235,
+        224
+      ],
+      "hsl": {
+        "h": 35,
+        "s": 44,
+        "l": 92
+      },
+      "cmyk_swop_relative": {
+        "c": 4,
+        "m": 6,
+        "y": 11,
+        "k": 0
+      },
+      "pantone_coated_nearest": [
+        {
+          "name": "Pantone Warm Gray 1 C",
+          "hex_approx": "#D7D2CB",
+          "delta_e00": 5.97
+        },
+        {
+          "name": "Pantone Cool Gray 1 C",
+          "hex_approx": "#D9D9D6",
+          "delta_e00": 6.21
+        },
+        {
+          "name": "Pantone 7527 C",
+          "hex_approx": "#D6D2C4",
+          "delta_e00": 6.47
+        }
+      ],
+      "pantone_uncoated": {
+        "recommended": "Pantone Warm Gray 1 U",
+        "note": "Conventional pairing: use the Uncoated (U) ink of the same PMS number as the nearest coated match. C and U of one number do not look identical; uncoated stock absorbs more and prints softer. This is not a separately measured nearest-U match. Verify against a physical Pantone Uncoated guide on the actual stock before printing."
+      }
+    },
+    "ink": {
+      "name": "ink",
+      "hex": "#17141C",
+      "rgb": [
+        23,
+        20,
+        28
+      ],
+      "hsl": {
+        "h": 262,
+        "s": 17,
+        "l": 9
+      },
+      "cmyk_swop_relative": {
+        "c": 75,
+        "m": 70,
+        "y": 62,
+        "k": 87
+      },
+      "pantone_coated_nearest": [
+        {
+          "name": "Pantone Black 6 C",
+          "hex_approx": "#101820",
+          "delta_e00": 6.62
+        },
+        {
+          "name": "Pantone Neutral Black C",
+          "hex_approx": "#222223",
+          "delta_e00": 6.8
+        },
+        {
+          "name": "Pantone 7547 C",
+          "hex_approx": "#131E29",
+          "delta_e00": 7.84
+        }
+      ],
+      "pantone_uncoated": {
+        "recommended": "Pantone Black 6 U",
+        "note": "Conventional pairing: use the Uncoated (U) ink of the same PMS number as the nearest coated match. C and U of one number do not look identical; uncoated stock absorbs more and prints softer. This is not a separately measured nearest-U match. Verify against a physical Pantone Uncoated guide on the actual stock before printing."
+      }
+    },
+    "muted": {
+      "name": "muted",
+      "hex": "#6B645C",
+      "rgb": [
+        107,
+        100,
+        92
+      ],
+      "hsl": {
+        "h": 32,
+        "s": 8,
+        "l": 39
+      },
+      "cmyk_swop_relative": {
+        "c": 55,
+        "m": 54,
+        "y": 61,
+        "k": 28
+      },
+      "pantone_coated_nearest": [
+        {
+          "name": "Pantone Warm Gray 11 C",
+          "hex_approx": "#6E6259",
+          "delta_e00": 2.64
+        },
+        {
+          "name": "Pantone Cool Gray 11 C",
+          "hex_approx": "#53565A",
+          "delta_e00": 9.55
+        },
+        {
+          "name": "Pantone 448 C",
+          "hex_approx": "#4A412A",
+          "delta_e00": 14.23
+        }
+      ],
+      "pantone_uncoated": {
+        "recommended": "Pantone Warm Gray 11 U",
+        "note": "Conventional pairing: use the Uncoated (U) ink of the same PMS number as the nearest coated match. C and U of one number do not look identical; uncoated stock absorbs more and prints softer. This is not a separately measured nearest-U match. Verify against a physical Pantone Uncoated guide on the actual stock before printing."
+      }
+    },
+    "success": {
+      "name": "success",
+      "hex": "#1F8A5B",
+      "rgb": [
+        31,
+        138,
+        91
+      ],
+      "hsl": {
+        "h": 154,
+        "s": 63,
+        "l": 33
+      },
+      "cmyk_swop_relative": {
+        "c": 89,
+        "m": 23,
+        "y": 87,
+        "k": 9
+      },
+      "pantone_coated_nearest": [
+        {
+          "name": "Pantone 7725 C",
+          "hex_approx": "#06815B",
+          "delta_e00": 4.07
+        },
+        {
+          "name": "Pantone 7724 C",
+          "hex_approx": "#00966C",
+          "delta_e00": 4.79
+        },
+        {
+          "name": "Pantone 335 C",
+          "hex_approx": "#007A53",
+          "delta_e00": 6.14
+        }
+      ],
+      "pantone_uncoated": {
+        "recommended": "Pantone 7725 U",
+        "note": "Conventional pairing: use the Uncoated (U) ink of the same PMS number as the nearest coated match. C and U of one number do not look identical; uncoated stock absorbs more and prints softer. This is not a separately measured nearest-U match. Verify against a physical Pantone Uncoated guide on the actual stock before printing."
+      }
+    },
+    "warning": {
+      "name": "warning",
+      "hex": "#E0A100",
+      "rgb": [
+        224,
+        161,
+        0
+      ],
+      "hsl": {
+        "h": 43,
+        "s": 100,
+        "l": 44
+      },
+      "cmyk_swop_relative": {
+        "c": 12,
+        "m": 40,
+        "y": 100,
+        "k": 0
+      },
+      "pantone_coated_nearest": [
+        {
+          "name": "Pantone 143 C",
+          "hex_approx": "#E5A823",
+          "delta_e00": 2.05
+        },
+        {
+          "name": "Pantone 7550 C",
+          "hex_approx": "#D89F27",
+          "delta_e00": 2.4
+        },
+        {
+          "name": "Pantone 124 C",
+          "hex_approx": "#EAAA00",
+          "delta_e00": 2.61
+        }
+      ],
+      "pantone_uncoated": {
+        "recommended": "Pantone 143 U",
+        "note": "Conventional pairing: use the Uncoated (U) ink of the same PMS number as the nearest coated match. C and U of one number do not look identical; uncoated stock absorbs more and prints softer. This is not a separately measured nearest-U match. Verify against a physical Pantone Uncoated guide on the actual stock before printing."
+      }
+    },
+    "danger": {
+      "name": "danger",
+      "hex": "#C5362B",
+      "rgb": [
+        197,
+        54,
+        43
+      ],
+      "hsl": {
+        "h": 4,
+        "s": 64,
+        "l": 47
+      },
+      "cmyk_swop_relative": {
+        "c": 16,
+        "m": 98,
+        "y": 100,
+        "k": 7
+      },
+      "pantone_coated_nearest": [
+        {
+          "name": "Pantone 180 C",
+          "hex_approx": "#C52928",
+          "delta_e00": 2.08
+        },
+        {
+          "name": "Pantone 7626 C",
+          "hex_approx": "#C5291C",
+          "delta_e00": 2.67
+        },
+        {
+          "name": "Pantone 711 C",
+          "hex_approx": "#CB2C30",
+          "delta_e00": 2.82
+        }
+      ],
+      "pantone_uncoated": {
+        "recommended": "Pantone 180 U",
+        "note": "Conventional pairing: use the Uncoated (U) ink of the same PMS number as the nearest coated match. C and U of one number do not look identical; uncoated stock absorbs more and prints softer. This is not a separately measured nearest-U match. Verify against a physical Pantone Uncoated guide on the actual stock before printing."
+      }
+    },
+    "info": {
+      "name": "info",
+      "hex": "#2B4C7E",
+      "rgb": [
+        43,
+        76,
+        126
+      ],
+      "hsl": {
+        "h": 216,
+        "s": 49,
+        "l": 33
+      },
+      "cmyk_swop_relative": {
+        "c": 100,
+        "m": 83,
+        "y": 26,
+        "k": 11
+      },
+      "pantone_coated_nearest": [
+        {
+          "name": "Pantone 7686 C",
+          "hex_approx": "#1D4F91",
+          "delta_e00": 2.99
+        },
+        {
+          "name": "Pantone 7687 C",
+          "hex_approx": "#1D4F91",
+          "delta_e00": 2.99
+        },
+        {
+          "name": "Pantone 7693 C",
+          "hex_approx": "#1D4F91",
+          "delta_e00": 2.99
+        }
+      ],
+      "pantone_uncoated": {
+        "recommended": "Pantone 7686 U",
+        "note": "Conventional pairing: use the Uncoated (U) ink of the same PMS number as the nearest coated match. C and U of one number do not look identical; uncoated stock absorbs more and prints softer. This is not a separately measured nearest-U match. Verify against a physical Pantone Uncoated guide on the actual stock before printing."
+      }
+    },
+    "play": {
+      "name": "play",
+      "hex": "#D9487A",
+      "rgb": [
+        217,
+        72,
+        122
+      ],
+      "hsl": {
+        "h": 339,
+        "s": 66,
+        "l": 57
+      },
+      "cmyk_swop_relative": {
+        "c": 10,
+        "m": 92,
+        "y": 30,
+        "k": 0
+      },
+      "pantone_coated_nearest": [
+        {
+          "name": "Pantone 205 C",
+          "hex_approx": "#E0457B",
+          "delta_e00": 1.2
+        },
+        {
+          "name": "Pantone 7424 C",
+          "hex_approx": "#E24585",
+          "delta_e00": 2.72
+        },
+        {
+          "name": "Pantone 213 C",
+          "hex_approx": "#E31C79",
+          "delta_e00": 4.69
+        }
+      ],
+      "pantone_uncoated": {
+        "recommended": "Pantone 205 U",
+        "note": "Conventional pairing: use the Uncoated (U) ink of the same PMS number as the nearest coated match. C and U of one number do not look identical; uncoated stock absorbs more and prints softer. This is not a separately measured nearest-U match. Verify against a physical Pantone Uncoated guide on the actual stock before printing."
+      }
+    }
+  },
+  "neutrals": {
+    "50": {
+      "hex": "#FBF7F2",
+      "rgb": [
+        251,
+        247,
+        242
+      ],
+      "hsl": {
+        "h": 33,
+        "s": 53,
+        "l": 97
+      },
+      "cmyk_swop_relative": {
+        "c": 1,
+        "m": 2,
+        "y": 4,
+        "k": 0
+      }
+    },
+    "100": {
+      "hex": "#F3EBE0",
+      "rgb": [
+        243,
+        235,
+        224
+      ],
+      "hsl": {
+        "h": 35,
+        "s": 44,
+        "l": 92
+      },
+      "cmyk_swop_relative": {
+        "c": 4,
+        "m": 6,
+        "y": 11,
+        "k": 0
+      }
+    },
+    "200": {
+      "hex": "#E6D9C8",
+      "rgb": [
+        230,
+        217,
+        200
+      ],
+      "hsl": {
+        "h": 34,
+        "s": 37,
+        "l": 84
+      },
+      "cmyk_swop_relative": {
+        "c": 9,
+        "m": 13,
+        "y": 21,
+        "k": 0
+      }
+    },
+    "300": {
+      "hex": "#D0C0AA",
+      "rgb": [
+        208,
+        192,
+        170
+      ],
+      "hsl": {
+        "h": 35,
+        "s": 29,
+        "l": 74
+      },
+      "cmyk_swop_relative": {
+        "c": 19,
+        "m": 23,
+        "y": 34,
+        "k": 0
+      }
+    },
+    "400": {
+      "hex": "#B3A28A",
+      "rgb": [
+        179,
+        162,
+        138
+      ],
+      "hsl": {
+        "h": 35,
+        "s": 21,
+        "l": 62
+      },
+      "cmyk_swop_relative": {
+        "c": 31,
+        "m": 34,
+        "y": 49,
+        "k": 1
+      }
+    },
+    "500": {
+      "hex": "#8F8170",
+      "rgb": [
+        143,
+        129,
+        112
+      ],
+      "hsl": {
+        "h": 33,
+        "s": 12,
+        "l": 50
+      },
+      "cmyk_swop_relative": {
+        "c": 44,
+        "m": 45,
+        "y": 58,
+        "k": 11
+      }
+    },
+    "600": {
+      "hex": "#6B645C",
+      "rgb": [
+        107,
+        100,
+        92
+      ],
+      "hsl": {
+        "h": 32,
+        "s": 8,
+        "l": 39
+      },
+      "cmyk_swop_relative": {
+        "c": 55,
+        "m": 54,
+        "y": 61,
+        "k": 28
+      }
+    },
+    "700": {
+      "hex": "#524C46",
+      "rgb": [
+        82,
+        76,
+        70
+      ],
+      "hsl": {
+        "h": 30,
+        "s": 8,
+        "l": 30
+      },
+      "cmyk_swop_relative": {
+        "c": 60,
+        "m": 60,
+        "y": 67,
+        "k": 49
+      }
+    },
+    "800": {
+      "hex": "#3A3531",
+      "rgb": [
+        58,
+        53,
+        49
+      ],
+      "hsl": {
+        "h": 27,
+        "s": 8,
+        "l": 21
+      },
+      "cmyk_swop_relative": {
+        "c": 62,
+        "m": 67,
+        "y": 73,
+        "k": 75
+      }
+    },
+    "900": {
+      "hex": "#241F1C",
+      "rgb": [
+        36,
+        31,
+        28
+      ],
+      "hsl": {
+        "h": 22,
+        "s": 12,
+        "l": 13
+      },
+      "cmyk_swop_relative": {
+        "c": 68,
+        "m": 68,
+        "y": 68,
+        "k": 86
+      }
+    },
+    "950": {
+      "hex": "#17141C",
+      "rgb": [
+        23,
+        20,
+        28
+      ],
+      "hsl": {
+        "h": 262,
+        "s": 17,
+        "l": 9
+      },
+      "cmyk_swop_relative": {
+        "c": 75,
+        "m": 70,
+        "y": 62,
+        "k": 87
+      }
+    }
+  },
+  "contrast": [
+    {
+      "fg": "ink",
+      "bg": "paper",
+      "ratio": 17.3,
+      "aa_normal": "AAA",
+      "aa_large": "AAA"
+    },
+    {
+      "fg": "ink",
+      "bg": "mist",
+      "ratio": 15.41,
+      "aa_normal": "AAA",
+      "aa_large": "AAA"
+    },
+    {
+      "fg": "ink",
+      "bg": "white",
+      "ratio": 18.21,
+      "aa_normal": "AAA",
+      "aa_large": "AAA"
+    },
+    {
+      "fg": "ember",
+      "bg": "paper",
+      "ratio": 3.74,
+      "aa_normal": "fail",
+      "aa_large": "AA"
+    },
+    {
+      "fg": "ember",
+      "bg": "white",
+      "ratio": 3.93,
+      "aa_normal": "fail",
+      "aa_large": "AA"
+    },
+    {
+      "fg": "ember",
+      "bg": "ink",
+      "ratio": 4.63,
+      "aa_normal": "AA",
+      "aa_large": "AAA"
+    },
+    {
+      "fg": "gold",
+      "bg": "ink",
+      "ratio": 9.47,
+      "aa_normal": "AAA",
+      "aa_large": "AAA"
+    },
+    {
+      "fg": "gold",
+      "bg": "paper",
+      "ratio": 1.83,
+      "aa_normal": "fail",
+      "aa_large": "fail"
+    },
+    {
+      "fg": "slate",
+      "bg": "paper",
+      "ratio": 8.18,
+      "aa_normal": "AAA",
+      "aa_large": "AAA"
+    },
+    {
+      "fg": "slate",
+      "bg": "white",
+      "ratio": 8.61,
+      "aa_normal": "AAA",
+      "aa_large": "AAA"
+    },
+    {
+      "fg": "slate",
+      "bg": "ink",
+      "ratio": 2.11,
+      "aa_normal": "fail",
+      "aa_large": "fail"
+    },
+    {
+      "fg": "white",
+      "bg": "ember",
+      "ratio": 3.93,
+      "aa_normal": "fail",
+      "aa_large": "AA"
+    },
+    {
+      "fg": "white",
+      "bg": "slate",
+      "ratio": 8.61,
+      "aa_normal": "AAA",
+      "aa_large": "AAA"
+    },
+    {
+      "fg": "white",
+      "bg": "ink",
+      "ratio": 18.21,
+      "aa_normal": "AAA",
+      "aa_large": "AAA"
+    },
+    {
+      "fg": "paper",
+      "bg": "ember",
+      "ratio": 3.74,
+      "aa_normal": "fail",
+      "aa_large": "AA"
+    },
+    {
+      "fg": "paper",
+      "bg": "slate",
+      "ratio": 8.18,
+      "aa_normal": "AAA",
+      "aa_large": "AAA"
+    },
+    {
+      "fg": "paper",
+      "bg": "ink",
+      "ratio": 17.3,
+      "aa_normal": "AAA",
+      "aa_large": "AAA"
+    },
+    {
+      "fg": "muted",
+      "bg": "paper",
+      "ratio": 5.54,
+      "aa_normal": "AA",
+      "aa_large": "AAA"
+    },
+    {
+      "fg": "muted",
+      "bg": "ink",
+      "ratio": 3.12,
+      "aa_normal": "fail",
+      "aa_large": "AA"
+    },
+    {
+      "fg": "success",
+      "bg": "paper",
+      "ratio": 4.12,
+      "aa_normal": "fail",
+      "aa_large": "AA"
+    },
+    {
+      "fg": "success",
+      "bg": "white",
+      "ratio": 4.33,
+      "aa_normal": "fail",
+      "aa_large": "AA"
+    },
+    {
+      "fg": "warning",
+      "bg": "ink",
+      "ratio": 8.04,
+      "aa_normal": "AAA",
+      "aa_large": "AAA"
+    },
+    {
+      "fg": "warning",
+      "bg": "paper",
+      "ratio": 2.15,
+      "aa_normal": "fail",
+      "aa_large": "fail"
+    },
+    {
+      "fg": "danger",
+      "bg": "paper",
+      "ratio": 5.07,
+      "aa_normal": "AA",
+      "aa_large": "AAA"
+    },
+    {
+      "fg": "danger",
+      "bg": "white",
+      "ratio": 5.33,
+      "aa_normal": "AA",
+      "aa_large": "AAA"
+    },
+    {
+      "fg": "info",
+      "bg": "paper",
+      "ratio": 8.18,
+      "aa_normal": "AAA",
+      "aa_large": "AAA"
+    },
+    {
+      "fg": "play",
+      "bg": "paper",
+      "ratio": 3.87,
+      "aa_normal": "fail",
+      "aa_large": "AA"
+    },
+    {
+      "fg": "play",
+      "bg": "white",
+      "ratio": 4.07,
+      "aa_normal": "fail",
+      "aa_large": "AA"
+    },
+    {
+      "fg": "play",
+      "bg": "ink",
+      "ratio": 4.47,
+      "aa_normal": "fail",
+      "aa_large": "AA"
+    }
+  ]
+}
