@@ -1,0 +1,20 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Guidelines/Layout and grid" />
+
+# Layout and grid
+
+Product UI sits on morning paper (`--background`) with a max reading width of **72rem** (`Container` size `lg`). Forms and settings use `md` (56rem). Dialogs stay at 480px.
+
+## Page frame
+
+- **Header** 64px, lockup on the left (master or Chamuka + Name), utilities on the right.
+- **Body** 16px / 24px IBM Plex Sans.
+- **Margins** 16px on small screens, 24–32px from `md`.
+- **Grid** CSS grid, 12 columns on desktop, 4 on mobile. Gutters follow the spacing scale (16 / 24).
+
+Do not stretch the mark to fill a hero. Do not invent a second banner style — use the templates in `/templates`.
+
+## Stacking
+
+Use `Stack` for vertical rhythm. Default gap is `--spacing-4` (16px) between related items, `--spacing-6` (24px) between sections, `--spacing-8` (32px) between page blocks.

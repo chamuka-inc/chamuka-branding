@@ -1,0 +1,58 @@
+html,
+body,
+#storybook-root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--background, #fff8f1);
+  color: var(--foreground, #17141c);
+}
+
+.sb-guide {
+  max-width: 44rem;
+  font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.sb-guide h1,
+.sb-guide h2,
+.sb-guide h3 {
+  font-family: Sora, ui-sans-serif, system-ui, sans-serif;
+}
+
+.sb-swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.sb-swatch {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card);
+}
+
+.sb-swatch-chip {
+  height: 72px;
+}
+
+.sb-swatch-meta {
+  padding: 8px 10px;
+  font-size: 12px;
+}
+
+.sb-type-row {
+  margin: 0 0 16px;
+}
+
+.sb-space-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+}

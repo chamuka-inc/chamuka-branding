@@ -14,7 +14,8 @@ from fontTools.ttLib import TTFont
 from PIL import Image, ImageCms
 import cairosvg
 
-ROOT = Path("/workspace/chamuka-design/brand/daybreak")
+ROOT = Path(__file__).resolve().parent.parent
+REPO = ROOT.parent
 
 # Confirmed web presence. Email is a placeholder — replace name@ with the person.
 SITE_HOST = "chamuka.ai"
@@ -46,6 +47,8 @@ PALETTE = {
     "danger": "#C5362B",
     "info": "#2B4C7E",
     "play": "#D9487A",
+    "forest": "#2F6B4F",
+    "mineral": "#1F7A6B",
     "white": "#FFFFFF",
     "transparent": "none",
 }

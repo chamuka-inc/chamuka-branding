@@ -8,8 +8,9 @@ from pathlib import Path
 
 import cairosvg
 
-ROOT = Path("/workspace/chamuka-design/brand/daybreak")
-sys.path.insert(0, str(ROOT))
+SCRIPTS = Path(__file__).resolve().parent
+ROOT = SCRIPTS.parent
+sys.path.insert(0, str(SCRIPTS))
 from _build import (  # noqa: E402
     BAR_H,
     BAR_W,
@@ -531,7 +532,9 @@ def tokens_and_readme():
   --warning: #E0A100;
   --danger: #C5362B;
   --info: #2B4C7E;
-  --play: #D9487A; /* Play product accent only */
+  --play: #D9487A; /* Coral — playful-but-adult products (Play is an example) */
+  --forest: #2F6B4F; /* Forest — calm green products (Waypoint is an example) */
+  --mineral: #1F7A6B; /* Mineral — infra / platform tools (Vmette is an example) */
 
   /* Neutral ramp */
   --neutral-50: #FBF7F2;
@@ -572,6 +575,8 @@ def tokens_and_readme():
   --accent-drawit: var(--ember);
   --accent-formit: var(--slate);
   --accent-play: var(--play);
+  --accent-forest: var(--forest);
+  --accent-mineral: var(--mineral);
 }}
 
 .dark {{
@@ -610,6 +615,8 @@ def tokens_and_readme():
   --color-danger: #C5362B;
   --color-info: #2B4C7E;
   --color-play: #D9487A;
+  --color-forest: #2F6B4F;
+  --color-mineral: #1F7A6B;
   --color-neutral-50: #FBF7F2;
   --color-neutral-100: #F3EBE0;
   --color-neutral-200: #E6D9C8;

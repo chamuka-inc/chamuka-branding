@@ -1,0 +1,31 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Introduction" />
+
+# Daybreak design system
+
+Daybreak is the master brand for everything [chamuka-inc](https://chamuka.ai) builds. This Storybook is the UI/UX source for product teams. The logo masters, print files, and Python generators live in `/brand`. Digital marketing templates live in `/templates`.
+
+**Audience:** business teams. **Feel:** playful, warm, African-rooted — not toy-like.
+
+## Packages
+
+| Package | Use |
+|---|---|
+| `@chamuka/tokens` | DTCG tokens → CSS variables, Tailwind v3 preset, Tailwind v4 `@theme`, TS |
+| `@chamuka/ui` | React 19 components on Radix |
+| `@chamuka/icons` | Daybreak mark, lockups, product marks |
+
+Consuming apps (DrawIt, FormIt, Play) are Next.js + React 19 + Tailwind v3 or v4 with shadcn-style CSS variables. Import tokens CSS, then UI CSS, then wrap with `ThemeProvider`.
+
+## Quick start
+
+See the repository README for Tailwind v3 and v4 wiring. In JSX:
+
+```tsx
+import { ThemeProvider, Button } from "@chamuka/ui";
+
+<ThemeProvider>
+  <Button>Save</Button>
+</ThemeProvider>
+```

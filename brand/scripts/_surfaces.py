@@ -7,8 +7,10 @@ from pathlib import Path
 
 import cairosvg
 
-ROOT = Path("/workspace/chamuka-design/brand/daybreak")
-sys.path.insert(0, str(ROOT))
+SCRIPTS = Path(__file__).resolve().parent
+ROOT = SCRIPTS.parent
+REPO = ROOT.parent
+sys.path.insert(0, str(SCRIPTS))
 from _build import (  # noqa: E402
     HORIZON_X1,
     HORIZON_X2,
@@ -43,7 +45,7 @@ muted, coral = PALETTE["muted"], PALETTE["play"]
 FOREST = "#2F6B4F"
 MINERAL = "#1F7A6B"
 
-TPL = ROOT / "templates"
+TPL = REPO / "templates"
 TPNG = TPL / "png"
 SVG = ROOT / "svg"
 PNG = ROOT / "png"
@@ -524,7 +526,7 @@ Visual examples: `github-repo-naming.svg`.
 
 ## Web and landing pages
 
-`web-landing.svg` is a guidance frame, not a finished site. Tie implementation to `tokens.css`:
+`web-landing.svg` is a guidance frame, not a finished site. Tie implementation to `@chamuka/tokens` (and the brand snapshot at `brand/tokens.css`):
 
 - Page background `--paper` (`#FFF8F1`), body `--ink`, secondary `--muted`.
 - Display and heroes in **Sora 600**; UI and body in **IBM Plex Sans 16/24**; code in **IBM Plex Mono**.

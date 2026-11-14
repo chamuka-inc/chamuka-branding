@@ -1,0 +1,14 @@
+{
+  "radius": {
+    "$type": "dimension",
+    "sm": { "$value": "4px" },
+    "md": { "$value": "8px" },
+    "lg": { "$value": "12px" },
+    "xl": { "$value": "20px" },
+    "full": { "$value": "9999px" },
+    "default": {
+      "$value": "0.5rem",
+      "$description": "Shadcn --radius on :root."
+    }
+  }
+}

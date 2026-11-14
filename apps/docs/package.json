@@ -1,0 +1,40 @@
+{
+  "name": "@chamuka/docs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Storybook for the Daybreak design system.",
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "echo 'Storybook is built with build-storybook'",
+    "build-storybook": "storybook build --disable-telemetry",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "echo 'No unit tests in docs'"
+  },
+  "dependencies": {
+    "@chamuka/icons": "workspace:*",
+    "@chamuka/tokens": "workspace:*",
+    "@chamuka/ui": "workspace:*",
+    "@fontsource/ibm-plex-mono": "^5.2.7",
+    "@fontsource/ibm-plex-sans": "^5.2.8",
+    "@fontsource/sora": "^5.2.8",
+    "lucide-react": "^0.552.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^8.6.14",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/addon-themes": "^8.6.14",
+    "@storybook/blocks": "^8.6.14",
+    "@storybook/react": "^8.6.14",
+    "@storybook/react-vite": "^8.6.14",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "storybook": "^8.6.14",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.1"
+  }
+}

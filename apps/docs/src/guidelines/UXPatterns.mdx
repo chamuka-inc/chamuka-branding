@@ -1,0 +1,25 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Guidelines/UX patterns" />
+
+# UX patterns
+
+## Forms
+
+Label above the control. Help text is optional and short. Validate on submit, then on blur after a field has failed. Use `Field` so help and error IDs are wired. Primary action on the right on desktop, full-width on small screens. Destructive actions are never the default button.
+
+## Empty
+
+Explain the next step, not the absence. One sentence, one primary action (*Create form*). No illustration required; if you use one, keep it in Daybreak colours and do not drop a mascot.
+
+## Error
+
+Name the problem and a way forward. Page-level: `Alert` variant `danger`. Field-level: `Field` `error`. Network failure: retry. Do not blame the person.
+
+## Loading
+
+Prefer `Skeleton` that matches the layout over a centred spinner. Use `Spinner` on buttons (`aria-busy`) and for short waits. Copy stays quiet: *Loading forms…*
+
+## Navigation
+
+Product chrome uses the Chamuka + Name lockup. Org chrome uses the master lockup. Current location is indicated by the ember (or product accent) underline on `Tabs` / nav, not by recolouring the sun. Breadcrumbs are IBM Plex Sans 14/20 muted, current page in ink.

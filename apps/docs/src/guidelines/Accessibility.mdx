@@ -1,0 +1,16 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Guidelines/Accessibility" />
+
+# Accessibility
+
+Components follow WAI-ARIA APG patterns via Radix. Keyboard: Tab moves focus, Enter/Space activate, Escape closes overlays, arrows move within menus, radios, and tabs.
+
+- Visible **focus-visible** ring using `--ring` (ember / lifted ember).
+- Icon-only controls require an accessible name (`IconButton` `label`).
+- Every checkbox, radio, and switch has a `Label`.
+- Errors are `role="alert"` and referenced from the control with `aria-describedby`.
+- Do not rely on colour alone: pair danger with text, not only a red border.
+- Hit targets: 40px default, 32px compact.
+
+Test with keyboard, a screen reader, and the Storybook a11y addon. jsdom unit tests disable colour-contrast because jsdom cannot compute it reliably — contrast is a documented token constraint, not a unit-test claim.
