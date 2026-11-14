@@ -1,6 +1,8 @@
 # Chamuka Daybreak
 
-Daybreak is the brand pack and UI/UX design system for **[Chamuka Labs](https://chamuka.ai), an applied AI lab**. Products such as **DrawIt** (flagship) and **FormIt** are sub-brands — outputs of the lab, not the lab itself.
+**Chamuka Labs is an applied AI lab: we ship AI-native products, put research into practice, and build tools for AI agents.**
+
+Daybreak is brand infrastructure for [Chamuka Labs](https://chamuka.ai) — tokens, components, and marks — not a product. **DrawIt** is the flagship (a canvas you and the model both edit). FormIt, Play, Waypoint, Vmette and others are experiments or infrastructure, not launched products.
 
 This repository is public. Clone it, open issues, and send pull requests. See [CONTRIBUTING.md](./CONTRIBUTING.md).
 

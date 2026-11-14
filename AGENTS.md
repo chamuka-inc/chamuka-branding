@@ -1,8 +1,10 @@
 # Chamuka design system — agent guide
 
-This repository is **chamuka-inc/chamuka-design** (Daybreak), the brand and UI system for **Chamuka Labs, an applied AI lab**. Products such as DrawIt (flagship) and FormIt are sub-brands — lab outputs. Consume this pack from those apps; do not invent a parallel palette, type ramp, or component set.
+This repository is **chamuka-inc/chamuka-design** (Daybreak), brand infrastructure for Chamuka Labs — not a product. Consume this pack from lab apps; do not invent a parallel palette, type ramp, or component set.
 
-**Voice:** Chamuka Labs has no separate slogan in this pack. “From thoughts to form” is DrawIt’s line only. If you write “research”, mean applied engineering — not academic or fundamental research. Full rules: [`brand/docs/voice.md`](./brand/docs/voice.md).
+**Chamuka Labs is an applied AI lab: we ship AI-native products, put research into practice, and build tools for AI agents.**
+
+**Voice:** founder-led, short, specific, slightly dry; a tinkerer speaking for the lab. Lead with the lab, then name the outputs. DrawIt is the flagship. FormIt, Play, Waypoint, Vmette and others are experiments or infrastructure, not launched products. “From thoughts to form” is DrawIt’s line only. If you write “research”, mean applied engineering — no papers, benchmarks, evaluation work, or research results. Do not claim other chamuka-inc repos are already open source. Full rules: [`brand/docs/voice.md`](./brand/docs/voice.md).
 
 Before writing UI, read this file, then the package `AGENTS.md` for the package you are changing. Machine-readable inventory: [`manifest.json`](./manifest.json), [`llms.txt`](./llms.txt), and the shadcn registry under [`registry/`](./registry).
 

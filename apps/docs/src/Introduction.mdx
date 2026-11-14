@@ -4,9 +4,11 @@ import { Meta } from "@storybook/blocks";
 
 # Daybreak design system
 
-Daybreak is the brand and UI system for **[Chamuka Labs](https://chamuka.ai), an applied AI lab**. Products such as DrawIt (flagship) and FormIt are sub-brands — outputs of the lab. This Storybook is the UI/UX source for those products. Logo masters, print files, and Python generators live in `/brand`. Digital templates live in `/templates`.
+**Chamuka Labs is an applied AI lab: we ship AI-native products, put research into practice, and build tools for AI agents.**
 
-**Audience:** business teams. **Feel:** playful, warm, African-rooted — not toy-like. **“From thoughts to form”** is DrawIt’s line only.
+Daybreak is brand infrastructure for [Chamuka Labs](https://chamuka.ai) — not a product. **DrawIt** is the flagship. FormIt, Play, Waypoint, Vmette and others are experiments or infrastructure, not launched products. This Storybook is the UI/UX source for that system. Logo masters, print files, and Python generators live in `/brand`. Digital templates live in `/templates`.
+
+**Audience:** business teams. **Feel:** playful, warm, African-rooted — not toy-like. **Voice:** founder-led, short, specific, slightly dry. **“From thoughts to form”** is DrawIt’s line only.
 
 ## Packages
 
@@ -16,7 +18,7 @@ Daybreak is the brand and UI system for **[Chamuka Labs](https://chamuka.ai), an
 | `@chamuka/ui` | React 19 components (Tailwind + UI SDK) |
 | `@chamuka/icons` | Daybreak mark, lockups, product marks |
 
-Consuming apps (DrawIt, FormIt, Play) are Next.js + React 19 + Tailwind v3 or v4 with shadcn-style CSS variables. Import `tokens.css` + `theme.css`, `@source` `@chamuka/ui` (or import the compiled `styles.css` fallback), then wrap with `ThemeProvider`. Interactive components wrap UI SDK; presentational ones are plain Tailwind.
+Consuming apps (DrawIt and other lab surfaces) are Next.js + React 19 + Tailwind v3 or v4 with shadcn-style CSS variables. Import `tokens.css` + `theme.css`, `@source` `@chamuka/ui` (or import the compiled `styles.css` fallback), then wrap with `ThemeProvider`. Interactive components wrap UI SDK; presentational ones are plain Tailwind.
 
 ## Quick start
 

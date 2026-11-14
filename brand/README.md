@@ -1,6 +1,8 @@
 # Chamuka Labs brand system (Daybreak)
 
-Daybreak is the visual system for **Chamuka Labs, an applied AI lab**. The lab is the master brand. Products such as **DrawIt** (flagship) and **FormIt** are sub-brands — outputs of the lab, not the lab itself.
+**Chamuka Labs is an applied AI lab: we ship AI-native products, put research into practice, and build tools for AI agents.**
+
+Daybreak is **brand infrastructure** for that lab — not a product. The lab is the master brand. **DrawIt** is the flagship. FormIt, Play, Waypoint, Vmette and others are experiments or infrastructure, not launched products.
 
 This folder holds logo masters, colour documentation, print files, and the Python generators. Screen tokens for product UI live in [`@chamuka/tokens`](../packages/tokens); this folder keeps a regenerated snapshot at `tokens.css` for brand QA.
 
@@ -41,11 +43,12 @@ Start from the SVGs, not the PNGs, for any production use. PNG previews are for 
 - **Minimum horizontal lockup:** 120 px wide on screen, 32 mm wide in print.
 - **Clear space:** one sun radius on every side (half the disc diameter), equal to 0.36 × the optical mark height (disc top to gold-bar bottom).
 - **Colourways:** colour on cream, knockout on ember or slate, and mono ink / light plates are in `svg/` and `png/`.
-- **Sub-brands:** a named product uses a Chamuka + Name lockup (`svg/lockup-drawit.svg` and the other examples). The Name is IBM Plex Sans Medium, in the product accent, at 0.72 of the wordmark size. Do not recolour the sun, horizon, or gold bar. Do not drop “Chamuka” from the lockup. Product icons are the mark knocked out on a 22% rounded square in the accent; at 16 / 32 px use the simple mark.
+- **Lab / org:** the master lockup (`svg/lockup-horizontal.svg`).
+- **Flagship (DrawIt):** Chamuka + DrawIt (`svg/lockup-drawit.svg`), ember `#E24E1B`. The Name is IBM Plex Sans Medium, in the product accent, at 0.72 of the wordmark size. Do not recolour the sun, horizon, or gold bar. Do not drop “Chamuka” from the lockup. Product icons are the mark knocked out on a 22% rounded square in the accent; at 16 / 32 px use the simple mark. Other Chamuka + Name lockups in this folder (FormIt, Play, Waypoint, Vmette) are worked examples for experiments or infrastructure — do not present those names as launched products.
 - **Don’ts:** see `svg/donts.svg` — do not stretch, rotate, recolour the sun, drop the bar or horizon, outline the mark, add a drop shadow, or place it on a busy photograph without a solid plate.
 - Wordmark outlines are Sora SemiBold, so printers do not need the font.
 
-DrawIt, FormIt, Play, Waypoint, and Vmette in this pack are worked examples of the sub-brand pattern, not a closed product list.
+DrawIt is the flagship. FormIt, Play, Waypoint, and Vmette in this pack are worked examples of the sub-brand pattern for experiments or infrastructure, not a closed list and not launched products.
 
 In product UI, prefer the React components in [`@chamuka/icons`](../packages/icons) over inlining these SVGs.
 
